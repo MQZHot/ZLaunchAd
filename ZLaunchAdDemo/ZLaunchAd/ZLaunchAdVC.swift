@@ -179,6 +179,7 @@ class ZLaunchAdVC: UIViewController {
 
 extension ZLaunchAdVC {
     func setAdImgView(url: String, defaultDuration: Int = 3, adDuartion: Int, skipBtnType: SkipButtonType = .timer, transitionType: TransitionType = .rippleEffect, adImgViewClick: (()->())?, completion:(()->())?) {
+        
         self.transitionType = transitionType
         self.adDuration = adDuartion
         
@@ -189,27 +190,28 @@ extension ZLaunchAdVC {
             self.adDuration = 1
         }
         self.skipBtnType = skipBtnType
-        
-        view.addSubview(launchAdImgView)
-        launchAdImgView.kf.setImage(with: URL.init(string: url)) { (image, error, cacheType, url) in
-            /// 如果带缓存，并且需要改变按钮状态
-            self.skipBtn.removeFromSuperview()
-            if self.animationLayer != nil {
-                self.animationLayer?.removeFromSuperlayer()
-                self.animationLayer = nil
-            }
-            
-            if self.skipBtnType != .none {
-                self.view.addSubview(self.skipBtn)
-                if self.skipBtnType == .circle {
-                    self.addLayer()
+        if url != "" {
+            view.addSubview(launchAdImgView)
+            launchAdImgView.kf.setImage(with: URL.init(string: url)) { (image, error, cacheType, url) in
+                /// 如果带缓存，并且需要改变按钮状态
+                self.skipBtn.removeFromSuperview()
+                if self.animationLayer != nil {
+                    self.animationLayer?.removeFromSuperlayer()
+                    self.animationLayer = nil
                 }
+                
+                if self.skipBtnType != .none {
+                    self.view.addSubview(self.skipBtn)
+                    if self.skipBtnType == .circle {
+                        self.addLayer()
+                    }
+                }
+                self.adStartTimer()
+                
+                UIView.animate(withDuration: 0.8, animations: {
+                    self.launchAdImgView.alpha = 1
+                })
             }
-            self.adStartTimer()
-            
-            UIView.animate(withDuration: 0.8, animations: {
-                self.launchAdImgView.alpha = 1
-            })
         }
         self.adImgViewClick = adImgViewClick
         self.completion = completion
