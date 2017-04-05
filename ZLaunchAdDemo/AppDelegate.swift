@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = nav
         } else {
             
-            let adVC = MLaunchADVC.init(skipBtnPosition: .rightBottom, setAdParams: { (advc) in
+            let adVC = ZLaunchAdVC.init(skipBtnPosition: .rightBottom, setAdParams: { (advc) in
                 advc.setAdImgView(url: "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170331202849335.png", adDuartion: 6, adImgViewClick: {
                     
                     let vc = UIViewController()

@@ -1,5 +1,5 @@
 //
-//  MLaunchADVC.swift
+//  ZLaunchAdVC.swift
 //  ZLaunchAdDemo
 //
 //  Created by mengqingzheng on 2017/4/5.
@@ -33,7 +33,7 @@ enum TransitionType {
     case filpFromRight
 }
 
-class MLaunchADVC: UIViewController {
+class ZLaunchAdVC: UIViewController {
     
     //MARK: - 属性
     /// 默认3s
@@ -68,7 +68,7 @@ class MLaunchADVC: UIViewController {
     /// 数据定时器
     fileprivate var dataTimer: DispatchSourceTimer?
     /// 闭包
-    fileprivate var setAdParams: ((_ launchAdVC: MLaunchADVC)->())?
+    fileprivate var setAdParams: ((_ launchAdVC: ZLaunchAdVC)->())?
     fileprivate var adImgViewClick: (()->())?
     fileprivate var completion:(()->())?
     /// layer
@@ -149,7 +149,7 @@ class MLaunchADVC: UIViewController {
     }
     //MARK: - XXXXXXXX
     /// 便利构造器
-    convenience init(adViewBottomDistance: CGFloat = 100, skipBtnPosition: SkipButtonPosition = .rightTop, setAdParams: ((_ launchAdVC: MLaunchADVC)->())?) {
+    convenience init(adViewBottomDistance: CGFloat = 100, skipBtnPosition: SkipButtonPosition = .rightTop, setAdParams: ((_ launchAdVC: ZLaunchAdVC)->())?) {
         self.init(nibName: nil, bundle: nil)
         self.AdViewBottomDistance = adViewBottomDistance
         self.skipBtnPosition = skipBtnPosition
@@ -177,7 +177,7 @@ class MLaunchADVC: UIViewController {
     }
 }
 
-extension MLaunchADVC {
+extension ZLaunchAdVC {
     func setAdImgView(url: String, defaultDuration: Int = 3, adDuartion: Int, skipBtnType: SkipButtonType = .timer, transitionType: TransitionType = .rippleEffect, adImgViewClick: (()->())?, completion:(()->())?) {
         self.transitionType = transitionType
         self.adDuration = adDuartion
@@ -232,7 +232,7 @@ extension MLaunchADVC {
 }
 
 // MARK: - 状态栏相关
-extension MLaunchADVC {
+extension ZLaunchAdVC {
     /// 隐藏状态栏
     override var prefersStatusBarHidden: Bool {
         return true
@@ -243,7 +243,7 @@ extension MLaunchADVC {
 }
 
 //MARK: - GCD定时器
-extension MLaunchADVC {
+extension ZLaunchAdVC {
     /// 初始定时器
     fileprivate func startTimer() {
         originalTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.main)
@@ -279,7 +279,7 @@ extension MLaunchADVC {
 }
 
 // MARK: - 获取启动页
-extension MLaunchADVC {
+extension ZLaunchAdVC {
     fileprivate func getLaunchImage() -> UIImage {
         if assetsLaunchImage() == nil {
             return storyboardLaunchImage()!
