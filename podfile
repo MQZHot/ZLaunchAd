@@ -4,7 +4,7 @@ platform :ios, '8.0'
 
 use_frameworks!
 
-target 'ZLaunchAdDemo’ do
+target 'ZLaunchAdDemo' do
 
-pod 'Kingfisher','3.5.1'
+pod 'Kingfisher','3.6.1'
 end

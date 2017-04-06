@@ -141,11 +141,11 @@ extension Kingfisher where Base: Image {
     }
     #else
     static func image(cgImage: CGImage, scale: CGFloat, refImage: Image?) -> Image {
-    if let refImage = refImage {
-        return Image(cgImage: cgImage, scale: scale, orientation: refImage.imageOrientation)
-    } else {
-        return Image(cgImage: cgImage, scale: scale, orientation: .up)
-    }
+        if let refImage = refImage {
+            return Image(cgImage: cgImage, scale: scale, orientation: refImage.imageOrientation)
+        } else {
+            return Image(cgImage: cgImage, scale: scale, orientation: .up)
+        }
     }
     
     /**
@@ -430,6 +430,21 @@ extension Kingfisher where Base: Image {
         }
     }
     
+    public func crop(to size: CGSize, anchorOn anchor: CGPoint) -> Image {
+        guard let cgImage = cgImage else {
+            assertionFailure("[Kingfisher] Crop only works for CG-based image.")
+            return base
+        }
+        
+        let rect = self.size.kf.constrainedRect(for: size, anchor: anchor)
+        guard let image = cgImage.cropping(to: rect) else {
+            assertionFailure("[Kingfisher] Cropping image failed.")
+            return base
+        }
+        
+        return Kingfisher.image(cgImage: image, scale: scale, refImage: base)
+    }
+    
     // MARK: - Blur
     
     /// Create an image with blur effect based on `self`.
@@ -486,7 +501,7 @@ extension Kingfisher where Base: Image {
                 return vImage_Buffer(data: data, height: height, width: width, rowBytes: rowBytes)
             }
 
-            guard let context = beginContext() else {
+            guard let context = beginContext(size: size) else {
                 assertionFailure("[Kingfisher] Failed to create CG context for blurring image.")
                 return base
             }
@@ -496,7 +511,7 @@ extension Kingfisher where Base: Image {
             
             var inBuffer = createEffectBuffer(context)
             
-            guard let outContext = beginContext() else {
+            guard let outContext = beginContext(size: size) else {
                 assertionFailure("[Kingfisher] Failed to create CG context for blurring image.")
                 return base
             }
@@ -612,7 +627,7 @@ extension Kingfisher where Base: Image {
             return base
         }
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        guard let context = beginContext() else {
+        guard let context = beginContext(size: CGSize(width: imageRef.width, height: imageRef.height)) else {
             assertionFailure("[Kingfisher] Decoding fails to create a valid context.")
             return base
         }
@@ -716,11 +731,31 @@ extension CGSizeProxy {
     private var aspectRatio: CGFloat {
         return base.height == 0.0 ? 1.0 : base.width / base.height
     }
+    
+    
+    func constrainedRect(for size: CGSize, anchor: CGPoint) -> CGRect {
+        
+        let unifiedAnchor = CGPoint(x: anchor.x.clamped(to: 0.0...1.0),
+                                    y: anchor.y.clamped(to: 0.0...1.0))
+        
+        let x = unifiedAnchor.x * base.width - unifiedAnchor.x * size.width
+        let y = unifiedAnchor.y * base.height - unifiedAnchor.y * size.height
+        let r = CGRect(x: x, y: y, width: size.width, height: size.height)
+        
+        let ori = CGRect(origin: CGPoint.zero, size: base)
+        return ori.intersection(r)
+    }
+}
+
+extension Comparable {
+    func clamped(to limits: ClosedRange<Self>) -> Self {
+        return min(max(self, limits.lowerBound), limits.upperBound)
+    }
 }
 
 extension Kingfisher where Base: Image {
     
-    func beginContext() -> CGContext? {
+    func beginContext(size: CGSize) -> CGContext? {
         #if os(macOS)
             guard let rep = NSBitmapImageRep(
                 bitmapDataPlanes: nil,
