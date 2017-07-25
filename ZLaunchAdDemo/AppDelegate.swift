@@ -20,29 +20,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         let homeVC = ViewController()
         let nav = UINavigationController.init(rootViewController: homeVC)
+        
+        
         if launchOptions != nil {
             
+            /// 通过推送等启动
+            /// ============================================
             window?.rootViewController = nav
-        } else {
             
-            let adVC = ZLaunchAdVC.init(skipBtnPosition: .rightBottom, setAdParams: { (advc) in
-                advc.setAdImgView(url: "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170331202849335.png", adDuartion: 6, adImgViewClick: {
+        } else {
+            /// 正常点击icon启动页，加载广告
+            /// ============================================
+            
+            /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg
+            
+            /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
+            
+            let adVC = ZLaunchAdVC.init(defaultDuration: 6, completion: {
+                self.window?.rootViewController = nav
+            })
+            /// 延时模拟网络请求
+            /// 网络超过vc默认显示时间（可设置），不加载图片
+            /// ====================================================
+            /// ====================================================
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                
+                let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif"
+                let adDuartion = 4
+                
+                /// 设置参数
+                adVC.setAdParams(url: url, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 100, transitionType: .filpFromLeft, adImgViewClick: {
                     
                     let vc = UIViewController()
                     vc.view.backgroundColor = UIColor.green
                     homeVC.navigationController?.pushViewController(vc, animated: true)
                     
-                }, completion: {
-                    self.window?.rootViewController = nav
                 })
+                
             })
             window?.rootViewController = adVC
         }
+        
         window?.makeKeyAndVisible()
         
         return true
     }
-
-
 }
-

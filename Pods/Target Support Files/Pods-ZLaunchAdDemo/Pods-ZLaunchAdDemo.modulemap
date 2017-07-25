@@ -1,6 +1,0 @@
-framework module Pods_ZLaunchAdDemo {
-  umbrella header "Pods-ZLaunchAdDemo-umbrella.h"
-
-  export *
-  module * { export * }
-}
