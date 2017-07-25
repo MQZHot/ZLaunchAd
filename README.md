@@ -10,14 +10,14 @@
 
 ## 功能
 
--[x] 圆形跳过按钮、倒计时+跳过
--[x] 全屏广告、广告距离底部距离设置
--[x] 跳过按钮位置： 屏幕右上角、右下角，广告图右下角
--[x] 支持GIF图片显示
--[x] 支持状态栏颜色设置、显示与隐藏
+- [x] 圆形跳过按钮、倒计时+跳过
+- [x] 全屏广告、广告距离底部距离设置
+- [x] 跳过按钮位置： 屏幕右上角、右下角，广告图右下角
+- [x] 支持GIF图片显示
+- [x] 支持状态栏颜色设置、显示与隐藏
 
 ## 使用
-==============
+
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -82,6 +82,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## LICENSE
 
-ZLaunchAdVC is released under the MIT license. See LICENSE for details.
+ZLaunchAdVC is released under the MIT license. See [LICENSE](https://github.com/MQZHot/ZLaunchAdVC/blob/master/LICENSE) for details.
 
 
