@@ -36,11 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
-            let adVC = ZLaunchAdVC.init(defaultDuration: 6, completion: {
-                self.window?.rootViewController = nav
+            let adVC = ZLaunchAdVC.init(defaultDuration: 3, completion: { [weak self] in
+                self?.window?.rootViewController = nav
             })
             /// 延时模拟网络请求
-            /// 网络超过vc默认显示时间（可设置），不加载图片
             /// ====================================================
             /// ====================================================
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {

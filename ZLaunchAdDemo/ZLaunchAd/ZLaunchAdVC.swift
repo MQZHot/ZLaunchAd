@@ -227,8 +227,6 @@ class ZLaunchAdVC: UIViewController {
         
         view.addSubview(launchImageView)
         
-        dataTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.main)
-        
         startTimer()
     }
     
@@ -280,6 +278,11 @@ extension ZLaunchAdVC {
                         self.addLayer()
                     }
                 }
+                
+                if self.originalTimer?.isCancelled == true {
+                    return
+                }
+                
                 self.adStartTimer()
                 
                 UIView.animate(withDuration: 0.8, animations: {
@@ -318,7 +321,7 @@ extension ZLaunchAdVC {
     /// 默认定时器
     fileprivate func startTimer() {
         
-        originalTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.main)
+        originalTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.global())
         
         originalTimer?.scheduleRepeating(deadline: DispatchTime.now(), interval: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(defaultTime))
         
@@ -328,7 +331,9 @@ extension ZLaunchAdVC {
             
             if self.defaultTime == 0 {
                 
-                self.launchAdVCRemove(completion: nil)
+                DispatchQueue.main.async {
+                    self.launchAdVCRemove(completion: nil)
+                }
                 
             }
             self.defaultTime -= 1
@@ -344,6 +349,8 @@ extension ZLaunchAdVC {
             self.originalTimer?.cancel()
         }
         
+        dataTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.global())
+        
         dataTimer?.scheduleRepeating(deadline: DispatchTime.now(), interval: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(adDuration))
         
         dataTimer?.setEventHandler(handler: {
@@ -352,7 +359,11 @@ extension ZLaunchAdVC {
             
             if self.adDuration == 0 {
                 
-                self.launchAdVCRemove(completion: nil)
+                
+                DispatchQueue.main.async {
+                    self.launchAdVCRemove(completion: nil)
+                }
+                
             }
             
             printLog("广告倒计时" + "\(self.adDuration)")
