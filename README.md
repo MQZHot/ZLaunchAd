@@ -70,6 +70,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ## CocoaPods更新日志
 
 ```
+• 2017.08.01(0.0.3):
+  1.修复无网络崩溃
+
 • 2017.07.25(0.0.2):
   1.新增GIF图片显示
   2.去除kingfisher
