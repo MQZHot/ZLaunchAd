@@ -8,121 +8,49 @@
 
 import UIKit
 
-fileprivate let Z_SCREEN_WIDTH = UIScreen.main.bounds.size.width
-fileprivate let Z_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
-
-enum SkipButtonType {
-    case none                   /// 无跳过按钮
-    case timer                  /// 跳过+倒计时
-    case circle                 /// 圆形跳过
-}
-enum SkipButtonPosition {
-    case rightTop               /// 屏幕右上角
-    case rightBottom            /// 屏幕右下角
-    case rightAdViewBottom      /// 广告图右下角
-}
-
-enum TransitionType {
-    case none
-    case rippleEffect           /// 波纹
-    case fade                   /// 交叉淡化
-    case flipFromTop            /// 上下翻转
-    case filpFromBottom
-    case filpFromLeft           /// 左右翻转
-    case filpFromRight
-}
 
 class ZLaunchAdVC: UIViewController {
     
-    /// 默认3s
-    /// ===========================
+    fileprivate var skipBtnConfig: SkipBtnModel = SkipBtnModel()
+    
+    /// 不加载图片情况下显示时间
     fileprivate var defaultTime = 3
     
-    /// 广告图距底部距离
-    ///  ===========================
-    fileprivate var AdViewBottomDistance: CGFloat = 100
+    /// 图片距屏幕底部距离
+    fileprivate var adViewBottomDistance: CGFloat = 100
     
+    /// 控制器过渡类型
     fileprivate var transitionType: TransitionType = .fade
     
-    /// 跳过按钮位置
-    /// ===========================
-    fileprivate var skipBtnPosition: SkipButtonPosition = .rightTop
-    
-    /// 跳过按钮类型
-    /// ===========================
-    fileprivate var skipBtnType: SkipButtonType = .timer {
-        didSet {
-            
-            let btnWidth: CGFloat = 60
-            
-            let btnHeight: CGFloat = 30
-            
-            var y: CGFloat = 0
-            
-            switch skipBtnPosition {
-                
-            case .rightBottom:
-                
-                y = Z_SCREEN_HEIGHT - 50
-                
-            case .rightAdViewBottom:
-                
-                y = Z_SCREEN_HEIGHT - AdViewBottomDistance - 50
-                
-            default:
-                
-                y = 30
-                
-            }
-            
-            let timerRect = CGRect(x: Z_SCREEN_WIDTH - 70, y: y, width: btnWidth, height: btnHeight)
-            
-            let circleRect = CGRect(x: Z_SCREEN_WIDTH - 50, y: y, width: btnHeight, height: btnHeight)
-            
-            skipBtn.frame = self.skipBtnType == .timer ? timerRect : circleRect
-            
-            skipBtn.titleLabel?.font = UIFont.systemFont(ofSize: self.skipBtnType == .timer ? 13.5 : 12)
-            
-            skipBtn.setTitle(self.skipBtnType == .timer ? "\(self.adDuration) 跳过" : "跳过", for: .normal)
-        }
-    }
-    
     /// 广告时间
-    /// ===========================
     fileprivate var adDuration: Int = 0
     
     /// 默认定时器
-    /// ===========================
     fileprivate var originalTimer: DispatchSourceTimer?
     
     /// 图片显示定时器
-    /// ===========================
     fileprivate var dataTimer: DispatchSourceTimer?
     
     /// 图片点击闭包
-    /// ===========================
-    fileprivate var adImgViewClick: (()->())?
+    fileprivate var adImgViewClick: ZClosure?
     
     /// 图片倒计时完成闭包
-    /// ===========================
-    fileprivate var completion:(()->())?
+    fileprivate var completion: ZClosure?
     
     /// layer
     fileprivate var animationLayer: CAShapeLayer?
     
     /// 启动页
-    /// ===========================
     fileprivate lazy var launchImageView: UIImageView = {
-        let imgView = UIImageView.init(frame: UIScreen.main.bounds)
+        let imgView = UIImageView(frame: UIScreen.main.bounds)
         imgView.image = self.getLaunchImage()
         return imgView
     }()
     
     /// 广告图
-    /// ===========================
     fileprivate lazy var launchAdImgView: UIImageView = {
-        let height = Z_SCREEN_HEIGHT - self.AdViewBottomDistance
-        let imgView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: height))
+        let height = Z_SCREEN_HEIGHT - self.adViewBottomDistance
+        let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: height))
         imgView.isUserInteractionEnabled = true
         imgView.alpha = 0.2
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(launchAdTapAction(sender:)))
@@ -131,11 +59,8 @@ class ZLaunchAdVC: UIViewController {
     }()
     
     /// 跳过按钮
-    /// ===========================
     fileprivate lazy var skipBtn: UIButton = {
-        let button = UIButton.init(type: .custom)
-        button.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        button.layer.cornerRadius = 15
+        let button = UIButton(type: .custom)
         button.addTarget(self, action: #selector(skipBtnClick), for: .touchUpInside)
         return button
     }()
@@ -152,13 +77,207 @@ class ZLaunchAdVC: UIViewController {
             })
         }
     }
+    /// 跳过点击
     @objc fileprivate func skipBtnClick() {
         dataTimer?.cancel()
         launchAdVCRemove(completion: nil)
     }
     
+//MARK: - 便利构造方法
+    
+    /// 初始化    设置默认显示时间
+    ///
+    /// - Parameter defaultDuration: 默认显示时间，如果不设置，默认3s
+    public convenience init(defaultDuration: Int = 3, completion: ZClosure?) {
+        self.init(nibName: nil, bundle: nil)
+        
+        if defaultDuration >= 1 {
+            self.defaultTime = defaultDuration
+        }
+        self.completion = completion
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(launchImageView)
+        startTimer()
+    }
+    
+    deinit {
+        print("byebye")
+    }
+    
+    
+}
+
+// MARK: - 参数设置
+extension ZLaunchAdVC {
+    
+    /// 配置按钮
+    @discardableResult
+    public func configSkipBtn(_ config: (inout SkipBtnModel) -> Void) -> ZLaunchAdVC {
+        config(&skipBtnConfig)
+        return self
+    }
+    
+    /// 广告图距离底部的距离
+    @discardableResult
+    public func adBottom(_ adViewBottom: CGFloat) -> Self {
+        adViewBottomDistance = adViewBottom
+        return self
+    }
+    
+    /// 切换控制器效果
+    @discardableResult
+    public func transition(_ transitionType: TransitionType) -> Self {
+        self.transitionType = transitionType
+        return self
+    }
+    
+    /// 完成
+    @discardableResult
+    public func configEnd(_ completion: ZClosure?) -> Self {
+        self.completion = completion
+        return self
+    }
+    
+    /// 网络图片参数设置
+    ///
+    /// - Parameters:
+    ///   - url: url
+    ///   - duration: 持续时间
+    ///   - adImgViewClick: 点击闭包
+    public func configNetImage(url: String, duration: Int, adImgViewClick: ZClosure? = nil) {
+        
+        if url == "" { return }
+        
+        adDuration = duration < 1 ? 1 : duration
+        view.addSubview(launchAdImgView)
+        
+        launchAdImgView.setImage(with: url, completion: {
+            
+            self.configSkipBtn()
+            
+            if self.originalTimer?.isCancelled == true { return }
+            
+            self.adStartTimer()
+            
+            UIView.animate(withDuration: 0.8, animations: {
+                self.launchAdImgView.alpha = 1
+            })
+        })
+        self.adImgViewClick = adImgViewClick
+    }
+    
+    
+    /// 本地图片
+    ///
+    /// - Parameters:
+    ///   - image: 图片名
+    ///   - duration: 持续时间
+    ///   - adImgViewClick: 点击闭包
+    func configLocalImage(image: UIImage?, duration: Int, adImgViewClick: ZClosure? = nil) {
+        
+        if let image = image {
+            adDuration = duration < 1 ? 1 : duration
+            view.addSubview(launchAdImgView)
+            launchAdImgView.image = image
+            
+            self.configSkipBtn()
+            
+            if self.originalTimer?.isCancelled == true { return }
+            
+            self.adStartTimer()
+            
+            UIView.animate(withDuration: 0.8, animations: {
+                self.launchAdImgView.alpha = 1
+            })
+            
+        }
+        self.adImgViewClick = adImgViewClick
+        
+    }
+    
+    /// 本地GIF
+    ///
+    /// - Parameters:
+    ///   - name: 图片名
+    ///   - duration: 持续时间
+    ///   - adImgViewClick: 点击闭包
+    public func configLocalGif(name: String, duration: Int, adImgViewClick: ZClosure? = nil) {
+        
+        adDuration = duration < 1 ? 1 : duration
+        view.addSubview(launchAdImgView)
+        
+        launchAdImgView.gifImage(named: name) { 
+            self.configSkipBtn()
+            
+            if self.originalTimer?.isCancelled == true { return }
+            
+            self.adStartTimer()
+            
+            UIView.animate(withDuration: 0.8, animations: {
+                self.launchAdImgView.alpha = 1
+            })
+        }
+        self.adImgViewClick = adImgViewClick
+    }
+    
+    
+    private func configSkipBtn() -> Void {
+        
+        skipBtn.removeFromSuperview()
+        if animationLayer != nil {
+            animationLayer?.removeFromSuperlayer()
+            animationLayer = nil
+        }
+        if skipBtnConfig.skipBtnType != .none {
+            
+            skipBtn.backgroundColor = skipBtnConfig.backgroundColor
+            skipBtn.setTitleColor(skipBtnConfig.titleColor, for: .normal)
+            skipBtn.titleLabel?.font = skipBtnConfig.titleFont
+            if skipBtnConfig.skipBtnType == .circle {
+                skipBtn.frame = CGRect(x: 0, y: 0, width: skipBtnConfig.height, height: skipBtnConfig.height)
+                skipBtn.layer.cornerRadius = skipBtnConfig.height*0.5
+                circleBtnAddLayer(strokeColor: skipBtnConfig.strokeColor, lineWidth: skipBtnConfig.lineWidth)
+            } else {
+                skipBtn.frame = CGRect(x: 0, y: 0, width: skipBtnConfig.width, height: skipBtnConfig.height)
+                skipBtn.layer.cornerRadius = skipBtnConfig.cornerRadius
+            }
+            skipBtn.center = CGPoint(x: skipBtnConfig.centerX, y: skipBtnConfig.centerY)
+            view.addSubview(skipBtn)
+            skipBtn.setTitle(skipBtnConfig.skipBtnType == .timer ? "\(adDuration) 跳过" : "跳过", for: .normal)
+        }
+    }
+    
+    /// 添加动画
+    fileprivate func circleBtnAddLayer(strokeColor: UIColor, lineWidth: CGFloat) {
+        let bezierPath = UIBezierPath(ovalIn: skipBtn.bounds)
+        animationLayer = CAShapeLayer()
+        animationLayer?.path = bezierPath.cgPath
+        animationLayer?.lineWidth = lineWidth
+        animationLayer?.strokeColor = strokeColor.cgColor
+        animationLayer?.fillColor = UIColor.clear.cgColor
+        let animation = CABasicAnimation(keyPath: "strokeStart")
+        animation.duration = Double(adDuration)
+        animation.fromValue = 0
+        animation.toValue = 1
+        animationLayer?.add(animation, forKey: nil)
+        skipBtn.layer.addSublayer(animationLayer!)
+    }
+}
+
+extension ZLaunchAdVC {
     /// 关闭广告
-    /// ==============================================================================================================================================================================================================================================================================================================================================================
+    /// ==============
     fileprivate func launchAdVCRemove(completion: (()->())?) {
         
         if self.originalTimer?.isCancelled == false {
@@ -168,6 +287,19 @@ class ZLaunchAdVC: UIViewController {
             self.dataTimer?.cancel()
         }
         
+        if self.completion != nil {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.1, execute: {
+                self.transitionAnimation()
+                self.completion!()
+                if completion != nil {
+                    completion!()
+                }
+            })
+            
+        }
+    }
+    
+    private func transitionAnimation() -> Void {
         let trans = CATransition()
         trans.duration = 0.5
         switch transitionType {
@@ -190,134 +322,15 @@ class ZLaunchAdVC: UIViewController {
             trans.type = "fade"
         }
         UIApplication.shared.keyWindow?.layer.add(trans, forKey: nil)
-        
-        if self.completion != nil {
-            self.completion!()
-            if completion != nil {
-
-                completion!()
-            }
-        }
     }
     
-    //MARK: - XXXXXXXX
-    
-    
-    /// 初始化    设置默认显示时间
-    ///
-    /// - Parameter defaultDuration: 默认显示时间，如果不设置，默认3s
-    convenience init(defaultDuration: Int = 3, completion: (()->())?) {
-        self.init(nibName: nil, bundle: nil)
-        if defaultDuration >= 1 {
-            self.defaultTime = defaultDuration
-        }
-        self.completion = completion
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.addSubview(launchImageView)
-        
-        startTimer()
-    }
-    
-    deinit {
-        print("byebye")
-    }
-}
-
-// MARK: - 参数设置
-
-extension ZLaunchAdVC {
-    
-    /// 设置广告参数
-    ///
-    /// - Parameters:
-    ///   - url: 路径
-    ///   - adDuartion:             显示时间
-    ///   - skipBtnType:            跳过按钮类型，默认 倒计时+跳过
-    ///   - skipBtnPosition:        跳过按钮位置，默认右上角
-    ///   - adViewBottomDistance:   图片距底部的距离，默认100
-    ///   - transitionType:         过渡的类型，默认没有
-    ///   - adImgViewClick:         点击广告回调
-    ///   - completion:             完成回调
-    func setAdParams(url: String, adDuartion: Int, skipBtnType: SkipButtonType = .timer, skipBtnPosition: SkipButtonPosition = .rightTop,  adViewBottomDistance: CGFloat = 100, transitionType: TransitionType = .none, adImgViewClick: (()->())?) {
-        
-        self.AdViewBottomDistance = adViewBottomDistance
-        self.skipBtnPosition = skipBtnPosition
-        self.transitionType = transitionType
-        self.adDuration = adDuartion
-        self.skipBtnType = skipBtnType
-        if adDuration < 1 {
-            self.adDuration = 1
-        }
-        
-        if url != "" {
-            view.addSubview(launchAdImgView)
-            
-            self.launchAdImgView.setImage(with: url, completion: {
-                /// 如果带缓存，并且需要改变按钮状态
-                self.skipBtn.removeFromSuperview()
-                if self.animationLayer != nil {
-                    self.animationLayer?.removeFromSuperlayer()
-                    self.animationLayer = nil
-                }
-                
-                if self.skipBtnType != .none {
-                    self.view.addSubview(self.skipBtn)
-                    if self.skipBtnType == .circle {
-                        self.addLayer()
-                    }
-                }
-                
-                if self.originalTimer?.isCancelled == true {
-                    return
-                }
-                
-                self.adStartTimer()
-                
-                UIView.animate(withDuration: 0.8, animations: {
-                    self.launchAdImgView.alpha = 1
-                })
-            })
-        }
-        self.adImgViewClick = adImgViewClick
-    }
-    
-    /// 添加动画
-    fileprivate func addLayer() {
-        let bezierPath = UIBezierPath.init(ovalIn: skipBtn.bounds)
-        animationLayer = CAShapeLayer()
-        animationLayer?.path = bezierPath.cgPath
-        animationLayer?.lineWidth = 2
-        animationLayer?.strokeColor = UIColor.red.cgColor
-        animationLayer?.fillColor = UIColor.clear.cgColor
-        let animation = CABasicAnimation.init(keyPath: "strokeStart")
-        animation.duration = Double(adDuration)
-        animation.fromValue = 0
-        animation.toValue = 1
-        animationLayer?.add(animation, forKey: nil)
-        skipBtn.layer.addSublayer(animationLayer!)
-    }
 }
 
 //MARK: - GCD定时器
 /// APP启动后开始默认定时器，默认3s
 /// 3s内若网络图片加载完成，默认定时器关闭，开启图片倒计时
 /// 3s内若图片加载未完成，执行completion闭包
-/// =============================================================================================================================================================================================================================================
-
 extension ZLaunchAdVC {
-    
     /// 默认定时器
     fileprivate func startTimer() {
         
@@ -334,7 +347,6 @@ extension ZLaunchAdVC {
                 DispatchQueue.main.async {
                     self.launchAdVCRemove(completion: nil)
                 }
-                
             }
             self.defaultTime -= 1
         })
@@ -354,33 +366,28 @@ extension ZLaunchAdVC {
         dataTimer?.scheduleRepeating(deadline: DispatchTime.now(), interval: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(adDuration))
         
         dataTimer?.setEventHandler(handler: {
-            
-            self.skipBtn.setTitle(self.skipBtnType == .timer ? "\(self.adDuration) 跳过" : "跳过", for: .normal)
-            
-            if self.adDuration == 0 {
-                
-                
-                DispatchQueue.main.async {
-                    self.launchAdVCRemove(completion: nil)
-                }
-                
-            }
-            
             printLog("广告倒计时" + "\(self.adDuration)")
             
-            self.adDuration -= 1
-            
+            DispatchQueue.main.async {
+                self.skipBtn.setTitle(self.skipBtnConfig.skipBtnType == .timer ? "\(self.adDuration) 跳过" : "跳过", for: .normal)
+                if self.adDuration == 0 {
+                    self.launchAdVCRemove(completion: nil)
+                }
+                self.adDuration -= 1
+            }
         })
         dataTimer?.resume()
     }
 }
 
 // MARK: - 状态栏相关
-/// 状态栏显示、颜色与General -> Deployment Info中设置一致========================================================================================================================================================================================================================================================================================================================================================================================
+/// 状态栏显示、颜色与General -> Deployment Info中设置一致
 extension ZLaunchAdVC {
+    
     override var prefersStatusBarHidden: Bool {
         return Bundle.main.infoDictionary?["UIStatusBarHidden"] as! Bool
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         let str = Bundle.main.infoDictionary?["UIStatusBarStyle"] as! String
         return str.contains("Default") ? .default : .lightContent
@@ -388,7 +395,6 @@ extension ZLaunchAdVC {
 }
 
 // MARK: - 获取启动页
-// ========================================================================================================================================================================================================================================================================================================================================================================================
 extension ZLaunchAdVC {
     
     fileprivate func getLaunchImage() -> UIImage {
@@ -398,17 +404,14 @@ extension ZLaunchAdVC {
         return UIImage()
     }
     
-    /// 获取Assets里LaunchImage
-    /// ===================================
-    fileprivate func assetsLaunchImage() -> UIImage? {
+    //获取Assets里LaunchImage
+    private func assetsLaunchImage() -> UIImage? {
         
         let size = UIScreen.main.bounds.size
         
         let orientation = "Portrait" //横屏 "Landscape"
         
-        guard let launchImages = Bundle.main.infoDictionary?["UILaunchImages"] as? [[String: Any]] else {
-            return nil
-        }
+        guard let launchImages = Bundle.main.infoDictionary?["UILaunchImages"] as? [[String: Any]] else { return nil }
         
         for dict in launchImages {
             
@@ -425,9 +428,8 @@ extension ZLaunchAdVC {
         return nil
     }
     
-    /// 获取LaunchScreen.Storyboard
-    /// ===================================
-    fileprivate func storyboardLaunchImage() -> UIImage? {
+    //获取LaunchScreen.Storyboard
+    private func storyboardLaunchImage() -> UIImage? {
         
         guard let storyboardLaunchName = Bundle.main.infoDictionary?["UILaunchStoryboardName"] as? String,
             let launchVC = UIStoryboard.init(name: storyboardLaunchName, bundle: nil).instantiateInitialViewController() else {
@@ -441,23 +443,16 @@ extension ZLaunchAdVC {
     }
     
     /// view转换图片
-    fileprivate func viewConvertImage(view: UIView) -> UIImage {
+    private func viewConvertImage(view: UIView) -> UIImage? {
         
         let size = view.bounds.size
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image!
+        return image
         
     }
 }
 
-//MARK: - Log日志
-// ========================================================================================================================================================================================================================================================================================================================
-func printLog<T>( _ message: T, file: String = #file, method: String = #function, line: Int = #line){
-    #if DEBUG
-        print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
-    #endif
-}
 

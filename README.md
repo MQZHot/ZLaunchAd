@@ -1,10 +1,13 @@
+
+
 ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/ZLaunchAdVC.png)
 
 ![](https://img.shields.io/badge/platform-iOS-yellow.svg) ![](https://img.shields.io/badge/language-swift-red.svg) ![](https://img.shields.io/badge/support-iOS%208%2B-blue.svg) ![](https://img.shields.io/cocoapods/v/ZLaunchAdVC.svg?style=flat) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)
 
+
 ## swift 集成app启动页广告，切换rootViewController，支持LaunchImage和LaunchScreen.storyboard，支持GIF图片显示，支持视图过渡动画
 
-## 不足之处，欢迎交流，欢迎star✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+## 不足之处，欢迎纠正，欢迎star✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 
 
 ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic1.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic2.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic3.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic4.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic5.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic6.gif)

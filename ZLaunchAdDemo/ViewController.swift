@@ -10,13 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        navigationItem.title = "启动页广告ZLaunchAdVC"
-        
-        
-        
+        navigationItem.title = "ZLaunchAdVC"
         
     }
     

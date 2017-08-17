@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D636AD5D1F45899D0092E197 /* ZLaunchAdVC+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D636AD5C1F45899D0092E197 /* ZLaunchAdVC+Config.swift */; };
 		D66EE3421E94EACB0097DF7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3411E94EACB0097DF7A /* AppDelegate.swift */; };
 		D66EE3441E94EACB0097DF7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3431E94EACB0097DF7A /* ViewController.swift */; };
 		D66EE3491E94EACB0097DF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66EE3481E94EACB0097DF7A /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D636AD5C1F45899D0092E197 /* ZLaunchAdVC+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZLaunchAdVC+Config.swift"; sourceTree = "<group>"; };
 		D66EE33E1E94EACB0097DF7A /* ZLaunchAdDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66EE3411E94EACB0097DF7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D66EE3431E94EACB0097DF7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				D66EE3571E94EB2F0097DF7A /* ZLaunchAdVC.swift */,
 				D6A0AF7C1F25B8E5002BB570 /* UIImageView+Gif.swift */,
+				D636AD5C1F45899D0092E197 /* ZLaunchAdVC+Config.swift */,
 			);
 			path = ZLaunchAd;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				D66EE3441E94EACB0097DF7A /* ViewController.swift in Sources */,
 				D66EE3421E94EACB0097DF7A /* AppDelegate.swift in Sources */,
+				D636AD5D1F45899D0092E197 /* ZLaunchAdVC+Config.swift in Sources */,
 				D6A0AF7D1F25B8E5002BB570 /* UIImageView+Gif.swift in Sources */,
 				D66EE3581E94EB2F0097DF7A /* ZLaunchAdVC.swift in Sources */,
 			);
@@ -270,7 +274,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = meng.ZLaunchAdDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -285,7 +289,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = meng.ZLaunchAdDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
