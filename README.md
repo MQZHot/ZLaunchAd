@@ -118,7 +118,7 @@ adVC.configLocalGif(name: "111", duration: 7, adImgViewClick: {
 ## CocoaPods更新日志
 
 ```
-• 2017.08.18(0.0.4):
+• 2017.08.18(0.0.5):
   1.修复倒计时时间不变
   2.新增本地图片显示，支持GIF
   3.增加跳过按钮配置
