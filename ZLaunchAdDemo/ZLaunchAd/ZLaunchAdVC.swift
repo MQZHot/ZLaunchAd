@@ -85,12 +85,10 @@ class ZLaunchAdVC: UIViewController {
     
 //MARK: - 便利构造方法
     
-    /// 初始化    设置默认显示时间
-    ///
-    /// - Parameter defaultDuration: 默认显示时间，如果不设置，默认3s
-    public convenience init(defaultDuration: Int = 3, completion: ZClosure?) {
+    public convenience init(defaultDuration: Int = 3, adViewBottom: CGFloat = 100, transitionType: TransitionType = .fade, completion: ZClosure?) {
         self.init(nibName: nil, bundle: nil)
-        
+        self.transitionType = transitionType
+        adViewBottomDistance = adViewBottom
         if defaultDuration >= 1 {
             self.defaultTime = defaultDuration
         }
@@ -155,7 +153,7 @@ extension ZLaunchAdVC {
     ///   - url: url
     ///   - duration: 持续时间
     ///   - adImgViewClick: 点击闭包
-    public func configNetImage(url: String, duration: Int, adImgViewClick: ZClosure? = nil) {
+    public func configNetImage(url: String, duration: Int, adImgViewClick: ZClosure?) {
         
         if url == "" { return }
         
@@ -184,7 +182,7 @@ extension ZLaunchAdVC {
     ///   - image: 图片名
     ///   - duration: 持续时间
     ///   - adImgViewClick: 点击闭包
-    func configLocalImage(image: UIImage?, duration: Int, adImgViewClick: ZClosure? = nil) {
+    func configLocalImage(image: UIImage?, duration: Int, adImgViewClick: ZClosure?) {
         
         if let image = image {
             adDuration = duration < 1 ? 1 : duration
@@ -212,7 +210,7 @@ extension ZLaunchAdVC {
     ///   - name: 图片名
     ///   - duration: 持续时间
     ///   - adImgViewClick: 点击闭包
-    public func configLocalGif(name: String, duration: Int, adImgViewClick: ZClosure? = nil) {
+    public func configLocalGif(name: String, duration: Int, adImgViewClick: ZClosure?) {
         
         adDuration = duration < 1 ? 1 : duration
         view.addSubview(launchAdImgView)
