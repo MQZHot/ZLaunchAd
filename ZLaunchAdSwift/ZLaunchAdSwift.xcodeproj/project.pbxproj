@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		D636AD5C1F45899D0092E197 /* ZLaunchAdVC+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZLaunchAdVC+Config.swift"; sourceTree = "<group>"; };
-		D66EE33E1E94EACB0097DF7A /* ZLaunchAdDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66EE33E1E94EACB0097DF7A /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66EE3411E94EACB0097DF7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D66EE3431E94EACB0097DF7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D66EE3481E94EACB0097DF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		D66EE3351E94EACB0097DF7A = {
 			isa = PBXGroup;
 			children = (
-				D66EE3401E94EACB0097DF7A /* ZLaunchAdDemo */,
+				D66EE3401E94EACB0097DF7A /* ZLaunchAdSwift */,
 				D66EE33F1E94EACB0097DF7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		D66EE33F1E94EACB0097DF7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D66EE33E1E94EACB0097DF7A /* ZLaunchAdDemo.app */,
+				D66EE33E1E94EACB0097DF7A /* ZLaunchAdSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D66EE3401E94EACB0097DF7A /* ZLaunchAdDemo */ = {
+		D66EE3401E94EACB0097DF7A /* ZLaunchAdSwift */ = {
 			isa = PBXGroup;
 			children = (
 				D66EE3561E94EB2F0097DF7A /* ZLaunchAd */,
@@ -65,7 +65,7 @@
 				D66EE34A1E94EACB0097DF7A /* LaunchScreen.storyboard */,
 				D66EE34D1E94EACB0097DF7A /* Info.plist */,
 			);
-			path = ZLaunchAdDemo;
+			path = ZLaunchAdSwift;
 			sourceTree = "<group>";
 		};
 		D66EE3561E94EB2F0097DF7A /* ZLaunchAd */ = {
@@ -81,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D66EE33D1E94EACB0097DF7A /* ZLaunchAdDemo */ = {
+		D66EE33D1E94EACB0097DF7A /* ZLaunchAdSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D66EE3501E94EACB0097DF7A /* Build configuration list for PBXNativeTarget "ZLaunchAdDemo" */;
+			buildConfigurationList = D66EE3501E94EACB0097DF7A /* Build configuration list for PBXNativeTarget "ZLaunchAdSwift" */;
 			buildPhases = (
 				D66EE33A1E94EACB0097DF7A /* Sources */,
 				D66EE33B1E94EACB0097DF7A /* Frameworks */,
@@ -93,9 +93,9 @@
 			);
 			dependencies = (
 			);
-			name = ZLaunchAdDemo;
+			name = ZLaunchAdSwift;
 			productName = ZLaunchAdDemo;
-			productReference = D66EE33E1E94EACB0097DF7A /* ZLaunchAdDemo.app */;
+			productReference = D66EE33E1E94EACB0097DF7A /* ZLaunchAdSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D66EE3391E94EACB0097DF7A /* Build configuration list for PBXProject "ZLaunchAdDemo" */;
+			buildConfigurationList = D66EE3391E94EACB0097DF7A /* Build configuration list for PBXProject "ZLaunchAdSwift" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D66EE33D1E94EACB0097DF7A /* ZLaunchAdDemo */,
+				D66EE33D1E94EACB0097DF7A /* ZLaunchAdSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -268,10 +268,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 47ZCN2V9UQ;
-				INFOPLIST_FILE = ZLaunchAdDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ZLaunchAdSwift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = meng.ZLaunchAdDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = meng.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -283,10 +283,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 47ZCN2V9UQ;
-				INFOPLIST_FILE = ZLaunchAdDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ZLaunchAdSwift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = meng.ZLaunchAdDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = meng.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -296,7 +296,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D66EE3391E94EACB0097DF7A /* Build configuration list for PBXProject "ZLaunchAdDemo" */ = {
+		D66EE3391E94EACB0097DF7A /* Build configuration list for PBXProject "ZLaunchAdSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D66EE34E1E94EACB0097DF7A /* Debug */,
@@ -305,7 +305,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D66EE3501E94EACB0097DF7A /* Build configuration list for PBXNativeTarget "ZLaunchAdDemo" */ = {
+		D66EE3501E94EACB0097DF7A /* Build configuration list for PBXNativeTarget "ZLaunchAdSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D66EE3511E94EACB0097DF7A /* Debug */,
