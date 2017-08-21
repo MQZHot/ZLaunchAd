@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "ZLaunchAdVC.h"
 @interface AppDelegate ()
 
 @end
@@ -19,9 +20,46 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[ViewController new]];
+    ViewController *homeVC = [[ViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homeVC];
     
-    self.window.rootViewController = nav;
+    if (launchOptions) {
+        
+        self.window.rootViewController = nav;
+        
+    } else {
+        
+        /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg
+        /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
+        
+        ZLaunchAdVC *adVC = [[ZLaunchAdVC alloc]initWithDuration:4 transitionStyle:TransitionStyleFlipFromTop adBottom:200 completion:^{
+            self.window.rootViewController = nav;
+        }];
+        [adVC configLocalGifWithName:@"321" duration:8 adImgViewClick:^{
+            UIViewController *VC = [[UIViewController alloc]init];
+            VC.view.backgroundColor = [UIColor redColor];
+            [homeVC.navigationController pushViewController:VC animated:YES];
+        }];
+        
+//        [adVC configLocalImageWithImage:[UIImage imageNamed:@"2"] duration:8 adImgViewClick:^{
+//            UIViewController *VC = [[UIViewController alloc]init];
+//            VC.view.backgroundColor = [UIColor redColor];
+//            [homeVC.navigationController pushViewController:VC animated:YES];
+//        }];
+        
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            
+//            NSString *url = @"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg";
+//            
+//            [adVC configNetImageWithURL:url duration:8 adImgViewClick:^{
+//                UIViewController *VC = [[UIViewController alloc]init];
+//                VC.view.backgroundColor = [UIColor redColor];
+//                [homeVC.navigationController pushViewController:VC animated:YES];
+//            }];
+//            
+//        });
+        self.window.rootViewController = adVC;
+    }
     
     [self.window makeKeyAndVisible];
     return YES;

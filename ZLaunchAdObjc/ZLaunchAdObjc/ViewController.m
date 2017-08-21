@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.title = @"ZLaunchAdVC";
+    
+    self.navigationItem.title = @"ZLaunchAdVC";
+    
 }
 
 
