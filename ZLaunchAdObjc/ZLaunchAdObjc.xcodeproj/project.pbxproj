@@ -14,7 +14,7 @@
 		D6DE01A91F46E2DC00873BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6DE01A81F46E2DC00873BE0 /* Assets.xcassets */; };
 		D6DE01AC1F46E2DC00873BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6DE01AA1F46E2DC00873BE0 /* LaunchScreen.storyboard */; };
 		D6DE01D41F46F37500873BE0 /* ZLaunchAdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DE01D31F46F37500873BE0 /* ZLaunchAdVC.m */; };
-		D6DE01D81F46F9EB00873BE0 /* UIImageView+ZImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DE01D71F46F9EB00873BE0 /* UIImageView+ZImage.m */; };
+		D6DE01D81F46F9EB00873BE0 /* UIImageView+ZLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DE01D71F46F9EB00873BE0 /* UIImageView+ZLaunchAd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		D6DE01AD1F46E2DC00873BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6DE01D21F46F37500873BE0 /* ZLaunchAdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLaunchAdVC.h; sourceTree = "<group>"; };
 		D6DE01D31F46F37500873BE0 /* ZLaunchAdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLaunchAdVC.m; sourceTree = "<group>"; };
-		D6DE01D61F46F9EB00873BE0 /* UIImageView+ZImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZImage.h"; sourceTree = "<group>"; };
-		D6DE01D71F46F9EB00873BE0 /* UIImageView+ZImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZImage.m"; sourceTree = "<group>"; };
+		D6DE01D61F46F9EB00873BE0 /* UIImageView+ZLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZLaunchAd.h"; sourceTree = "<group>"; };
+		D6DE01D71F46F9EB00873BE0 /* UIImageView+ZLaunchAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZLaunchAd.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,8 @@
 			children = (
 				D6DE01D21F46F37500873BE0 /* ZLaunchAdVC.h */,
 				D6DE01D31F46F37500873BE0 /* ZLaunchAdVC.m */,
-				D6DE01D61F46F9EB00873BE0 /* UIImageView+ZImage.h */,
-				D6DE01D71F46F9EB00873BE0 /* UIImageView+ZImage.m */,
+				D6DE01D61F46F9EB00873BE0 /* UIImageView+ZLaunchAd.h */,
+				D6DE01D71F46F9EB00873BE0 /* UIImageView+ZLaunchAd.m */,
 				D67698A11F4AC70C00777ED6 /* ZLaunchAdConfig.h */,
 				D67698A21F4AC70C00777ED6 /* ZLaunchAdConfig.m */,
 			);
@@ -173,7 +173,7 @@
 				D6DE01A11F46E2DC00873BE0 /* AppDelegate.m in Sources */,
 				D67698A31F4AC70C00777ED6 /* ZLaunchAdConfig.m in Sources */,
 				D6DE019E1F46E2DC00873BE0 /* main.m in Sources */,
-				D6DE01D81F46F9EB00873BE0 /* UIImageView+ZImage.m in Sources */,
+				D6DE01D81F46F9EB00873BE0 /* UIImageView+ZLaunchAd.m in Sources */,
 				D6DE01D41F46F37500873BE0 /* ZLaunchAdVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

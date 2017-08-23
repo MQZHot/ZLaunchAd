@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ZLaunchAdVC: UIViewController {
     
     fileprivate var skipBtnConfig: SkipBtnModel = SkipBtnModel()
@@ -112,8 +111,6 @@ class ZLaunchAdVC: UIViewController {
     deinit {
         print("byebye")
     }
-    
-    
 }
 
 // MARK: - 参数设置
@@ -128,14 +125,14 @@ extension ZLaunchAdVC {
     
     /// 广告图距离底部的距离
     @discardableResult
-    public func adBottom(_ adViewBottom: CGFloat) -> Self {
+    public func adBottom(_ adViewBottom: CGFloat = 100) -> Self {
         adViewBottomDistance = adViewBottom
         return self
     }
     
     /// 切换控制器效果
     @discardableResult
-    public func transition(_ transitionType: TransitionType) -> Self {
+    public func transition(_ transitionType: TransitionType = .fade) -> Self {
         self.transitionType = transitionType
         return self
     }

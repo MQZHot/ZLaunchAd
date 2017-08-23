@@ -7,7 +7,9 @@
 //
 
 #import "ZLaunchAdVC.h"
-#import "UIImageView+ZImage.h"
+#import "UIImageView+ZLaunchAd.h"
+
+#define DEFAULT_TIME 3
 
 @interface ZLaunchAdVC ()
 
@@ -22,7 +24,6 @@
 @property (nonatomic, assign) CGFloat           adViewBottomDistance;
 @property (nonatomic, assign) TransitionStyle   transitionStyle;
 @property (nonatomic,   copy) ZLaunchAdCompletion    adImgViewClick;
-@property (nonatomic,   copy) ZLaunchAdCompletion    completion;
 @property (nonatomic, strong) ZLaunchAdConfig   *skipBtnConfig;         /// 配置跳过按钮
 
 @end
@@ -35,7 +36,7 @@
         self.defaultTime = duration;
         self.transitionStyle = transitionStyle;
         self.adViewBottomDistance = adBottom;
-        self.completion = completion;
+        self.configEnd = completion;
     }
     return self;
 }
@@ -43,9 +44,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.skipBtnConfig = [[ZLaunchAdConfig alloc]init];
-    self.defaultTime = self.defaultTime <= 0 ? 3 : self.defaultTime;
+    self.defaultTime = self.defaultTime <= 0 ? DEFAULT_TIME : self.defaultTime;
     self.adViewBottomDistance = self.adViewBottomDistance <= 0 ? 100 : self.adViewBottomDistance;
-    self.transitionStyle = TransitionStyleFlipFromLeft;
     [self.view addSubview:self.launchImageView];
     [self startTimer];
 }
@@ -201,9 +201,9 @@
     if (self.dataTimer) {
         dispatch_source_cancel(self.dataTimer);
     }
-    if (self.completion) {
+    if (self.configEnd) {
         [self transitionAnimation];
-        self.completion();
+        self.configEnd();
         if (completion) {
             completion();
         }

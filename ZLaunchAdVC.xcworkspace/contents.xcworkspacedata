@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ZLaunchAdObjc/ZLaunchAdObjc.xcodeproj">
+      location = "group:ZLaunchAdSwift/ZLaunchAdSwift.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:ZLaunchAdSwift/ZLaunchAdSwift.xcodeproj">
+      location = "group:ZLaunchAdObjc/ZLaunchAdObjc.xcodeproj">
    </FileRef>
 </Workspace>

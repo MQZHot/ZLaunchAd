@@ -12,11 +12,9 @@
 typedef void (^ZLaunchAdCompletion)();
 typedef void (^ConfigSkipBtn)(ZLaunchAdConfig *config);
 
-
 typedef NS_ENUM(NSUInteger, TransitionStyle) {
-    TransitionStyleNone = 0,            /** 无动画 */
+    TransitionStyleFade = 0,            /** 交叉淡化 */
     TransitionStyleRippleEffect,        /** 涟漪波纹 */
-    TransitionStyleFade,                /** 交叉淡化 */
     TransitionStyleFlipFromTop,         /** 上下翻转 */
     TransitionStyleFlipFromBottom,
     TransitionStyleFlipFromLeft,        /** 左右翻转 */
@@ -37,7 +35,7 @@ typedef NS_ENUM(NSUInteger, TransitionStyle) {
 - (instancetype)initWithDuration: (NSInteger)duration
                  transitionStyle: (TransitionStyle)transitionStyle
                         adBottom: (CGFloat)adBottom
-                      completion: (ZLaunchAdCompletion)completion;
+                      completion: (nonnull ZLaunchAdCompletion)completion;
 
 /**
  配置网络图片
@@ -76,5 +74,7 @@ typedef NS_ENUM(NSUInteger, TransitionStyle) {
  配置跳过按钮
  */
 @property (nonatomic, copy) ConfigSkipBtn configSkipBtn;
+
+@property (nonatomic, copy) ZLaunchAdCompletion configEnd;
 
 @end

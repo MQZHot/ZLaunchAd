@@ -1,16 +1,15 @@
 //
-//  UIImageView+ZImage.m
+//  UIImageView+ZLaunchAd.m
 //  ZLaunchAdObjc
 //
 //  Created by mengqingzheng on 2017/8/18.
 //  Copyright © 2017年 mengqingzheng. All rights reserved.
 //
 
-#import "UIImageView+ZImage.h"
+#import "UIImageView+ZLaunchAd.h"
 #import <ImageIO/ImageIO.h>
-#import <MobileCoreServices/MobileCoreServices.h>
 
-@implementation UIImageView (ZImage)
+@implementation UIImageView (ZLaunchAd)
 
 - (void)configImageWithUrl: (NSString *)url completion: (ZImageCompletion)completion {
     

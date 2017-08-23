@@ -31,20 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
-            let adVC = ZLaunchAdVC(defaultDuration: 3, adViewBottom: 100, transitionType: .filpFromLeft, completion: {
+            let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).configEnd({
                 self.window?.rootViewController = nav
             })
-            
-//            adVC.configSkipBtn({ (config) in
-//                config.backgroundColor = UIColor.red
-//                config.centerX = 100
-//                config.centerY = 200
-////                    config.width = 100
-////                    config.height = 100
-//                config.skipBtnType = .circle
-//                config.strokeColor = UIColor.green
-//            })
-            
             /// 延时模拟网络请求
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                 
@@ -55,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     vc.view.backgroundColor = UIColor.yellow
                     homeVC.navigationController?.pushViewController(vc, animated: true)
                 })
-                
             })
             
             /// 本地图片
@@ -74,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window?.rootViewController = adVC
         }
-        
         window?.makeKeyAndVisible()
         
         return true

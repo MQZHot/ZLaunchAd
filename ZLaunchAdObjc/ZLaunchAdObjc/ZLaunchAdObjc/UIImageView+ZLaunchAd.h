@@ -1,5 +1,5 @@
 //
-//  UIImageView+ZImage.h
+//  UIImageView+ZLaunchAd.h
 //  ZLaunchAdObjc
 //
 //  Created by mengqingzheng on 2017/8/18.
@@ -10,7 +10,7 @@
 
 typedef void(^ZImageCompletion)();
 
-@interface UIImageView (ZImage)
+@interface UIImageView (ZLaunchAd)
 
 /**
  网络图片
