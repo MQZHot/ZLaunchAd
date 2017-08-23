@@ -32,35 +32,39 @@
         /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg
         /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
         
-        ZLaunchAdVC *adVC = [[ZLaunchAdVC alloc]initWithDuration:4 transitionStyle:TransitionStyleFlipFromTop adBottom:200 completion:^{
+        ZLaunchAdVC *adVC = [[ZLaunchAdVC alloc]initWithDuration:4 transitionStyle:TransitionStyleFlipFromTop adBottom:100 completion:^{
             self.window.rootViewController = nav;
         }];
-        [adVC configLocalGifWithName:@"321" duration:8 adImgViewClick:^{
-            UIViewController *VC = [[UIViewController alloc]init];
-            VC.view.backgroundColor = [UIColor redColor];
-            [homeVC.navigationController pushViewController:VC animated:YES];
-        }];
-        
-//        [adVC configLocalImageWithImage:[UIImage imageNamed:@"2"] duration:8 adImgViewClick:^{
+        adVC.configSkipBtn = ^(ZLaunchAdConfig *config) {
+            config.skipBtnType = SkipBtnTypeCircle;
+        };
+        /// 配置本地GIF
+//        [adVC configLocalGifWithName:@"321" duration:8 adImgViewClick:^{
 //            UIViewController *VC = [[UIViewController alloc]init];
 //            VC.view.backgroundColor = [UIColor redColor];
 //            [homeVC.navigationController pushViewController:VC animated:YES];
 //        }];
         
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            
-//            NSString *url = @"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg";
-//            
-//            [adVC configNetImageWithURL:url duration:8 adImgViewClick:^{
-//                UIViewController *VC = [[UIViewController alloc]init];
-//                VC.view.backgroundColor = [UIColor redColor];
-//                [homeVC.navigationController pushViewController:VC animated:YES];
-//            }];
-//            
-//        });
+        /// 配置本地图片
+//        [adVC configLocalImageWithImage:[UIImage imageNamed:@"222"] duration:8 adImgViewClick:^{
+//            UIViewController *VC = [[UIViewController alloc]init];
+//            VC.view.backgroundColor = [UIColor redColor];
+//            [homeVC.navigationController pushViewController:VC animated:YES];
+//        }];
+        
+        /// 延时模拟网络请求
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            NSString *url = @"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif";
+            
+            [adVC configNetImageWithURL:url duration:8 adImgViewClick:^{
+                UIViewController *VC = [[UIViewController alloc]init];
+                VC.view.backgroundColor = [UIColor redColor];
+                [homeVC.navigationController pushViewController:VC animated:YES];
+            }];
+        });
         self.window.rootViewController = adVC;
     }
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

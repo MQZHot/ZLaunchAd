@@ -12,8 +12,20 @@ typedef void(^ZImageCompletion)();
 
 @interface UIImageView (ZImage)
 
+/**
+ 网络图片
+
+ @param url url
+ @param completion completion
+ */
 - (void)configImageWithUrl: (NSString *)url completion: (ZImageCompletion)completion;
 
+/**
+ GIF图片
+
+ @param name 图片名
+ @param completion completion
+ */
 - (void)gifWithName: (NSString *)name completion: (ZImageCompletion)completion;
 
 @end

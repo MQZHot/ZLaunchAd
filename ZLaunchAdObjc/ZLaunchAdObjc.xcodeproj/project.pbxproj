@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D67698A31F4AC70C00777ED6 /* ZLaunchAdConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D67698A21F4AC70C00777ED6 /* ZLaunchAdConfig.m */; };
-		D67698A51F4B295100777ED6 /* 321.gif in Resources */ = {isa = PBXBuildFile; fileRef = D67698A41F4B295100777ED6 /* 321.gif */; };
 		D6DE019E1F46E2DC00873BE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DE019D1F46E2DC00873BE0 /* main.m */; };
 		D6DE01A11F46E2DC00873BE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DE01A01F46E2DC00873BE0 /* AppDelegate.m */; };
 		D6DE01A41F46E2DC00873BE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DE01A31F46E2DC00873BE0 /* ViewController.m */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		D67698A11F4AC70C00777ED6 /* ZLaunchAdConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLaunchAdConfig.h; sourceTree = "<group>"; };
 		D67698A21F4AC70C00777ED6 /* ZLaunchAdConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLaunchAdConfig.m; sourceTree = "<group>"; };
-		D67698A41F4B295100777ED6 /* 321.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 321.gif; sourceTree = "<group>"; };
 		D6DE01991F46E2DC00873BE0 /* ZLaunchAdObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DE019D1F46E2DC00873BE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6DE019F1F46E2DC00873BE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 		D6DE019B1F46E2DC00873BE0 /* ZLaunchAdObjc */ = {
 			isa = PBXGroup;
 			children = (
-				D67698A41F4B295100777ED6 /* 321.gif */,
 				D6DE01B31F46E3A500873BE0 /* ZLaunchAdObjc */,
 				D6DE019F1F46E2DC00873BE0 /* AppDelegate.h */,
 				D6DE01A01F46E2DC00873BE0 /* AppDelegate.m */,
@@ -160,7 +157,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D67698A51F4B295100777ED6 /* 321.gif in Resources */,
 				D6DE01AC1F46E2DC00873BE0 /* LaunchScreen.storyboard in Resources */,
 				D6DE01A91F46E2DC00873BE0 /* Assets.xcassets in Resources */,
 			);

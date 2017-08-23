@@ -19,12 +19,12 @@ typedef NS_ENUM(NSUInteger, SkipBtnType) {
 
 @interface ZLaunchAdConfig : NSObject
 
-@property (nonatomic, strong) UIColor *backgroundColor;
-@property (nonatomic, strong) UIFont *titleFont;
-@property (nonatomic, assign) SkipBtnType skipBtnType;
-@property (nonatomic, strong) UIColor *titleColor;
-@property (nonatomic, strong) UIColor *strokeColor;
-@property (nonatomic, assign) CGFloat cornerRadius;
+@property (nonatomic, strong) UIColor *backgroundColor;     /// 背景颜色
+@property (nonatomic, strong) UIFont *titleFont;            /// 字体大小
+@property (nonatomic, assign) SkipBtnType skipBtnType;      /// btn类型
+@property (nonatomic, strong) UIColor *titleColor;          /// 字体颜色
+@property (nonatomic, strong) UIColor *strokeColor;         /// 圆形按钮进度条颜色
+@property (nonatomic, assign) CGFloat cornerRadius;         /// 
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) CGFloat width;
 @property (nonatomic, assign) CGFloat height;

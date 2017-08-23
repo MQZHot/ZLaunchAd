@@ -68,15 +68,6 @@ extension UIImageView {
 
 extension UIImage {
     
-    public class func gif(url: String) -> UIImage? {
-        
-        guard let bundleURL = URL(string: url) else { return nil }
-        
-        guard let imageData = try? Data(contentsOf: bundleURL) else { return nil }
-        
-        return gif(data: imageData)
-    }
-    
     public class func gif(name: String) -> UIImage? {
         
         var nameStr = name

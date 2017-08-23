@@ -23,8 +23,8 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.image = image;
-            if (completion) {
-                completion(image);
+            if (image && completion) {
+                completion();
             }
         });
     });
@@ -57,40 +57,32 @@
 }
 
 + (UIImage *)gifWithData:(NSData *)data{
-    
     if (!data) {return nil;}
-    
-    UIImage *gifImage;
     CGImageSourceRef imgSource = CGImageSourceCreateWithData((CFDataRef)data, NULL);
-    if (imgSource == NULL) {
-        fprintf(stderr, "Image source is NULL\n");
-    } else {
-        
-        NSInteger totalCount = CGImageSourceGetCount(imgSource);
-        
-        if (totalCount > 1) {
-            
-            NSMutableArray *frames = [NSMutableArray arrayWithCapacity:totalCount];
-            NSTimeInterval gifDuration = 0.0;
-            for (NSInteger i = 0; i < totalCount; i++) {
-                
-                CGImageRef cgImageRef = CGImageSourceCreateImageAtIndex(imgSource, i, NULL);
-                CFDictionaryRef properties = CGImageSourceCopyPropertiesAtIndex(imgSource, 1, NULL);
-                CFDictionaryRef gifDic = CFDictionaryGetValue(properties, kCGImagePropertyGIFDictionary);
-                CFStringRef delayTimeRef = CFDictionaryGetValue(gifDic, kCGImagePropertyGIFDelayTime);
-                gifDuration += [(__bridge NSString *)delayTimeRef doubleValue];
-                CFRelease(properties);
-                UIImage *image = [UIImage imageWithCGImage:cgImageRef];
-                [frames addObject:image];
-                
-            }
-            gifImage = [UIImage animatedImageWithImages:frames duration:gifDuration];
-        } else if (totalCount == 1) {
-            gifImage = [[UIImage alloc] initWithData:data];
-        }
-        CFRelease(imgSource);
+    return [UIImage gifImageWithSource:imgSource];
+}
+
++ (UIImage *)gifImageWithSource: (CGImageSourceRef)imgSource {
+    NSInteger totalCount = CGImageSourceGetCount(imgSource);
+    if (imgSource == nil) {
+        return nil;
     }
-    return gifImage;
+    NSMutableArray *images = [NSMutableArray arrayWithCapacity:totalCount];
+    CGFloat gifDuration = 0.0;
+    for (NSInteger i = 0; i < totalCount; i++) {
+        CGImageRef cgImageRef = CGImageSourceCreateImageAtIndex(imgSource, i, NULL);
+        CFDictionaryRef properties = CGImageSourceCopyPropertiesAtIndex(imgSource, 1, NULL);
+        CFDictionaryRef gifInfo = CFDictionaryGetValue(properties, kCGImagePropertyGIFDictionary);
+        CFStringRef delayTimeRef = CFDictionaryGetValue(gifInfo, kCGImagePropertyGIFDelayTime);
+        gifDuration += [(__bridge NSString *)delayTimeRef doubleValue];
+        UIImage *image = [UIImage imageWithCGImage:cgImageRef];
+        [images addObject:image];
+        CFRelease(properties);
+        CFRelease(cgImageRef);
+    }
+    CFRelease(imgSource);
+    UIImage *image = [UIImage animatedImageWithImages:images duration:gifDuration];
+    return image;
 }
 
 @end

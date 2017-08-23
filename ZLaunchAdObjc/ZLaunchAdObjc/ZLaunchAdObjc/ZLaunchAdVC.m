@@ -29,22 +29,25 @@
 
 @implementation ZLaunchAdVC
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.skipBtnConfig = [[ZLaunchAdConfig alloc]init];
-    self.defaultTime = 3;
-    self.adViewBottomDistance = 100;
-    self.transitionStyle = TransitionStyleFlipFromLeft;
-    [self.view addSubview:self.launchImageView];
-    [self startTimer];
-}
-
 - (instancetype)initWithDuration: (NSInteger)duration transitionStyle: (TransitionStyle)transitionStyle adBottom: (CGFloat)adBottom completion: (ZLaunchAdCompletion)completion {
     self = [super init];
     if (self) {
+        self.defaultTime = duration;
+        self.transitionStyle = transitionStyle;
+        self.adViewBottomDistance = adBottom;
         self.completion = completion;
     }
     return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.skipBtnConfig = [[ZLaunchAdConfig alloc]init];
+    self.defaultTime = self.defaultTime <= 0 ? 3 : self.defaultTime;
+    self.adViewBottomDistance = self.adViewBottomDistance <= 0 ? 100 : self.adViewBottomDistance;
+    self.transitionStyle = TransitionStyleFlipFromLeft;
+    [self.view addSubview:self.launchImageView];
+    [self startTimer];
 }
 
 #pragma mark - 配置广告图
@@ -64,8 +67,6 @@
             weakSelf.launchAdImgView.alpha = 1;
         }];
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:weakSelf action:@selector(imgViewTapAction:)];
-        [weakSelf.launchAdImgView addGestureRecognizer:tap];
     }];
     self.adImgViewClick = adImgViewClick;
 }
@@ -85,7 +86,7 @@
     }];
     self.adImgViewClick = adImgViewClick;
 }
-
+/// 本地GIF
 - (void)configLocalGifWithName: (NSString *)name duration: (NSInteger)duration adImgViewClick: (ZLaunchAdCompletion)adImgViewClick {
     self.adDuration = duration < 1 ? 1 : duration;
     [self.view addSubview:self.launchAdImgView];
@@ -101,7 +102,6 @@
     }];
     self.adImgViewClick = adImgViewClick;
 }
-
 
 - (void)addSkipBtn {
     [self.skipBtn removeFromSuperview];
@@ -141,13 +141,13 @@
     self.animationLayer.fillColor = [UIColor clearColor].CGColor;
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
     animation.duration = self.adDuration;
-    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.skipBtnConfig.centerX, 0)];;
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.skipBtnConfig.centerX, 0)];
+    animation.fromValue = @0;
+    animation.toValue = @1;
     [self.animationLayer addAnimation:animation forKey:nil];
     [self.skipBtn.layer addSublayer: self.animationLayer];
 }
 #pragma mark - 点击事件
-/// 图片点击事件
+
 - (void)imgViewTapAction:(UITapGestureRecognizer *)sender {
     dispatch_source_cancel(self.dataTimer);
     __strong typeof(self)weakSelf = self;
@@ -160,7 +160,7 @@
         });
     }];
 }
-/// 跳过事件
+
 - (void)skipBtnAction {
     if (self.dataTimer) {
         dispatch_source_cancel(self.dataTimer);
@@ -175,7 +175,6 @@
     }
     return _skipBtn;
 }
-/// 启动页
 - (UIImageView *)launchImageView {
     if (!_launchImageView) {
         _launchImageView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -183,12 +182,13 @@
     }
     return _launchImageView;
 }
-/// 广告图片
 - (UIImageView *)launchAdImgView {
     if (!_launchAdImgView) {
         _launchAdImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Z_SCREEN_WIDTH, Z_SCREEN_HEIGHT-self.adViewBottomDistance)];
         _launchAdImgView.userInteractionEnabled = true;
         _launchAdImgView.alpha = 0.2;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imgViewTapAction:)];
+        [_launchAdImgView addGestureRecognizer:tap];
     }
     return _launchAdImgView;
 }
@@ -258,7 +258,6 @@
     dispatch_resume(self.originalTimer);
 }
 
-/// 图片倒计时
 - (void)adStartTimer {
     dispatch_source_cancel(self.originalTimer);
     self.dataTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
@@ -286,7 +285,7 @@
     if(launchImage) return launchImage;
     return [self storyboardLaunchImage];
 }
-/// 获取Assets里LaunchImage
+
 - (UIImage *)assetsLaunchImage{
     CGSize viewSize = [UIScreen mainScreen].bounds.size;
     NSString *viewOrientation = @"Portrait";//横屏"Landscape"
@@ -302,7 +301,7 @@
     }
     return nil;
 }
-/// 获取Storyboard
+
 - (UIImage *)storyboardLaunchImage{
     NSString *storyboardLaunchName = [[NSBundle mainBundle].infoDictionary valueForKey:@"UILaunchStoryboardName"];
     UIViewController *launchVC = [[UIStoryboard storyboardWithName:storyboardLaunchName bundle:nil] instantiateInitialViewController];
@@ -313,7 +312,7 @@
     }
     return nil;
 }
-/// view转换图片
+
 - (UIImage*)viewConvertImage:(UIView*)launchView{
     CGSize imageSize = launchView.bounds.size;
     UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);

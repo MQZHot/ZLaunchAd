@@ -25,7 +25,19 @@ typedef NS_ENUM(NSUInteger, TransitionStyle) {
 
 @interface ZLaunchAdVC : UIViewController
 
-- (instancetype)initWithDuration: (NSInteger)duration transitionStyle: (TransitionStyle)transitionStyle adBottom: (CGFloat)adBottom completion: (ZLaunchAdCompletion)completion;
+/**
+ init
+
+ @param duration 持续时间
+ @param transitionStyle 过渡
+ @param adBottom 距底部距离
+ @param completion 完成
+ @return self
+ */
+- (instancetype)initWithDuration: (NSInteger)duration
+                 transitionStyle: (TransitionStyle)transitionStyle
+                        adBottom: (CGFloat)adBottom
+                      completion: (ZLaunchAdCompletion)completion;
 
 /**
  配置网络图片
@@ -48,7 +60,6 @@ typedef NS_ENUM(NSUInteger, TransitionStyle) {
 - (void)configLocalImageWithImage: (UIImage *)image
                          duration: (NSInteger)duration
                    adImgViewClick: (ZLaunchAdCompletion)adImgViewClick;
-
 
 /**
  配置本地GIF
