@@ -19,27 +19,18 @@ extension UIImageView {
     ///   - url: 图片url
     ///   - completion: 完成闭包
     public func setImage(with url: String, completion: ZClosure?) {
-        
         DispatchQueue.global().async {
-            
             guard let bundleURL = URL(string: url) else { return }
-            
             guard let imageData = try? Data(contentsOf: bundleURL) else { return }
-            
             guard let imageSource = CGImageSourceCreateWithData(imageData as CFData, nil) else { return }
-            
             let totalCount = CGImageSourceGetCount(imageSource)
-            
             var image: UIImage?
-            
             if totalCount == 1 {
                 image = UIImage(data: imageData)
             } else {
                 image = UIImage.gif(data: imageData)
             }
-            
             DispatchQueue.main.async {
-                
                 self.image = image
                 if completion != nil {
                     completion!()

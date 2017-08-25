@@ -29,13 +29,13 @@ typedef NS_ENUM(NSUInteger, TransitionStyle) {
  @param duration 持续时间
  @param transitionStyle 过渡
  @param adBottom 距底部距离
- @param completion 完成
+ @param rootViewController root
  @return self
  */
 - (instancetype)initWithDuration: (NSInteger)duration
                  transitionStyle: (TransitionStyle)transitionStyle
                         adBottom: (CGFloat)adBottom
-                      completion: (nonnull ZLaunchAdCompletion)completion;
+              rootViewController: (UIViewController *)rootViewController;
 
 /**
  配置网络图片
@@ -74,7 +74,5 @@ typedef NS_ENUM(NSUInteger, TransitionStyle) {
  配置跳过按钮
  */
 @property (nonatomic, copy) ConfigSkipBtn configSkipBtn;
-
-@property (nonatomic, copy) ZLaunchAdCompletion configEnd;
 
 @end

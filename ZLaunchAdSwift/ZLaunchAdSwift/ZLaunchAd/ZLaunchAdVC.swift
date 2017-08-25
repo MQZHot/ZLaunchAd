@@ -33,11 +33,10 @@ class ZLaunchAdVC: UIViewController {
     /// 图片点击闭包
     fileprivate var adImgViewClick: ZClosure?
     
-    /// 图片倒计时完成闭包
-    fileprivate var completion: ZClosure?
-    
     /// layer
     fileprivate var animationLayer: CAShapeLayer?
+    
+    fileprivate var rootViewController: UIViewController?
     
     /// 启动页
     fileprivate lazy var launchImageView: UIImageView = {
@@ -84,14 +83,14 @@ class ZLaunchAdVC: UIViewController {
     
 //MARK: - 便利构造方法
     
-    public convenience init(defaultDuration: Int = 3, adViewBottom: CGFloat = 100, transitionType: TransitionType = .fade, completion: ZClosure?) {
+    public convenience init(defaultDuration: Int = 3, adViewBottom: CGFloat = 100, transitionType: TransitionType = .fade, rootViewController: UIViewController) {
         self.init(nibName: nil, bundle: nil)
         self.transitionType = transitionType
         adViewBottomDistance = adViewBottom
         if defaultDuration >= 1 {
             self.defaultTime = defaultDuration
         }
-        self.completion = completion
+        self.rootViewController = rootViewController
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -139,8 +138,8 @@ extension ZLaunchAdVC {
     
     /// 完成
     @discardableResult
-    public func configEnd(_ completion: ZClosure?) -> Self {
-        self.completion = completion
+    public func configRootVC(_ rootViewController: UIViewController) -> Self {
+        self.rootViewController = rootViewController
         return self
     }
     
@@ -282,10 +281,10 @@ extension ZLaunchAdVC {
             self.dataTimer?.cancel()
         }
         
-        if self.completion != nil {
+        if self.rootViewController != nil {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.1, execute: {
                 self.transitionAnimation()
-                self.completion!()
+                UIApplication.shared.keyWindow?.rootViewController = self.rootViewController
                 if completion != nil {
                     completion!()
                 }

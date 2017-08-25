@@ -25,18 +25,19 @@
 @property (nonatomic, assign) TransitionStyle   transitionStyle;
 @property (nonatomic,   copy) ZLaunchAdCompletion    adImgViewClick;
 @property (nonatomic, strong) ZLaunchAdConfig   *skipBtnConfig;         /// 配置跳过按钮
+@property (nonatomic, strong) UIViewController  *rootViewController;
 
 @end
 
 @implementation ZLaunchAdVC
 
-- (instancetype)initWithDuration: (NSInteger)duration transitionStyle: (TransitionStyle)transitionStyle adBottom: (CGFloat)adBottom completion: (ZLaunchAdCompletion)completion {
+- (instancetype)initWithDuration: (NSInteger)duration transitionStyle: (TransitionStyle)transitionStyle adBottom: (CGFloat)adBottom rootViewController: (UIViewController *)rootViewController {
     self = [super init];
     if (self) {
         self.defaultTime = duration;
         self.transitionStyle = transitionStyle;
         self.adViewBottomDistance = adBottom;
-        self.configEnd = completion;
+        self.rootViewController = rootViewController;
     }
     return self;
 }
@@ -201,9 +202,9 @@
     if (self.dataTimer) {
         dispatch_source_cancel(self.dataTimer);
     }
-    if (self.configEnd) {
+    if (self.rootViewController) {
         [self transitionAnimation];
-        self.configEnd();
+        [UIApplication sharedApplication].keyWindow.rootViewController = self.rootViewController;
         if (completion) {
             completion();
         }

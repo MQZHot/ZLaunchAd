@@ -32,20 +32,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     let homeVC = ViewController()
     let nav = UINavigationController.init(rootViewController: homeVC)
     if launchOptions != nil {
-
         /// 通过推送等启动
         window?.rootViewController = nav
-
     } else {
         /// 正常点击icon启动，加载广告
-        let adVC = ZLaunchAdVC(completion: {
-            self.window?.rootViewController = nav
-        })
-        /// 延时模拟网络请求
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-            let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725165329728.jpg"
-            let duration = 4
-            /// 设置参数
+        let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).configRootVC(nav)
+
+        request(completion: { (url, duration) in
             adVC.configNetImage(url: url, duration: duration, adImgViewClick: {
                 let vc = UIViewController()
                 vc.view.backgroundColor = UIColor.yellow
@@ -57,6 +50,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     window?.makeKeyAndVisible()
     return true
 }
+/// 网络请求
+func request(completion: @escaping (_ url: String, _ duration: Int)->()) -> Void {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+        let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif"
+        let adDuartion = 8
+        completion(url, adDuartion)
+    })
+}
 ```
 
 ### 2. 默认显示时间、广告图大小、过渡类型 配置
@@ -65,14 +66,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 /// defaultDuration: 未设置广告/广告加载不出来时，VC的显示时间，默认3s
 /// adViewBottom: 图片距离底部距离，默认100
 /// transitionType: 过渡类型，默认fade
-let adVC = ZLaunchAdVC(defaultDuration: 3, adViewBottom: 100, transitionType: .filpFromLeft, completion: {
-    self.window?.rootViewController = nav
-})
+let adVC = ZLaunchAdVC(defaultDuration: 3, adViewBottom: 200, transitionType: .filpFromBottom, rootViewController: nav)
 
 /// 或者
-let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).configEnd({
-    self.window?.rootViewController = nav
-})
+let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).configRootVC(nav)
 
 ```
 
@@ -110,11 +107,11 @@ adVC.configLocalGif(name: "111", duration: 7, adImgViewClick: {
 ```
 
 ## 安装
-
+```
 * 1.pod 'ZLaunchAdVC'
 
 * 2.pod install / pod update
-
+```
 ## CocoaPods更新日志
 
 ```

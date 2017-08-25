@@ -29,9 +29,7 @@
         
     } else {
         
-        ZLaunchAdVC *launchAdVC = [[ZLaunchAdVC alloc]initWithDuration:4 transitionStyle:TransitionStyleFlipFromTop adBottom:200 completion:^{
-            self.window.rootViewController = nav;
-        }];
+        ZLaunchAdVC *launchAdVC = [[ZLaunchAdVC alloc]initWithDuration:4 transitionStyle:TransitionStyleFlipFromTop adBottom:200 rootViewController:nav];
        
         [self networkCompletion:^(NSString *url, NSInteger duration) {
             [launchAdVC configNetImageWithURL:url duration:duration adImgViewClick:^{
