@@ -24,11 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = nav
         } else {
             /// 加载广告
-            /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg
-            /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
-            let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).configRootVC(nav)
-            
+            let adVC = ZLaunchAdVC().adBottom(200).transition(.rippleEffect).rootVC(nav)
+            adVC.configSkipBtn({ (model) in
+                model.skipBtnType = .text
+                model.borderColor = UIColor.green
+            })
             /// 网络图片
             request(completion: { (url, duration) in
                 adVC.configNetImage(url: url, duration: duration, adImgViewClick: {
@@ -59,12 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg
+    /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
     func request(completion: @escaping (_ url: String, _ duration: Int)->()) -> Void {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-            let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif"
+            let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg"
             let adDuartion = 8
             completion(url, adDuartion)
         })
     }
-    
 }
+

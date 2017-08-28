@@ -125,6 +125,8 @@
         } else {
             self.skipBtn.frame = CGRectMake(0, 0, self.skipBtnConfig.width, self.skipBtnConfig.height);
             self.skipBtn.layer.cornerRadius = self.skipBtnConfig.cornerRadius;
+            self.skipBtn.layer.borderWidth = self.skipBtnConfig.borderWidth;
+            self.skipBtn.layer.borderColor = self.skipBtnConfig.borderColor.CGColor;
         }
         self.skipBtn.center = CGPointMake(self.skipBtnConfig.centerX, self.skipBtnConfig.centerY);
         [self.view addSubview: self.skipBtn];

@@ -17,6 +17,7 @@ public enum SkipButtonType {
     case none                   /// 无跳过按钮
     case timer                  /// 跳过+倒计时
     case circle                 /// 圆形跳过
+    case text                   /// 跳过
 }
 
 public enum TransitionType {
@@ -41,13 +42,14 @@ public protocol SkipBtnConfig {
     var height: CGFloat { get }
     var centerX: CGFloat { get }
     var centerY: CGFloat { get }
+    var borderColor: UIColor { get }
+    var borderWidth: CGFloat { get }
 }
 
 struct SkipBtnModel: SkipBtnConfig {
-    
     var cornerRadius: CGFloat = 15
     var backgroundColor = UIColor.black.withAlphaComponent(0.4)
-    var titleFont = UIFont.systemFont(ofSize: 12)
+    var titleFont = UIFont.systemFont(ofSize: 13)
     var titleColor = UIColor.white
     var skipBtnType: SkipButtonType = .timer
     var strokeColor = UIColor.red
@@ -56,10 +58,12 @@ struct SkipBtnModel: SkipBtnConfig {
     var centerX: CGFloat = Z_SCREEN_WIDTH - 40
     var height: CGFloat = 30
     var centerY: CGFloat = 45
+    var borderColor: UIColor = UIColor.clear
+    var borderWidth: CGFloat = 1
     
 }
 
-//MARK: - Log日志
+//MARK: - Log
 func printLog<T>( _ message: T, file: String = #file, method: String = #function, line: Int = #line){
     #if DEBUG
         print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")

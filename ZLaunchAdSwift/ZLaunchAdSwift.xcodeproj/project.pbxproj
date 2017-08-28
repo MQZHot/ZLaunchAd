@@ -13,7 +13,7 @@
 		D66EE3491E94EACB0097DF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66EE3481E94EACB0097DF7A /* Assets.xcassets */; };
 		D66EE34C1E94EACB0097DF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66EE34A1E94EACB0097DF7A /* LaunchScreen.storyboard */; };
 		D66EE3581E94EB2F0097DF7A /* ZLaunchAdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3571E94EB2F0097DF7A /* ZLaunchAdVC.swift */; };
-		D6A0AF7D1F25B8E5002BB570 /* UIImageView+ZLaunchAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0AF7C1F25B8E5002BB570 /* UIImageView+ZLaunchAd.swift */; };
+		D6A0AF7D1F25B8E5002BB570 /* ZLaunchAdImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0AF7C1F25B8E5002BB570 /* ZLaunchAdImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		D66EE34B1E94EACB0097DF7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D66EE34D1E94EACB0097DF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66EE3571E94EB2F0097DF7A /* ZLaunchAdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdVC.swift; sourceTree = "<group>"; };
-		D6A0AF7C1F25B8E5002BB570 /* UIImageView+ZLaunchAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ZLaunchAd.swift"; sourceTree = "<group>"; };
+		D6A0AF7C1F25B8E5002BB570 /* ZLaunchAdImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				D66EE3571E94EB2F0097DF7A /* ZLaunchAdVC.swift */,
-				D6A0AF7C1F25B8E5002BB570 /* UIImageView+ZLaunchAd.swift */,
+				D6A0AF7C1F25B8E5002BB570 /* ZLaunchAdImage.swift */,
 				D636AD5C1F45899D0092E197 /* ZLaunchAdConfig.swift */,
 			);
 			path = ZLaunchAd;
@@ -153,7 +153,7 @@
 				D66EE3441E94EACB0097DF7A /* ViewController.swift in Sources */,
 				D66EE3421E94EACB0097DF7A /* AppDelegate.swift in Sources */,
 				D636AD5D1F45899D0092E197 /* ZLaunchAdConfig.swift in Sources */,
-				D6A0AF7D1F25B8E5002BB570 /* UIImageView+ZLaunchAd.swift in Sources */,
+				D6A0AF7D1F25B8E5002BB570 /* ZLaunchAdImage.swift in Sources */,
 				D66EE3581E94EB2F0097DF7A /* ZLaunchAdVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

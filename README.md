@@ -69,7 +69,7 @@ func request(completion: @escaping (_ url: String, _ duration: Int)->()) -> Void
 let adVC = ZLaunchAdVC(defaultDuration: 3, adViewBottom: 200, transitionType: .filpFromBottom, rootViewController: nav)
 
 /// 或者
-let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).configRootVC(nav)
+let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).rootVC(nav)
 
 ```
 
@@ -91,44 +91,29 @@ adVC.configSkipBtn({ (config) in
 ```swift
 
 adVC.configLocalImage(image: UIImage(named: "222"), duration: 7, adImgViewClick: {
-    let vc = UIViewController()
-    vc.view.backgroundColor = UIColor.yellow
-    homeVC.navigationController?.pushViewController(vc, animated: true)
+    /// do something
 })
 
 ```
 #### 4.2 本地GIF
 ```swift
 adVC.configLocalGif(name: "111", duration: 7, adImgViewClick: {
-    let vc = UIViewController()
-    vc.view.backgroundColor = UIColor.yellow
-    homeVC.navigationController?.pushViewController(vc, animated: true)
+    /// do something
 })
 ```
 
 ## 安装
 ```
-* 1.pod 'ZLaunchAdVC'
+1.pod 'ZLaunchAdVC'
 
-* 2.pod install / pod update
+2.pod install / pod update
 ```
 ## CocoaPods更新日志
-
-```
-• 2017.08.18(0.0.5):
-  1.修复倒计时时间不变
-  2.新增本地图片显示，支持GIF
-  3.增加跳过按钮配置
-  4.代码整理
-
-• 2017.08.01(0.0.3):
-  1.修复无网络崩溃
-
-• 2017.07.25(0.0.2):
-  1.新增GIF图片显示
-  2.去除kingfisher
-  3.修复过渡动画重复执行
-```
+| date | version | content |
+|:---:|:---:|:---|
+|2017.08.18|0.0.5|1.修复倒计时时间不变<br>2.新增本地图片显示，支持GIF<br>3.增加跳过按钮配置<br>4.代码整理|
+|2017.08.01|0.0.3|1.修复无网络崩溃|
+|2017.07.25|0.0.2|1.新增GIF图片显示<br>2.去除kingfisher<br>3.修复过渡动画重复执行|
 
 ## Author
 

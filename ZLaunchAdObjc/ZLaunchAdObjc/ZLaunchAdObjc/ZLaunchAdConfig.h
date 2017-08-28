@@ -30,5 +30,7 @@ typedef NS_ENUM(NSUInteger, SkipBtnType) {
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) CGFloat centerX;
 @property (nonatomic, assign) CGFloat centerY;
+@property (nonatomic, assign) CGFloat borderWidth;
+@property (nonatomic, strong) UIColor *borderColor;
 
 @end

@@ -25,6 +25,8 @@
         self.centerX = Z_SCREEN_WIDTH - 40;
         self.height = 30;
         self.centerY = 45;
+        self.borderColor = [UIColor clearColor];
+        self.borderWidth = 1;
     }
     return self;
 }
