@@ -51,7 +51,6 @@ class ZLaunchAdVC: UIViewController {
         return button
     }()
     
-//MARK: - event
     /// tap your ad action
     @objc fileprivate func launchAdTapAction(sender: UITapGestureRecognizer) {
         dataTimer?.cancel()
@@ -68,23 +67,6 @@ class ZLaunchAdVC: UIViewController {
         dataTimer?.cancel()
         launchAdVCRemove(completion: nil)
     }
-    
-//MARK: - convenience init
-    public convenience init(defaultDuration: Int = 3, adViewBottom: CGFloat = 100, transitionType: TransitionType = .fade, rootViewController: UIViewController) {
-        self.init(nibName: nil, bundle: nil)
-        self.transitionType = transitionType
-        adViewBottomDistance = adViewBottom
-        if defaultDuration >= 1 {
-            self.defaultTime = defaultDuration
-        }
-        self.rootViewController = rootViewController
-    }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(launchImageView)
@@ -95,8 +77,16 @@ class ZLaunchAdVC: UIViewController {
     }
 }
 
-// MARK: -
+// MARK: - API
 extension ZLaunchAdVC {
+    ///
+    @discardableResult
+    public func defaultDuration(_ defaultDuration: Int) -> Self {
+        if defaultDuration >= 1 {
+            self.defaultTime = defaultDuration
+        }
+        return self
+    }
     /// set skip button's params
     @discardableResult
     public func configSkipBtn(_ config: (inout SkipBtnModel) -> Void) -> ZLaunchAdVC {
@@ -105,13 +95,13 @@ extension ZLaunchAdVC {
     }
     /// distance of adImg to launchImage's bottom
     @discardableResult
-    public func adBottom(_ adViewBottom: CGFloat = 100) -> Self {
+    public func adBottom(_ adViewBottom: CGFloat) -> Self {
         adViewBottomDistance = adViewBottom
         return self
     }
     /// set transition animation type
     @discardableResult
-    public func transition(_ transitionType: TransitionType = .fade) -> Self {
+    public func transition(_ transitionType: TransitionType) -> Self {
         self.transitionType = transitionType
         return self
     }
@@ -147,7 +137,7 @@ extension ZLaunchAdVC {
     ///   - image: pic name
     ///   - duration: display seconds
     ///   - adImgViewClick: do something click ad
-    func configLocalImage(image: UIImage?, duration: Int, adImgViewClick: ZClosure?) {
+    public func configLocalImage(image: UIImage?, duration: Int, adImgViewClick: ZClosure?) {
         if let image = image {
             adDuration = duration < 1 ? 1 : duration
             view.addSubview(launchAdImgView)
@@ -181,9 +171,12 @@ extension ZLaunchAdVC {
         }
         self.adImgViewClick = adImgViewClick
     }
-    
+}
+
+// MARK: - configure skip button
+extension ZLaunchAdVC {
     /// setup skip button
-    private func configSkipBtn() -> Void {
+    fileprivate func configSkipBtn() -> Void {
         skipBtn.removeFromSuperview()
         if animationLayer != nil {
             animationLayer?.removeFromSuperlayer()
@@ -227,7 +220,6 @@ extension ZLaunchAdVC {
         skipBtn.layer.addSublayer(animationLayer!)
     }
 }
-
 // MARK: - ZLaunchAdVC remove
 extension ZLaunchAdVC {
     /// remove the launch viewController, change rootViewController or do something

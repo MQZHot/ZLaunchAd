@@ -60,7 +60,6 @@ struct SkipBtnModel: SkipBtnConfig {
     var centerY: CGFloat = 45
     var borderColor: UIColor = UIColor.clear
     var borderWidth: CGFloat = 1
-    
 }
 
 //MARK: - Log

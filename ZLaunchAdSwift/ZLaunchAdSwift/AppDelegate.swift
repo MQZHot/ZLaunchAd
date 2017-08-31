@@ -25,7 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             /// 加载广告
             
-            let adVC = ZLaunchAdVC().adBottom(200).transition(.rippleEffect).rootVC(nav)
+            let adVC = ZLaunchAdVC()
+                .defaultDuration(5)
+                .adBottom(100)
+                .transition(.rippleEffect)
+                .rootVC(nav)
+            
             adVC.configSkipBtn({ (model) in
                 model.skipBtnType = .text
                 model.borderColor = UIColor.green

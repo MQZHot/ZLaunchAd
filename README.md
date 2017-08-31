@@ -4,8 +4,12 @@
 
 ![](https://img.shields.io/badge/platform-iOS-yellow.svg) ![](https://img.shields.io/badge/language-swift-red.svg) ![](https://img.shields.io/badge/support-iOS%208%2B-blue.svg) ![](https://img.shields.io/cocoapods/v/ZLaunchAdVC.svg?style=flat) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)
 
+> 使用view制作启动页广告，总存在一些问题
 
-## 快速集成启动页广告，切换rootViewController，支持LaunchImage和LaunchScreen.storyboard，支持GIF图片显示，支持视图过渡动画，支持本地图片显示
+    * 启动图出现之前总是会先闪出rootViewController，再出现广告图
+    * 首页需要弹出一些视图：版本更新、弹窗广告、新手引导等，层级关系复杂。
+
+## ZLaunchAdVC 快速集成启动页广告，切换rootViewController，支持LaunchImage和LaunchScreen.storyboard，支持GIF图片显示，支持视图过渡动画，支持本地图片显示
 
 ### 不足之处，欢迎纠正，欢迎star✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 
@@ -102,13 +106,13 @@ adVC.configLocalGif(name: "111", duration: 7, adImgViewClick: {
 })
 ```
 
-## 安装
+## Install
 ```
 1.pod 'ZLaunchAdVC'
 
 2.pod install / pod update
 ```
-## CocoaPods更新日志
+## CocoaPods
 | date | version | content |
 |:---:|:---:|:---|
 |2017.08.18|0.0.5|1.修复倒计时时间不变<br>2.新增本地图片显示，支持GIF<br>3.增加跳过按钮配置<br>4.代码整理|
