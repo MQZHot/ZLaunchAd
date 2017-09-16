@@ -8,12 +8,12 @@
 > * 启动图出现之前总是会先闪出rootViewController，再出现广告图
 > * 首页需要弹出一些视图：版本更新、弹窗广告、新手引导等，层级关系复杂。
 
-## ZLaunchAdVC 快速集成启动页广告，切换rootViewController，支持LaunchImage和LaunchScreen.storyboard，支持GIF图片显示，支持视图过渡动画，支持本地图片显示
+## ZLaunchAdVC 快速集成启动页广告，切换rootViewController，支持LaunchImage和LaunchScreen.storyboard，支持GIF图片，支持视图过渡动画，支持本地图片
 
 ### 不足之处，欢迎纠正，欢迎star✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 
 
-![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic1.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic2.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic3.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic4.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic5.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic6.gif)
+![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic0.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic2.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic3.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic4.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic5.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic6.gif)
 
 ## 功能
 
