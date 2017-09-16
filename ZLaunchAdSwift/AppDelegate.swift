@@ -23,36 +23,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             /// 通过推送等启动
             window?.rootViewController = nav
         } else {
+            print(UIDevice.current.orientation)
             /// 加载广告
-            
-            let adVC = ZLaunchAdVC()
-                .defaultDuration(5)
-                .adBottom(100)
-                .transition(.rippleEffect)
-                .rootVC(nav)
+            let adVC = ZLaunchAdVC().waitTime(3).adBottom(200).transition(.rippleEffect).rootVC(nav).showRootAfterClick(true)
             
             adVC.configSkipBtn({ (model) in
                 model.skipBtnType = .text
                 model.borderColor = UIColor.green
             })
             /// 网络图片
-            request(completion: { (url, duration) in
-                adVC.configNetImage(url: url, duration: duration, adImgViewClick: {
+            request {
+                adVC.setImage($0, duration: $1, action: {
                     let vc = UIViewController()
                     vc.view.backgroundColor = UIColor.yellow
                     homeVC.navigationController?.pushViewController(vc, animated: true)
                 })
-            })
-            
-            /// 本地图片
-//            adVC.configLocalImage(image: UIImage(named: "222"), duration: 7, adImgViewClick: {
+            }
+//            /// 本地图片
+//            adVC.setImage(UIImage(named: "222"), duration: 7, action: {
 //                let vc = UIViewController()
 //                vc.view.backgroundColor = UIColor.yellow
 //                homeVC.navigationController?.pushViewController(vc, animated: true)
 //            })
-            
-            /// 本地GIF
-//            adVC.configLocalGif(name: "111", duration: 7, adImgViewClick: {
+//
+//            /// 本地GIF
+//            adVC.setGif("111", duration: 7, action: {
 //                let vc = UIViewController()
 //                vc.view.backgroundColor = UIColor.yellow
 //                homeVC.navigationController?.pushViewController(vc, animated: true)
@@ -67,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg
     /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
-    func request(completion: @escaping (_ url: String, _ duration: Int)->()) -> Void {
+    func request(_ completion: @escaping (_ url: String, _ duration: Int)->()) -> Void {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
             let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg"
             let adDuartion = 8

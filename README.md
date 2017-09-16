@@ -2,12 +2,11 @@
 
 ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/ZLaunchAdVC.png)
 
-![](https://img.shields.io/badge/platform-iOS-yellow.svg) ![](https://img.shields.io/badge/language-swift-red.svg) ![](https://img.shields.io/badge/support-iOS%208%2B-blue.svg) ![](https://img.shields.io/cocoapods/v/ZLaunchAdVC.svg?style=flat) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)
+![](https://img.shields.io/badge/platform-iOS-yellow.svg) ![](https://img.shields.io/badge/language-swift-red.svg) ![](https://img.shields.io/badge/support-swift%204%2B-red.svg) ![](https://img.shields.io/badge/support-iOS%208%2B-blue.svg) ![](https://img.shields.io/cocoapods/v/ZLaunchAdVC.svg?style=flat) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)
 
-> 使用view制作启动页广告，总存在一些问题
-
-    * 启动图出现之前总是会先闪出rootViewController，再出现广告图
-    * 首页需要弹出一些视图：版本更新、弹窗广告、新手引导等，层级关系复杂。
+> ### 使用view制作启动页广告，总存在一些问题
+> * 启动图出现之前总是会先闪出rootViewController，再出现广告图
+> * 首页需要弹出一些视图：版本更新、弹窗广告、新手引导等，层级关系复杂。
 
 ## ZLaunchAdVC 快速集成启动页广告，切换rootViewController，支持LaunchImage和LaunchScreen.storyboard，支持GIF图片显示，支持视图过渡动画，支持本地图片显示
 
@@ -40,22 +39,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         window?.rootViewController = nav
     } else {
         /// 正常点击icon启动，加载广告
-        let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).configRootVC(nav)
-
-        request(completion: { (url, duration) in
-            adVC.configNetImage(url: url, duration: duration, adImgViewClick: {
-                let vc = UIViewController()
-                vc.view.backgroundColor = UIColor.yellow
-                homeVC.navigationController?.pushViewController(vc, animated: true)
+        let adVC = ZLaunchAdVC().waitTime(3).adBottom(200).transition(.rippleEffect).rootVC(nav)
+        request {
+            adVC.configNetImage(url: $0, duration: $1, adImgViewClick: {
+                /// do something...
             })
-        })
+        }
         window?.rootViewController = adVC
     }
     window?.makeKeyAndVisible()
     return true
 }
 /// 网络请求
-func request(completion: @escaping (_ url: String, _ duration: Int)->()) -> Void {
+func request(_ completion: @escaping (_ url: String, _ duration: Int)->()) -> Void {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
         let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif"
         let adDuartion = 8
@@ -64,22 +60,24 @@ func request(completion: @escaping (_ url: String, _ duration: Int)->()) -> Void
 }
 ```
 
-### 2. 默认显示时间、广告图大小、过渡类型 配置
+### 2. 广告配置
 
 ```swift
-/// defaultDuration: 未设置广告/广告加载不出来时，VC的显示时间，默认3s
-/// adViewBottom: 图片距离底部距离，默认100
-/// transitionType: 过渡类型，默认fade
-let adVC = ZLaunchAdVC(defaultDuration: 3, adViewBottom: 200, transitionType: .filpFromBottom, rootViewController: nav)
 
-/// 或者
-let adVC = ZLaunchAdVC().adBottom(200).transition(.filpFromLeft).rootVC(nav)
+/// 等待加载时间
+func waitTime(_ waitTime: Int) -> Self
+/// 跳转时是否显示rootVC
+func showRootAfterClick(_ showRootAfterClick: Bool) -> Self
+/// 配置跳过按钮
+func configSkipBtn(_ config: (inout SkipBtnModel) -> Void) -> ZLaunchAdVC
+/// 设置广告图底部距离
+func adBottom(_ adViewBottom: CGFloat) -> Self
+/// 控制器过渡类型
+func transition(_ transitionType: TransitionType) -> Self
+/// app的rootVC
+func rootVC(_ rootViewController: UIViewController) -> Self
 
-```
-
-### 3. 跳过按钮配置
-
-```swift
+let adVC = ZLaunchAdVC().waitTime(3).adBottom(200).transition(.rippleEffect).rootVC(nav)
 adVC.configSkipBtn({ (config) in
     config.backgroundColor = UIColor.red
     config.centerX = 100
@@ -89,19 +87,28 @@ adVC.configSkipBtn({ (config) in
 })
 
 ```
+
+### 3. 加载图片
+```swift
+let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif"
+adVC.setImage(url, duration: 5, action: {
+    /// do something
+})
+
+```
 ### 4. 加载本地图片
 
 #### 4.1 本地图片
 ```swift
 
-adVC.configLocalImage(image: UIImage(named: "222"), duration: 7, adImgViewClick: {
+adVC.setImage(UIImage(named: "222"), duration: 7, action: {
     /// do something
 })
 
 ```
 #### 4.2 本地GIF
 ```swift
-adVC.configLocalGif(name: "111", duration: 7, adImgViewClick: {
+adVC.setGif("111", duration: 7, action: {
     /// do something
 })
 ```
@@ -115,6 +122,7 @@ adVC.configLocalGif(name: "111", duration: 7, adImgViewClick: {
 ## CocoaPods
 | date | version | content |
 |:---:|:---:|:---|
+|2017.09.16|0.0.7|支持swift4|
 |2017.08.18|0.0.5|1.修复倒计时时间不变<br>2.新增本地图片显示，支持GIF<br>3.增加跳过按钮配置<br>4.代码整理|
 |2017.08.01|0.0.3|1.修复无网络崩溃|
 |2017.07.25|0.0.2|1.新增GIF图片显示<br>2.去除kingfisher<br>3.修复过渡动画重复执行|
