@@ -11,60 +11,62 @@ import UIKit
 public let Z_SCREEN_WIDTH = UIScreen.main.bounds.size.width
 public let Z_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
-public typealias ZClosure = ()->()
-
-public enum SkipButtonType {
-    case none                   /// 无跳过按钮
-    case timer                  /// 跳过+倒计时
-    case circle                 /// 圆形跳过
-    case text                   /// 跳过
-}
-
-public enum TransitionType {
+public typealias ZLaunchClosure = ()->()
+/// 动画
+public enum ZLaunchAnimationType {
+    /// 缩小
+    case zoomOut
+    /// 无动画
     case none
-    case rippleEffect           /// 涟漪波纹
-    case fade                   /// 交叉淡化
-    case flipFromTop            /// 上下翻转
-    case filpFromBottom
-    case filpFromLeft           /// 左右翻转
-    case filpFromRight
+    /// 溶解消失
+    case crossDissolve
+    /// 翻页
+    case curlUp
+    /// 上方翻转
+    case flipFromTop
+    /// 左边翻转
+    case flipFromLeft
+    /// 右边翻转
+    case flipFromRight
+    /// 底部翻转
+    case flipFromBottom
+    /// 向上滑动
+    case slideFromTop
+    /// 向下滑动
+    case slideFromBottom
+    /// 向左滑动
+    case slideFromLeft
+    /// 向右滑动
+    case slideFromRight
 }
-
-public protocol SkipBtnConfig {
-    var skipBtnType: SkipButtonType { get }         /// 按钮类型
-    var backgroundColor: UIColor { get }            /// 背景颜色
-    var titleFont: UIFont { get }                   /// 标题字体
-    var titleColor: UIColor { get }                 /// 字体颜色
-    var cornerRadius: CGFloat { get }               /// 圆角
-    var strokeColor: UIColor { get }                /// 圆形按钮进度条颜色
-    var lineWidth: CGFloat { get }                  /// 圆形按钮进度条宽度
-    var width: CGFloat { get }
-    var height: CGFloat { get }
-    var centerX: CGFloat { get }
-    var centerY: CGFloat { get }
-    var borderColor: UIColor { get }
-    var borderWidth: CGFloat { get }
-}
-
-struct SkipBtnModel: SkipBtnConfig {
-    var cornerRadius: CGFloat = 15
+/// 跳过按钮
+struct ZLaunchSkipButtonConfig {
+    /// frame
+    var frame = CGRect(x: Z_SCREEN_WIDTH - 70,y: 42, width: 60,height: 30)
+    /// 背景颜色
     var backgroundColor = UIColor.black.withAlphaComponent(0.4)
-    var titleFont = UIFont.systemFont(ofSize: 13)
-    var titleColor = UIColor.white
-    var skipBtnType: SkipButtonType = .timer
+    /// 文字
+    var text: NSString = "跳过"
+    /// 字体大小
+    var textFont = UIFont.systemFont(ofSize: 14)
+    /// 字体颜色
+    var textColor = UIColor.white
+    /// 数字大小
+    var timeFont = UIFont.systemFont(ofSize: 15)
+    /// 数字颜色
+    var timeColor = UIColor.red
+    /// 跳过按钮类型
+    var skipBtnType: ZLaunchSkipButtonType = .textLeftTimerRight
+    /// 圆形进度颜色
     var strokeColor = UIColor.red
+    /// 圆形进度宽度
     var lineWidth: CGFloat = 2
-    var width: CGFloat = 60
-    var centerX: CGFloat = Z_SCREEN_WIDTH - 40
-    var height: CGFloat = 30
-    var centerY: CGFloat = 45
+    /// 圆角
+    var cornerRadius: CGFloat = 5
+    /// 边框颜色
     var borderColor: UIColor = UIColor.clear
+    /// 边框宽度
     var borderWidth: CGFloat = 1
 }
 
-//MARK: - Log
-func printLog<T>( _ message: T, file: String = #file, method: String = #function, line: Int = #line){
-    #if DEBUG
-        print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
-    #endif
-}
+

@@ -11,5 +11,4 @@ s.source_files  = "ZLaunchAdSwift/ZLaunchAd", "ZLaunchAdSwift/ZLaunchAd/*.{swift
 s.requires_arc = true
 s.license      = "MIT"
 s.license      = { :type => "MIT", :file => "LICENSE" }
-
 end
