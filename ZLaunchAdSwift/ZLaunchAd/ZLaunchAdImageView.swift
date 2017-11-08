@@ -31,26 +31,30 @@ class ZLaunchAdImageView: UIImageView {
 
 extension ZLaunchAdImageView {
     
-    /// 加载图片
-    func setImage(with url: String, completion: ZLaunchClosure?) {
-        DispatchQueue.global().async {
-            guard let bundleURL = URL(string: url) else { return }
-            guard let imageData = try? Data(contentsOf: bundleURL) else { return }
-            guard let imageSource = CGImageSourceCreateWithData(imageData as CFData, nil) else { return }
-            let totalCount = CGImageSourceGetCount(imageSource)
-            var image: UIImage?
-            if totalCount == 1 {
-                image = UIImage(data: imageData)
-            } else {
-                image = UIImage.gif(data: imageData)
+    func setImage(with url: String, options: ZLaunchAdImageOptions, completion: ZLaunchClosure?) {
+        guard let bundleURL = URL(string: url) else { return }
+        var cache = false
+        switch options {
+        case .onlyLoad:
+            printLog("----")
+        case .readCache:
+            if let imageData = getCacheImageWithURL(bundleURL) {
+                self.image = image(data: imageData)
+                if completion != nil { completion!() }
+                return
             }
-            DispatchQueue.main.async {
-                self.image = image
-                if completion != nil {
-                    completion!()
-                }
+            cache = true
+        default:
+            cache = true
+            if let imageData = getCacheImageWithURL(bundleURL) {
+                self.image = image(data: imageData)
+                if completion != nil { completion!() }
             }
         }
+        image(url: bundleURL, cache: cache, completion: { (image) in
+            self.image = image
+            if completion != nil { completion!() }
+        })
     }
 
     /// 设置Gif图片
@@ -66,9 +70,32 @@ extension ZLaunchAdImageView {
             }
         }
     }
+    
+    private func image(url: URL, cache: Bool, completion:@escaping (UIImage?)->()) {
+        guard let imageData = try? Data(contentsOf: url) else { return }
+        if cache {
+            saveImage(imageData, url: url, completion: nil)/// 存储
+        }
+        let image = self.image(data: imageData)
+        completion(image)
+    }
+    
+    private func image(data: Data) -> UIImage? {
+        guard let imageSource = CGImageSourceCreateWithData(data as CFData, nil) else { return nil }
+        let totalCount = CGImageSourceGetCount(imageSource)
+        var image: UIImage?
+        if totalCount == 1 {
+            image = UIImage(data: data)
+        } else {
+            image = UIImage.gif(data: data)
+        }
+        return image
+    }
 }
 
 extension UIImage {
+    
+    
     class func gif(name: String) -> UIImage? {
         var nameStr = name
         if nameStr.contains(".gif") {

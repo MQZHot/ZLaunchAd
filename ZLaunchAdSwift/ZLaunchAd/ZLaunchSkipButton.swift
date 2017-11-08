@@ -8,23 +8,6 @@
 
 import UIKit
 
-public enum ZLaunchSkipButtonType: Int {
-    /// 无跳过按钮
-    case none = 0
-    /// 文字跳过
-    case text
-    /// 倒计时
-    case timer
-    /// 文字左、数字右
-    case textLeftTimerRight
-    /// 文字右、数字左
-    case textRightTimerLeft
-    /// 圆形文字
-    case roundText
-    /// 圆形进度文字
-    case roundProgressText
-}
-
 class ZLaunchSkipButton: UIButton {
     
     fileprivate var config: ZLaunchSkipButtonConfig!

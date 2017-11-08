@@ -8,35 +8,20 @@
 
 import UIKit
 
-protocol ZLaunchAPI {
-    /// 设置等待时间
-    func waitTime(_ waitTime: Int) -> ZLaunchAdVC
-    /// 设置跳过外观
-    func configSkipButton(_ config: (inout ZLaunchSkipButtonConfig) -> Void) -> ZLaunchAdVC
-    /// 设置广告图底部距离
-    func adBottom(_ adViewBottom: CGFloat) -> ZLaunchAdVC
-    /// 过渡类型
-    func animationType(_ animationType: ZLaunchAnimationType) -> ZLaunchAdVC
-    /// rootVC
-    func rootVC(_ rootViewController: UIViewController) -> ZLaunchAdVC
-    /// 加载图片
-    func setImage(_ url: String, duration: Int, action: ZLaunchClosure?)
-    /// 本地图片
-    func setImage(_ image: UIImage?, duration: Int, action: ZLaunchClosure?)
-    /// 本地GIF
-    func setGif(_ name: String, duration: Int, action: ZLaunchClosure?)
-}
-
 class ZLaunchAdVC: UIViewController {
-    
+    fileprivate var adViewConfig: ZLaunchAdViewConfig = ZLaunchAdViewConfig()
     fileprivate var skipBtnConfig: ZLaunchSkipButtonConfig = ZLaunchSkipButtonConfig()
-    fileprivate var waitTime = 3
-    fileprivate var adViewBottom: CGFloat = 100
-    fileprivate var animationType: ZLaunchAnimationType = .crossDissolve
+    fileprivate var waitTime: Int!
     fileprivate var originalTimer: DispatchSourceTimer?
     fileprivate var dataTimer: DispatchSourceTimer?
     fileprivate var adTapAction: ZLaunchClosure?
     fileprivate var rootViewController: UIViewController?
+    /// 初始化方法
+    convenience init(waitTime: Int = 3, rootVC: UIViewController) {
+        self.init()
+        if waitTime >= 1 { self.waitTime = waitTime }
+        rootViewController = rootVC
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +30,8 @@ class ZLaunchAdVC: UIViewController {
         startTimer()
     }
     
-    override var shouldAutorotate: Bool { return false }
-    
     fileprivate lazy var launchAdImgView: ZLaunchAdImageView = {
-        let height = Z_SCREEN_HEIGHT - self.adViewBottom
-        let imgView = ZLaunchAdImageView(frame: CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: height))
-        imgView.alpha = 0.2
+        let imgView = ZLaunchAdImageView(frame: adViewConfig.adFrame)
         imgView.adImageViewClick = { [weak self] in
             self?.launchAdTapAction()
         }
@@ -76,51 +57,28 @@ class ZLaunchAdVC: UIViewController {
     deinit { print("dealloc") }
 }
 
-extension ZLaunchAdVC: ZLaunchAPI {
+extension ZLaunchAdVC {
+    /// 配置
     @discardableResult
-    public func waitTime(_ waitTime: Int) -> Self {
-        if waitTime >= 1 { self.waitTime = waitTime }
+    public func configure(_ config: (inout ZLaunchSkipButtonConfig, inout ZLaunchAdViewConfig) -> Void) -> Self {
+        config(&skipBtnConfig, &adViewConfig)
         return self
     }
-    @discardableResult
-    public func configSkipButton(_ config: (inout ZLaunchSkipButtonConfig) -> Void) -> Self {
-        config(&skipBtnConfig)
-        return self
-    }
-    @discardableResult
-    public func adBottom(_ adViewBottom: CGFloat) -> Self {
-        self.adViewBottom = adViewBottom
-        return self
-    }
-    @discardableResult
-    public func animationType(_ animationType: ZLaunchAnimationType) -> Self {
-        self.animationType = animationType
-        return self
-    }
-    @discardableResult
-    public func rootVC(_ rootViewController: UIViewController) -> Self {
-        self.rootViewController = rootViewController
-        return self
-    }
-    public func setImage(_ url: String, duration: Int, action: ZLaunchClosure?) {
+    /// 加载图片
+    public func setImage(_ url: String, duration: Int, options: ZLaunchAdImageOptions = .refreshCache, action: ZLaunchClosure?) {
         view.addSubview(launchAdImgView)
-        launchAdImgView.setImage(with: url, completion: {
+        launchAdImgView.setImage(with: url, options: options) {
             self.setImage(duration: duration, action: action)
-        })
-    }
-    public func setImage(_ image: UIImage?, duration: Int, action: ZLaunchClosure?) {
-        if let image = image {
-            view.addSubview(launchAdImgView)
-            launchAdImgView.image = image
-            setImage(duration: duration, action: action)
         }
     }
+    /// 设置本地Gif
     public func setGif(_ name: String, duration: Int, action: ZLaunchClosure?) {
         view.addSubview(launchAdImgView)
         launchAdImgView.setGifImage(named: name) { 
             self.setImage(duration: duration, action: action)
         }
     }
+    
     private func setImage(duration: Int, action: ZLaunchClosure?) {
         let adDuration = duration < 1 ? 1 : duration
         adTapAction = action
@@ -128,9 +86,6 @@ extension ZLaunchAdVC: ZLaunchAPI {
         view.addSubview(skipBtn)
         if originalTimer?.isCancelled == true { return }
         adStartTimer(adDuration)
-        UIView.animate(withDuration: 0.8, animations: {
-            self.launchAdImgView.alpha = 1
-        })
     }
 }
 
@@ -140,30 +95,32 @@ extension ZLaunchAdVC {
         if originalTimer?.isCancelled == false { originalTimer?.cancel() }
         if dataTimer?.isCancelled == false { dataTimer?.cancel() }
         guard rootViewController != nil else { return }
-        ZLaunchAnimation().animationType(animationType, fromVC: self, toVC: rootViewController!, completion: completion)
+        ZLaunchAnimation().animationType(adViewConfig.animationType, fromVC: self, toVC: rootViewController!, completion: completion)
     }
 }
 
 //MARK: - GCD timer
 extension ZLaunchAdVC {
     fileprivate func startTimer() {
+        var duration: Int = waitTime
         originalTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.global())
-        originalTimer?.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(waitTime))
+        originalTimer?.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(duration))
         originalTimer?.setEventHandler(handler: {
-            printLog("等待加载计时:" + "\(self.waitTime)")
-            if self.waitTime == 0 {
+            printLog("等待加载计时:" + "\(duration)")
+            if duration == 0 {
                 DispatchQueue.main.async {
                     self.launchAdVCRemove()
                     return
                 }
             }
-            self.waitTime -= 1
+            duration -= 1
         })
         originalTimer?.resume()
     }
     /// 广告倒计时
     fileprivate func adStartTimer(_ duration: Int) {
         if self.originalTimer?.isCancelled == false { self.originalTimer?.cancel() }
+        if self.dataTimer?.isCancelled == false { self.dataTimer?.cancel() }
         var adDuration = duration
         dataTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.global())
         dataTimer?.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(adDuration))

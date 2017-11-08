@@ -12,14 +12,13 @@
 </p>
 
 
- * ZLaunchAdVC使用viewController做启动页广告，通过切换rootViewController，避免闪出首页控制器，避免处理复杂的层级关系
- * 如有问题，欢迎提出，不足之处，欢迎纠正，欢迎star ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
-
+ZLaunchAdVC集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF，支持本地图片，支持视图过渡动画，使用`viewController`做启动页广告，通过切换`rootViewController`，避免闪出首页控制器，避免处理复杂的层级关系
 
 ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic0.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic2.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic3.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic4.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic5.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic6.gif)
 
 ## 功能
 
+- [x] 支持图片缓存
 - [x] 支持自定义跳过按钮
 - [x] 支持网络/本地资源，支持GIF图片显示
 - [x] 支持LaunchImage和LaunchScreen.storyboard.
@@ -28,7 +27,9 @@
 - [x] 支持广告完成动画设置
 
 ## 使用
-
+* `didFinishLaunchingWithOptions`中设置`ZLaunchAdVC`为`rootViewController`，指定广告完成后展示的控制器，并配置广告的参数使用
+* 每次广告展示的配置可以统一，也可以通过网络数据配置，如按钮外观、图片大小、完成动画等
+* 通过推送、DeepLink等启动时，是否需要展示广告也可以灵活配置
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -39,14 +40,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         /// 通过推送等启动
         window?.rootViewController = nav
     } else {
-        /// 正常点击icon启动
-        let adVC = ZLaunchAdVC().waitTime(3).adBottom(200).animationType(.flipFromLeft).rootVC(nav).configSkipButton {
-            $0.skipBtnType = .text
-            $0.borderColor = UIColor.green
-        }
+    /// 加载广告
+        let adVC = ZLaunchAdVC(waitTime: 4,rootVC: nav)
         request {
-            adVC.setImage($0, duration: $1, action: {
-                /// do something...
+            adVC.configure { button, adView in
+                button.skipBtnType = .roundProgressText
+                button.strokeColor = UIColor.green
+                button.text = "跳过"
+                adView.animationType = .zoomOut
+            }.setImage($0, duration: $1, options: .readCache, action: {
+                let vc = UIViewController()
+                vc.view.backgroundColor = UIColor.yellow
+                homeVC.navigationController?.pushViewController(vc, animated: true)
             })
         }
         window?.rootViewController = adVC
@@ -63,39 +68,49 @@ func request(_ completion: @escaping (_ url: String, _ duration: Int)->()) -> Vo
     })
 }
 ```
-
- * 设置等待时间，默认3s
-```swift
-adVC.waitTime(5)
-```
- 
- * 设置广告图底部距离，默认100
+ ### 广告配置
+ * 通过`configure`方法配置广告参数，`configure`为闭包
+ * 闭包参数1：跳过按钮配置
  ```swift
-adVC.adBottom(200)
-```
-
-* 设置广告展示完成动画，默认溶解消失`.crossDissolve`
+ /// 按钮位置
+ var frame = CGRect(x: Z_SCREEN_WIDTH - 70,y: 42, width: 60,height: 30)
+ /// 背景颜色
+ var backgroundColor = UIColor.black.withAlphaComponent(0.4)
+ /// 文字
+ var text: NSString = "跳过"
+ /// 字体大小
+ var textFont = UIFont.systemFont(ofSize: 14)
+ /// 字体颜色
+ var textColor = UIColor.white
+ /// 数字大小
+ var timeFont = UIFont.systemFont(ofSize: 15)
+ /// 数字颜色
+ var timeColor = UIColor.red
+ /// 跳过按钮类型
+ var skipBtnType: ZLaunchSkipButtonType = .textLeftTimerRight
+ /// 圆形进度颜色
+ var strokeColor = UIColor.red
+ /// 圆形进度宽度
+ var lineWidth: CGFloat = 2
+ /// 圆角
+ var cornerRadius: CGFloat = 5
+ /// 边框颜色
+ var borderColor: UIColor = UIColor.clear
+ /// 边框宽度
+ var borderWidth: CGFloat = 1
+ ```
+ * 闭包参数2：配置广告图大小-完成动画
 ```swift
-adVC.animationType(.flipFromLeft)
+/// 广告图大小
+var adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-100)
+/// 过渡动画
+var animationType: ZLaunchAnimationType = .crossDissolve
 ```
-
-* 设置广告展示完成需要展示的控制器
-```swift
-adVC.rootVC(nav)
-```
-
- * 设置跳过按钮外观
- ```swift
-adVC.configSkipButton {
-    $0.skipBtnType = .text
-    $0.borderColor = UIColor.green
-}
-```
-
+### 加载图片
  * 加载网络图片
 ```swift
 let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif"
-adVC.setImage(url, duration: 5, action: {
+adVC.setImage(url, duration: 5, options: .readCache, action: {
     /// do something
 })
 
@@ -114,6 +129,10 @@ adVC.setGif("111", duration: 7, action: {
     /// do something
 })
 ```
+
+## 依赖
+
+*使用 [SwiftHash](https://github.com/onmyway133/SwiftHash)进行md5加密
 
 ## Install
 ```
