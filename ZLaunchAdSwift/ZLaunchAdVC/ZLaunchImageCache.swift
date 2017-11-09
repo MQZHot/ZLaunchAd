@@ -87,7 +87,6 @@ func clearDiskCacheWithImageUrlArray(_ urlArray: Array<String>) {
                 }catch {
                     printLog(error)
                 }
-                
             }
         }
     }

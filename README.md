@@ -18,8 +18,8 @@ ZLaunchAdVC集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF
 
 ## 功能
 
-- [x] 支持图片缓存
-- [x] 支持自定义跳过按钮
+- [x] 支持图片缓存，清除缓存
+- [x] 支持自定义跳过按钮外观、位置
 - [x] 支持网络/本地资源，支持GIF图片显示
 - [x] 支持LaunchImage和LaunchScreen.storyboard.
 - [x] 支持状态栏颜色设置、显示与隐藏
@@ -31,42 +31,24 @@ ZLaunchAdVC集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF
 * 每次广告展示的配置可以统一，也可以通过网络数据配置，如按钮外观、图片大小、完成动画等
 * 通过推送、DeepLink等启动时，是否需要展示广告也可以灵活配置
 ```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    window = UIWindow.init(frame: UIScreen.main.bounds)
-    window?.backgroundColor = UIColor.white
-    let homeVC = ViewController()
-    let nav = UINavigationController.init(rootViewController: homeVC)
-    if launchOptions != nil {
-        /// 通过推送等启动
-        window?.rootViewController = nav
-    } else {
-    /// 加载广告
-        let adVC = ZLaunchAdVC(waitTime: 4,rootVC: nav)
-        request {
-            adVC.configure { button, adView in
-                button.skipBtnType = .roundProgressText
-                button.strokeColor = UIColor.green
-                button.text = "跳过"
-                adView.animationType = .zoomOut
-            }.setImage($0, duration: $1, options: .readCache, action: {
-                let vc = UIViewController()
-                vc.view.backgroundColor = UIColor.yellow
-                homeVC.navigationController?.pushViewController(vc, animated: true)
-            })
-        }
-        window?.rootViewController = adVC
-    }
-    window?.makeKeyAndVisible()
-    return true
-}
-/// 网络请求
-func request(_ completion: @escaping (_ url: String, _ duration: Int)->()) -> Void {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-        let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif"
-        let adDuartion = 8
-        completion(url, adDuartion)
+/// 加载广告
+let adVC = ZLaunchAdVC(waitTime: 4,rootVC: nav)
+request { model in
+    adVC.configure { button, adView in
+
+        button.skipBtnType = model.skipBtnType
+        adView.animationType = model.animationType
+        adView.adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
+
+    }.setImage(model.imgUrl, duration: model.duration, options: .readCache, action: {
+
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.yellow
+        homeVC.navigationController?.pushViewController(vc, animated: true)
+
     })
 }
+window?.rootViewController = adVC
 ```
  ### 广告配置
  * 通过`configure`方法配置广告参数，`configure`为闭包
@@ -113,7 +95,6 @@ let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_201707241529288
 adVC.setImage(url, duration: 5, options: .readCache, action: {
     /// do something
 })
-
 ```
 
  * 设置本地图片
@@ -121,7 +102,6 @@ adVC.setImage(url, duration: 5, options: .readCache, action: {
 adVC.setImage(UIImage(named: "222"), duration: 7, action: {
     /// do something
 })
-
 ```
  * 设置本地GIF
 ```swift
@@ -132,23 +112,24 @@ adVC.setGif("111", duration: 7, action: {
 
 ## 依赖
 
-*使用 [SwiftHash](https://github.com/onmyway133/SwiftHash)进行md5加密
+* 使用 [SwiftHash](https://github.com/onmyway133/SwiftHash)进行md5加密
 
-## Install
-```
-1.pod 'ZLaunchAdVC'
+## 安装
 
-2.pod install / pod update
-```
-## CocoaPods
+* 1.pod 'ZLaunchAdVC'
+
+* 2.pod install / pod update
+
+## CocoaPods更新
 | version | content |
 |:---:|:---|
+|0.0.8|新增图片缓存，简化API，添加动画类型|
 |0.0.7|支持swift4|
 |0.0.5|1.修复倒计时时间不变<br>2.新增本地图片显示，支持GIF<br>3.增加跳过按钮配置|
 |0.0.3|1.修复无网络崩溃|
 |0.0.2|1.新增GIF图片显示<br>2.去除kingfisher<br>3.修复过渡动画重复执行|
 
-## Author
+## 联系
 
 * Email: mqz1228@163.com
 * 简 书 : http://www.jianshu.com/u/9e39ec4000e9

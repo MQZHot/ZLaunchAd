@@ -25,32 +25,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             /// 加载广告
             let adVC = ZLaunchAdVC(waitTime: 4,rootVC: nav)
-            request {
+            request { model in
                 adVC.configure { button, adView in
-                    button.skipBtnType = .roundProgressText
-                    button.strokeColor = UIColor.green
-                    button.text = "跳过"
-                    adView.animationType = .zoomOut
-                }.setImage($0, duration: $1, options: .readCache, action: {
+                    
+                    button.skipBtnType = model.skipBtnType
+                    adView.animationType = model.animationType
+                    adView.adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
+                    
+                }.setImage(model.imgUrl, duration: model.duration, options: .readCache, action: {
+                        
                     let vc = UIViewController()
                     vc.view.backgroundColor = UIColor.yellow
                     homeVC.navigationController?.pushViewController(vc, animated: true)
+                        
                 })
             }
+            
             window?.rootViewController = adVC
         }
         window?.makeKeyAndVisible()
         return true
     }
     
-    /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg
-    /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
-    func request(_ completion: @escaping (_ url: String, _ duration: Int)->()) -> Void {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-            let url = "http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif"
-            let adDuartion = 8
-            completion(url, adDuartion)
-        })
+    /// 模拟请求数据，此处解析json文件
+    func request(_ completion: @escaping (AdModel)->()) -> Void {
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            if let path = Bundle.main.path(forResource: "data", ofType: "json") {
+                let url = URL(fileURLWithPath: path)
+                do {
+                    let data = try Data(contentsOf: url)
+                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    if let dict = json as? [String: Any],
+                        let dataArray = dict["data"] as? [[String: Any]] {
+                        /// 随机显示
+                        let idx = Int(arc4random()) % dataArray.count
+                        let model = AdModel(dataArray[idx])
+                        completion(model)
+                    }
+                } catch  {
+                    print(error)
+                }
+            }
+        }
     }
 }
 

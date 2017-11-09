@@ -1,14 +1,15 @@
 //
-//  ZLaunchSkipButton.swift
+//  ZLaunchButton.swift
 //  ZLaunchAdSwift
 //
-//  Created by mengqingzheng on 2017/11/6.
+//  Created by mengqingzheng on 2017/11/9.
 //  Copyright © 2017年 meng. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ZLaunchSkipButton: UIButton {
+class ZLaunchButton: UIButton {
     
     fileprivate var config: ZLaunchSkipButtonConfig!
     fileprivate var adDuration: Int!
@@ -48,7 +49,7 @@ class ZLaunchSkipButton: UIButton {
             setTitle("\(config.text)", for: .normal)
             setTitleColor(config.textColor, for: .normal)
             titleLabel?.font = config.textFont
-       
+            
         case .roundProgressText:
             
             setTitle("\(config.text)", for: .normal)
@@ -96,15 +97,15 @@ class ZLaunchSkipButton: UIButton {
         let bezierPath = UIBezierPath(ovalIn: bounds)
         layer.path = bezierPath.cgPath
         layer.strokeStart = 0
-        layer.strokeEnd = 0.98
+        layer.strokeEnd = 1
         
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        let animation = CABasicAnimation(keyPath: "strokeStart")
         animation.duration = Double(adDuration)
         animation.fromValue = 0
         animation.toValue = 0.98
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
-        layer.add(animation, forKey: "strokeEndAnimation")
+        layer.add(animation, forKey: "strokeStartAnimation")
         return layer
     }()
 }
