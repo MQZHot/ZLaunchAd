@@ -1,8 +1,8 @@
 //
-//  ZLaunchImageView.swift
+//  ZLaunchAdImageView.swift
 //  ZLaunchAdSwift
 //
-//  Created by mengqingzheng on 2017/7/24.
+//  Created by mengqingzheng on 2017/11/9.
 //  Copyright © 2017年 meng. All rights reserved.
 //
 
@@ -56,7 +56,7 @@ extension ZLaunchAdImageView {
             if completion != nil { completion!() }
         })
     }
-
+    
     /// 设置Gif图片
     func setGifImage(named name: String, completion: ZLaunchClosure?) {
         DispatchQueue.global().async {
@@ -130,3 +130,4 @@ extension UIImage {
         return animation
     }
 }
+

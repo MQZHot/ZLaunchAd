@@ -1,8 +1,8 @@
 //
-//  ZLaunchImageView
+//  ZLaunchImageView.swift
 //  ZLaunchAdSwift
 //
-//  Created by mengqingzheng on 2017/11/5.
+//  Created by mengqingzheng on 2017/11/9.
 //  Copyright © 2017年 meng. All rights reserved.
 //
 
@@ -70,3 +70,4 @@ extension ZLaunchImageView {
         return image
     }
 }
+

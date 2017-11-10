@@ -1,8 +1,8 @@
 //
-//  ZLaunchAdVC+Config.swift
-//  ZLaunchAdDemo
+//  ZLaunchConfig.swift
+//  ZLaunchAdSwift
 //
-//  Created by mengqingzheng on 2017/8/17.
+//  Created by mengqingzheng on 2017/11/9.
 //  Copyright © 2017年 meng. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ let Z_SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let Z_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
 public typealias ZLaunchClosure = ()->()
+
 // MARK: - 完成动画类型
 public enum ZLaunchAnimationType: Int {
     /// 缩小
@@ -40,6 +41,7 @@ public enum ZLaunchAnimationType: Int {
     case slideFromRight
 }
 // MARK: - 跳过按钮类型
+
 public enum ZLaunchSkipButtonType: Int {
     /// 无跳过按钮
     case none = 0
@@ -66,7 +68,7 @@ public enum ZLaunchAdImageOptions: Int {
     case readCache
 }
 // MARK: - 配置跳过按钮
-struct ZLaunchSkipButtonConfig {
+public struct ZLaunchSkipButtonConfig {
     /// frame
     var frame = CGRect(x: Z_SCREEN_WIDTH - 70,y: 42, width: 60,height: 30)
     /// 背景颜色
@@ -95,10 +97,11 @@ struct ZLaunchSkipButtonConfig {
     var borderWidth: CGFloat = 1
 }
 // MARK: - 配置
-struct ZLaunchAdViewConfig {
+public struct ZLaunchAdViewConfig {
     /// 广告图大小
     var adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-100)
     /// 过渡动画
     var animationType: ZLaunchAnimationType = .crossDissolve
 }
+
 

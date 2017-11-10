@@ -2,7 +2,7 @@
 //  ZLaunchAnimation.swift
 //  ZLaunchAdSwift
 //
-//  Created by mengqingzheng on 2017/11/7.
+//  Created by mengqingzheng on 2017/11/9.
 //  Copyright © 2017年 meng. All rights reserved.
 //
 
@@ -134,3 +134,4 @@ class ZLaunchAnimation: NSObject, CAAnimationDelegate {
         }
     }
 }
+
