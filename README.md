@@ -1,16 +1,7 @@
-<p align="center">
-<img src="https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/ZLaunchAdVC.png" alt="ZLaunchAdVC" title="ZLaunchAdVC" width="408"/>
-</p>
 
-<p align="center">
-<img src="https://img.shields.io/badge/platform-iOS-yellow.svg">
-<img src="https://img.shields.io/badge/language-swift-red.svg">
-<img src="https://img.shields.io/badge/support-swift%204%2B-green.svg">
-<img src="https://img.shields.io/badge/support-iOS%208%2B-blue.svg">
-<img src="https://img.shields.io/badge/license-MIT%20License-brightgreen.svg">
-<img src="https://img.shields.io/cocoapods/v/ZLaunchAdVC.svg?style=flat">
-</p>
+## ZLaunchAdVC
 
+![image](https://img.shields.io/badge/platform-iOS-yellow.svg)  ![image](https://img.shields.io/badge/support-swift%204%2B-green.svg)  ![image](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![image](https://img.shields.io/cocoapods/v/ZLaunchAdVC.svg?style=flat)
 
 ZLaunchAdVC集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF，支持本地图片，支持视图过渡动画，使用`viewController`做启动页广告，通过切换`rootViewController`，避免闪出首页控制器，避免处理复杂的层级关系
 

@@ -46,7 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         return true
     }
-    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+    }
+}
+
+extension AppDelegate {
     /// 模拟请求数据，此处解析json文件
     func request(_ completion: @escaping (AdModel)->()) -> Void {
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
@@ -69,4 +74,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
