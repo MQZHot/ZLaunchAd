@@ -6,6 +6,6 @@ use_frameworks!
 
 target 'ZLaunchAdSwift' do
 
- pod 'SwiftHash', '~> 2.0.0'
+pod 'SwiftHash', '~> 2.0.0'
  
 end

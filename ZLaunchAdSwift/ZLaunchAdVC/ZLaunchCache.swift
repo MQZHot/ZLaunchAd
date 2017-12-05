@@ -37,10 +37,6 @@ public func clearDiskCacheWithImageUrlArray(_ urlArray: Array<String>) {
     }
 }
 
-
-
-
-
 /// 缓存图片
 func saveImage(_ data: Data, url: URL, completion: ((Bool)->())?) {
     DispatchQueue.global().async {

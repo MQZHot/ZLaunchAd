@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         let homeVC = ViewController()
-        let nav = UINavigationController.init(rootViewController: homeVC)
+        let nav = UINavigationController(rootViewController: homeVC)
         if launchOptions != nil {
             /// 通过推送等方式启动
             window?.rootViewController = nav
