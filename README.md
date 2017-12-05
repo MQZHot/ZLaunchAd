@@ -1,7 +1,7 @@
 
 ## ZLaunchAdVC
 
-![image](https://img.shields.io/badge/platform-iOS-yellow.svg)  ![image](https://img.shields.io/badge/support-swift%204%2B-green.svg)  ![image](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![image](https://img.shields.io/cocoapods/v/ZLaunchAdVC.svg?style=flat)
+![image](https://img.shields.io/badge/platform-iOS-yellow.svg)  ![image](https://img.shields.io/badge/support-swift%204-green.svg)  ![image](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![image](https://img.shields.io/cocoapods/v/ZLaunchAdVC.svg?style=flat)
 
 ZLaunchAdVC集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF，支持本地图片，支持视图过渡动画，使用`viewController`做启动页广告，通过切换`rootViewController`，避免闪出首页控制器，避免处理复杂的层级关系
 
@@ -110,15 +110,6 @@ adVC.setGif("111", duration: 7, action: {
 * 1.pod 'ZLaunchAdVC'
 
 * 2.pod install / pod update
-
-## CocoaPods更新
-| version | content |
-|:---:|:---|
-|0.0.8|新增图片缓存，简化API，添加动画类型|
-|0.0.7|支持swift4|
-|0.0.5|1.修复倒计时时间不变<br>2.新增本地图片显示，支持GIF<br>3.增加跳过按钮配置|
-|0.0.3|1.修复无网络崩溃|
-|0.0.2|1.新增GIF图片显示<br>2.去除kingfisher<br>3.修复过渡动画重复执行|
 
 ## 联系
 
