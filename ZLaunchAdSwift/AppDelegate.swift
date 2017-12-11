@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeVC = ViewController()
         let nav = UINavigationController(rootViewController: homeVC)
         if launchOptions != nil {
-            /// 通过推送等方式启动
+            /// 通过推送、Deeplink等方式启动
             window?.rootViewController = nav
         } else {
             /// 加载广告

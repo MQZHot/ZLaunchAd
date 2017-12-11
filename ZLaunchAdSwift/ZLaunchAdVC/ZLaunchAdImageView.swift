@@ -15,7 +15,7 @@ class ZLaunchAdImageView: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(adImageViewTapAction))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(adImageViewTapAction))
         addGestureRecognizer(tap)
     }
     

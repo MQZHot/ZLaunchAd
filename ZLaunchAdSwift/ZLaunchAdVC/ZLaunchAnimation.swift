@@ -10,7 +10,7 @@ import UIKit
 
 class ZLaunchAnimation: NSObject, CAAnimationDelegate {
     
-    private let animationDuration = 0.5
+    private let animationDuration = 0.8
     private var animationCompletion: ZLaunchClosure?
     private var animationView: UIView!
     private var animationType: ZLaunchAnimationType!
@@ -21,64 +21,79 @@ class ZLaunchAnimation: NSObject, CAAnimationDelegate {
         self.animationCompletion = completion
         switch animationType {
         case .crossDissolve, .curlUp, .flipFromBottom, .flipFromLeft, .flipFromRight, .flipFromTop:
+            
             let closure = {
                 UIView.setAnimationsEnabled(false)
                 UIApplication.shared.keyWindow?.rootViewController = toVC
+                if  completion != nil { completion!() }
                 UIView.setAnimationsEnabled(true)
             }
-            UIView.transition(with: UIApplication.shared.keyWindow!, duration: animationDuration, options: animationOptions(animationType), animations: closure) { success in
-                if success && completion != nil {
-                    completion!()
-                }
+            UIView.transition(with: UIApplication.shared.keyWindow!, duration: self.animationDuration, options: self.animationOptions(animationType), animations: closure) { _ in
+                
             }
+            
         case .zoomOut:
             toVC.view.addSubview(fromVC.view)
             UIApplication.shared.keyWindow?.rootViewController = toVC
-            animationZoom(fromVC.view)
+            if completion != nil { completion!() }
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2, execute: {
+                self.animationZoom(fromVC.view)
+            })
+            
         case .slideFromTop:
             toVC.view.addSubview(fromVC.view)
             UIApplication.shared.keyWindow?.rootViewController = toVC
+            if completion != nil { completion!() }
             var frame = fromVC.view.frame
-            
-            UIView.animate(withDuration: animationDuration, animations: {
-                frame.origin.y = -frame.size.height
-                fromVC.view.frame = frame
-            }, completion: { _ in
-                if completion != nil { completion!() }
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2, execute: {
+                UIView.animate(withDuration: self.animationDuration, animations: {
+                    frame.origin.y = -frame.size.height
+                    fromVC.view.frame = frame
+                }, completion: { _ in
+                    fromVC.view.removeFromSuperview()
+                })
             })
         case .slideFromBottom:
             toVC.view.addSubview(fromVC.view)
             UIApplication.shared.keyWindow?.rootViewController = toVC
+            if completion != nil { completion!() }
             var frame = fromVC.view.frame
-            
-            UIView.animate(withDuration: animationDuration, animations: {
-                frame.origin.y = frame.size.height
-                fromVC.view.frame = frame
-            }, completion: { _ in
-                if completion != nil { completion!() }
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2, execute: {
+                UIView.animate(withDuration: self.animationDuration, animations: {
+                    frame.origin.y = frame.size.height
+                    fromVC.view.frame = frame
+                }, completion: { _ in
+                    fromVC.view.removeFromSuperview()
+                })
             })
         case .slideFromLeft:
             toVC.view.addSubview(fromVC.view)
             UIApplication.shared.keyWindow?.rootViewController = toVC
+            if completion != nil { completion!() }
             var frame = fromVC.view.frame
-            
-            UIView.animate(withDuration: animationDuration, animations: {
-                frame.origin.x = -frame.size.width
-                fromVC.view.frame = frame
-            }, completion: { _ in
-                if completion != nil { completion!() }
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2, execute: {
+                UIView.animate(withDuration: self.animationDuration, animations: {
+                    frame.origin.x = -frame.size.width
+                    fromVC.view.frame = frame
+                }, completion: { _ in
+                   fromVC.view.removeFromSuperview()
+                })
             })
+            
         case .slideFromRight:
             toVC.view.addSubview(fromVC.view)
             UIApplication.shared.keyWindow?.rootViewController = toVC
+            if completion != nil { completion!() }
             var frame = fromVC.view.frame
-            
-            UIView.animate(withDuration: animationDuration, animations: {
-                frame.origin.x = frame.size.width
-                fromVC.view.frame = frame
-            }, completion: { _ in
-                if completion != nil { completion!() }
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2, execute: {
+                UIView.animate(withDuration: self.animationDuration, animations: {
+                    frame.origin.x = frame.size.width
+                    fromVC.view.frame = frame
+                }, completion: { _ in
+                    fromVC.view.removeFromSuperview()
+                })
             })
+            
         case .none:
             UIApplication.shared.keyWindow?.rootViewController = toVC
         }
@@ -129,9 +144,9 @@ class ZLaunchAnimation: NSObject, CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         animationView.removeFromSuperview()
         animationView = nil
-        if flag && self.animationCompletion != nil {
-            self.animationCompletion!()
-        }
+//        if flag && self.animationCompletion != nil {
+//            self.animationCompletion!()
+//        }
     }
 }
 
