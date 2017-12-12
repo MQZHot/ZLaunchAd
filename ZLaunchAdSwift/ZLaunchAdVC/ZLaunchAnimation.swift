@@ -11,14 +11,12 @@ import UIKit
 class ZLaunchAnimation: NSObject, CAAnimationDelegate {
     
     private let animationDuration = 0.8
-    private var animationCompletion: ZLaunchClosure?
     private var animationView: UIView!
     private var animationType: ZLaunchAnimationType!
     private var toVC: UIViewController!
     
     func animationType(_ animationType: ZLaunchAnimationType, fromVC: UIViewController, toVC: UIViewController, completion: ZLaunchClosure?) {
         self.animationType = animationType
-        self.animationCompletion = completion
         switch animationType {
         case .crossDissolve, .curlUp, .flipFromBottom, .flipFromLeft, .flipFromRight, .flipFromTop:
             
@@ -28,9 +26,7 @@ class ZLaunchAnimation: NSObject, CAAnimationDelegate {
                 if  completion != nil { completion!() }
                 UIView.setAnimationsEnabled(true)
             }
-            UIView.transition(with: UIApplication.shared.keyWindow!, duration: self.animationDuration, options: self.animationOptions(animationType), animations: closure) { _ in
-                
-            }
+            UIView.transition(with: UIApplication.shared.keyWindow!, duration: animationDuration, options: animationOptions(animationType), animations: closure, completion: nil)
             
         case .zoomOut:
             toVC.view.addSubview(fromVC.view)
@@ -144,9 +140,5 @@ class ZLaunchAnimation: NSObject, CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         animationView.removeFromSuperview()
         animationView = nil
-//        if flag && self.animationCompletion != nil {
-//            self.animationCompletion!()
-//        }
     }
 }
-

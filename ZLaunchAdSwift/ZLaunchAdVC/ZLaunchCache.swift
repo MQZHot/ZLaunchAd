@@ -10,7 +10,7 @@ import UIKit
 import SwiftHash
 
 // MARK: - 清除缓存
-public func clearDiskCache() {
+public func ZLaunchAdClearDiskCache() {
     DispatchQueue.global().async {
         do {
             try FileManager.default.removeItem(atPath: cacheImagePath())
@@ -21,7 +21,7 @@ public func clearDiskCache() {
     }
 }
 // MARK: - 清除指定url缓存
-public func clearDiskCacheWithImageUrlArray(_ urlArray: Array<String>) {
+public func ZLaunchAdClearDiskCacheWithImageUrlArray(_ urlArray: Array<String>) {
     if urlArray.count == 0 { return }
     DispatchQueue.global().async {
         for url in urlArray {

@@ -48,7 +48,7 @@ extension ZLaunchAdImageView {
             cache = true
             if let imageData = getCacheImageWithURL(bundleURL) {
                 self.image = ZGIFImage.image(data: imageData)
-                if completion != nil { completion!() }
+//                if completion != nil { completion!() }
             }
         }
         image(url: bundleURL, cache: cache, completion: { (image) in

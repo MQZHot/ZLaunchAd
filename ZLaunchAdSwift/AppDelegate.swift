@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     adView.animationType = model.animationType
                     adView.adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
                     
-                }.setImage(model.imgUrl, duration: model.duration, options: .readCache, action: {
+                }.setImage(model.imgUrl, duration: model.duration, options: .refreshCache, action: {
                         
                     let vc = UIViewController()
                     vc.view.backgroundColor = UIColor.yellow

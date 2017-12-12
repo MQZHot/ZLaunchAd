@@ -106,6 +106,8 @@
 		D6811E901FB54199002E8D49 /* ZLaunchAdVC */ = {
 			isa = PBXGroup;
 			children = (
+				D6811E991FB54199002E8D49 /* ZLaunchAdVC.swift */,
+				D6811E971FB54199002E8D49 /* ZLaunchConfig.swift */,
 				D697A7331FD63F5100E383B3 /* ZGIFImage.swift */,
 				D6811E911FB54199002E8D49 /* ZLaunchAdImageView.swift */,
 				D6811E921FB54199002E8D49 /* ZLaunchCache.swift */,
@@ -113,9 +115,7 @@
 				D6811E941FB54199002E8D49 /* ZLaunchImageView.swift */,
 				D6811E951FB54199002E8D49 /* ZLaunchLog.swift */,
 				D6811E961FB54199002E8D49 /* ZLaunchStatusBar.swift */,
-				D6811E971FB54199002E8D49 /* ZLaunchConfig.swift */,
 				D6811E981FB54199002E8D49 /* ZLaunchAnimation.swift */,
-				D6811E991FB54199002E8D49 /* ZLaunchAdVC.swift */,
 			);
 			path = ZLaunchAdVC;
 			sourceTree = "<group>";
