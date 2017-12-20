@@ -114,7 +114,6 @@ adVC.setGif("111", duration: 7, action: {
 ## 联系
 
 * Email: mqz1228@163.com
-* 简 书 : http://www.jianshu.com/u/9e39ec4000e9
 
 ## LICENSE
 
