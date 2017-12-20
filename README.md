@@ -7,17 +7,16 @@ ZLaunchAdVC集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF
 
 ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic0.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic2.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic3.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic4.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic5.gif) ![image](https://github.com/MQZHot/ZLaunchAdVC/raw/master/Picture/pic6.gif)
 
-## 功能
-
-- [x] 支持图片缓存，清除缓存
-- [x] 支持自定义跳过按钮外观、位置
+### 功能
+- [x] 支持Objective-C/Swift
+- [x] 自带图片缓存，清除缓存
+- [x] 自定义跳过按钮外观、位置
 - [x] 支持网络/本地资源，支持GIF图片显示
 - [x] 支持LaunchImage和LaunchScreen.storyboard.
-- [x] 支持状态栏颜色设置、显示与隐藏
-- [x] 支持广告点击事件
-- [x] 支持广告完成动画设置
+- [x] 状态栏颜色设置同Deployment Info一致
+- [x] 支持广告点击事件，支持广告完成动画设置
 
-## 使用
+### 使用
 * `didFinishLaunchingWithOptions`中设置`ZLaunchAdVC`为`rootViewController`，指定广告完成后展示的控制器，并配置广告的参数使用
 * 每次广告展示的配置可以统一，也可以通过网络数据配置，如按钮外观、图片大小、完成动画等
 * 通过推送、DeepLink等启动时，是否需要展示广告也可以灵活配置
@@ -26,22 +25,19 @@ ZLaunchAdVC集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF
 let adVC = ZLaunchAdVC(waitTime: 4,rootVC: nav)
 request { model in
     adVC.configure { button, adView in
-
         button.skipBtnType = model.skipBtnType
         adView.animationType = model.animationType
         adView.adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
-
-    }.setImage(model.imgUrl, duration: model.duration, options: .readCache, action: {
-
+    }
+    adVC.setImage(model.imgUrl, duration: model.duration, options: .readCache, action: {
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.yellow
         homeVC.navigationController?.pushViewController(vc, animated: true)
-
     })
 }
 window?.rootViewController = adVC
 ```
- ### 广告配置
+ ### 页面配置
  * 通过`configure`方法配置广告参数，`configure`为闭包
  * 闭包参数1：跳过按钮配置
  ```swift
@@ -72,7 +68,7 @@ window?.rootViewController = adVC
  /// 边框宽度
  var borderWidth: CGFloat = 1
  ```
- * 闭包参数2：配置广告图大小-完成动画
+ * 闭包参数2：配置广告图
 ```swift
 /// 广告图大小
 var adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-100)
