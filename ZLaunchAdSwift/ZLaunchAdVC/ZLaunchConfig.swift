@@ -14,7 +14,7 @@ let Z_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 public typealias ZLaunchClosure = ()->()
 
 // MARK: - 完成动画类型
-public enum ZLaunchAnimationType: Int {
+@objc public enum ZLaunchAnimationType: Int {
     /// 缩小
     case zoomOut = 0
     /// 溶解消失
@@ -40,7 +40,7 @@ public enum ZLaunchAnimationType: Int {
 }
 // MARK: - 跳过按钮类型
 
-public enum ZLaunchSkipButtonType: Int {
+@objc public enum ZLaunchSkipButtonType: Int {
     /// 无跳过按钮
     case none = 0
     /// 文字跳过
@@ -57,7 +57,7 @@ public enum ZLaunchSkipButtonType: Int {
     case roundProgressText
 }
 // MARK: - 缓存方式
-public enum ZLaunchAdImageOptions: Int {
+@objc public enum ZLaunchAdImageOptions: Int {
     /// 只加载，不缓存
     case onlyLoad = 0
     /// 先读缓存，再加载图片，刷新缓存
@@ -66,38 +66,38 @@ public enum ZLaunchAdImageOptions: Int {
     case readCache
 }
 // MARK: - 配置跳过按钮
-public struct ZLaunchSkipButtonConfig {
+@objc public class ZLaunchSkipButtonConfig: NSObject {
     /// frame
-    public var frame = CGRect(x: Z_SCREEN_WIDTH - 70,y: 42, width: 60,height: 30)
+    @objc public var frame = CGRect(x: Z_SCREEN_WIDTH - 70,y: 42, width: 60,height: 30)
     /// 背景颜色
-    public var backgroundColor = UIColor.black.withAlphaComponent(0.4)
+    @objc public var backgroundColor = UIColor.black.withAlphaComponent(0.4)
+    /// 文字
+    @objc public var text: NSString = "跳过"
     /// 字体大小
-    public var textFont = UIFont.systemFont(ofSize: 14)
+    @objc public var textFont = UIFont.systemFont(ofSize: 14)
     /// 字体颜色
-    public var textColor = UIColor.white
+    @objc public var textColor = UIColor.white
     /// 数字大小
-    public var timeFont = UIFont.systemFont(ofSize: 15)
+    @objc public var timeFont = UIFont.systemFont(ofSize: 15)
     /// 数字颜色
-    public var timeColor = UIColor.red
+    @objc public var timeColor = UIColor.red
     /// 跳过按钮类型
-    public var skipBtnType: ZLaunchSkipButtonType = .textLeftTimerRight
+    @objc public var skipBtnType: ZLaunchSkipButtonType = .textLeftTimerRight
     /// 圆形进度颜色
-    public var strokeColor = UIColor.red
+    @objc public var strokeColor = UIColor.red
     /// 圆形进度宽度
-    public var lineWidth: CGFloat = 2
+    @objc public var lineWidth: CGFloat = 2
     /// 圆角
-    public var cornerRadius: CGFloat = 5
+    @objc public var cornerRadius: CGFloat = 5
     /// 边框颜色
-    public var borderColor: UIColor = UIColor.clear
+    @objc public var borderColor: UIColor = UIColor.clear
     /// 边框宽度
-    public var borderWidth: CGFloat = 1
-    /// 设置文字
-    public var text: NSString = "跳过"
+    @objc public var borderWidth: CGFloat = 1
 }
-// MARK: - 配置广告图
-public struct ZLaunchAdViewConfig {
+// MARK: - 配置
+@objc public class ZLaunchAdViewConfig: NSObject {
     /// 广告图大小
-    public var adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-100)
+    @objc public var adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-100)
     /// 过渡动画
-    public var animationType: ZLaunchAnimationType = .crossDissolve
+    @objc public var animationType: ZLaunchAnimationType = .crossDissolve
 }

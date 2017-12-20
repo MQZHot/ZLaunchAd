@@ -71,7 +71,6 @@ class ZLaunchButton: UIButton {
             layer.cornerRadius = frame.size.height * 0.5
             layer.borderColor = config.borderColor.cgColor
             layer.borderWidth = config.borderWidth
-            layer.cornerRadius = config.cornerRadius
         case .roundProgressText:
             frame.size.width = frame.size.height
             self.frame = frame
@@ -102,7 +101,7 @@ class ZLaunchButton: UIButton {
         let animation = CABasicAnimation(keyPath: "strokeStart")
         animation.duration = Double(adDuration)
         animation.fromValue = 0
-        animation.toValue = 0.98
+        animation.toValue = 0.9999
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         layer.add(animation, forKey: "strokeStartAnimation")

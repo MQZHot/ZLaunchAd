@@ -13,7 +13,7 @@ extension ZLaunchAdVC {
         return Bundle.main.infoDictionary?["UIStatusBarHidden"] as! Bool
     }
     override public var preferredStatusBarStyle: UIStatusBarStyle {
-        let str = Bundle.main.infoDictionary?["UIStatusBarStyle"] as! String
+        let str = Bundle.main.infoDictionary?["UIStatusBarStyle"] as? String ?? ""
         return str.contains("Default") ? .default : .lightContent
     }
 }

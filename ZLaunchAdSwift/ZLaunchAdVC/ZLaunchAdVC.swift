@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class ZLaunchAdVC: UIViewController {
+@objc public class ZLaunchAdVC: UIViewController {
     
     /// 初始化方法
     ///
     /// - Parameters:
     ///   - waitTime: 等待加载时间
     ///   - rootVC: 广告显示完成后展示的控制器
-    convenience public init(waitTime: Int = 3, rootVC: UIViewController) {
+    @objc convenience public init(waitTime: Int = 3, rootVC: UIViewController) {
         self.init()
         if waitTime >= 1 { self.waitTime = waitTime }
         rootViewController = rootVC
@@ -26,19 +26,29 @@ public class ZLaunchAdVC: UIViewController {
     /// - Parameter config: 跳过按钮配置--广告配置
     /// - Returns: ZLaunchAdVC
     @discardableResult
-    public func configure(_ config: (inout ZLaunchSkipButtonConfig, inout ZLaunchAdViewConfig) -> Void) -> Self {
-        config(&skipBtnConfig, &adViewConfig)
+    public func configure(_ config: ( ZLaunchSkipButtonConfig,  ZLaunchAdViewConfig) -> Void)->Self {
+        config(skipBtnConfig, adViewConfig)
         return self
     }
     
-    /// 加载网络图片 --- GIF也可以加载
+    /// 外观配置 -- Objc
+    ///
+    /// - Parameters:
+    ///   - buttonConfig: 跳过按钮
+    ///   - adViewConfig: 广告图
+    @objc public func configure(buttonConfig: ZLaunchSkipButtonConfig? = nil, adViewConfig: ZLaunchAdViewConfig? = nil) {
+        if let buttonConfig = buttonConfig { skipBtnConfig = buttonConfig }
+        if let adViewConfig = adViewConfig { self.adViewConfig = adViewConfig }
+    }
+    
+    /// 加载网络图片
     ///
     /// - Parameters:
     ///   - url: 图片url
     ///   - duration: 显示秒数
     ///   - options: 缓存方式
     ///   - action: 点击响应事件
-    public func setImage(_ url: String, duration: Int, options: ZLaunchAdImageOptions = .readCache, action: ZLaunchClosure?) {
+    @objc public func setImage(_ url: String, duration: Int, options: ZLaunchAdImageOptions = .readCache, action: ZLaunchClosure?) {
         view.addSubview(launchAdImgView)
         launchAdImgView.setImage(with: url, options: options) {
             self.setImage(duration: duration, action: action)
@@ -51,11 +61,23 @@ public class ZLaunchAdVC: UIViewController {
     ///   - name: GIF名称
     ///   - duration: 显示秒数
     ///   - action: 点击响应事件
-    public func setGif(_ name: String, duration: Int, action: ZLaunchClosure?) {
+    @objc public func setGif(_ name: String, duration: Int, action: ZLaunchClosure?) {
         view.addSubview(launchAdImgView)
         launchAdImgView.setGifImage(named: name) {
             self.setImage(duration: duration, action: action)
         }
+    }
+    
+    /// 清除全部缓存
+    @objc public class func clearDiskCache() {
+        ZLaunchAdClearDiskCache()
+    }
+    
+    /// 清除指定url的缓存
+    ///
+    /// - Parameter urlArray: url数组
+    @objc public class func clearDiskCacheWithImageUrlArray(_ urlArray: Array<String>) {
+        ZLaunchAdClearDiskCacheWithImageUrlArray(urlArray)
     }
     
     fileprivate var adViewConfig: ZLaunchAdViewConfig = ZLaunchAdViewConfig()
