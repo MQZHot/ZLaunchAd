@@ -2,13 +2,15 @@
 //  ZLaunchAdVC.swift
 //  ZLaunchAdSwift
 //
-//  Created by mengqingzheng on 2017/11/9.
-//  Copyright © 2017年 meng. All rights reserved.
+//  Created by MQZHot on 2017/4/5.
+//  Copyright © 2017年 MQZHot. All rights reserved.
+//
+//  https://github.com/MQZHot/ZLaunchAdVC
 //
 
 import UIKit
-
-@objc public class ZLaunchAdVC: UIViewController {
+@objc
+public class ZLaunchAdVC: UIViewController {
     
     /// 初始化方法
     ///
@@ -55,6 +57,18 @@ import UIKit
         }
     }
     
+    /// 设置本地图片
+    ///
+    /// - Parameters:
+    ///   - image: 本地图片
+    ///   - duration: 显示时间
+    ///   - action: 点击响应事件
+    @objc public func setImage(_ image: UIImage, duration: Int, action: ZLaunchClosure?) {
+        view.addSubview(launchAdImgView)
+        launchAdImgView.image = image
+        setImage(duration: duration, action: action)
+    }
+    
     /// 设置本地GIF
     ///
     /// - Parameters:
@@ -79,7 +93,7 @@ import UIKit
     @objc public class func clearDiskCacheWithImageUrlArray(_ urlArray: Array<String>) {
         ZLaunchAdClearDiskCacheWithImageUrlArray(urlArray)
     }
-    
+    ////////////-----------------------------------------------------/////////////
     fileprivate var adViewConfig: ZLaunchAdViewConfig = ZLaunchAdViewConfig()
     fileprivate var skipBtnConfig: ZLaunchSkipButtonConfig = ZLaunchSkipButtonConfig()
     fileprivate var waitTime: Int!

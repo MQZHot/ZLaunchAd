@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         let homeVC = ViewController()
@@ -28,28 +27,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let adVC = ZLaunchAdVC(waitTime: 4,rootVC: nav)
             request { model in
                 adVC.configure { button, adView in
-                    
                     button.skipBtnType = model.skipBtnType
                     adView.animationType = model.animationType
                     adView.adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
-                    
-                }.setImage(model.imgUrl, duration: model.duration, options: .refreshCache, action: {
-                        
+                }
+                adVC.setImage(model.imgUrl, duration: model.duration, options: .refreshCache, action: {
                     let vc = UIViewController()
                     vc.view.backgroundColor = UIColor.yellow
                     homeVC.navigationController?.pushViewController(vc, animated: true)
-                        
                 })
             }
-            
             window?.rootViewController = adVC
         }
         window?.makeKeyAndVisible()
         return true
     }
-    
 }
-
 extension AppDelegate {
     /// 模拟请求数据，此处解析json文件
     func request(_ completion: @escaping (AdModel)->()) -> Void {

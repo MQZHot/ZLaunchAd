@@ -97,21 +97,31 @@ adVC.setGif("111", duration: 7, action: {
 })
 ```
 
-## 依赖
+### 清除缓存
+```swift
+/// 清除全部缓存
+ZLaunchAdVC.clearDiskCache()
+
+/// 清除指定url的缓存
+let array = ["http://..", "http://..", "http://..", "http://.."]
+ZLaunchAdVC.clearDiskCacheWithImageUrlArray(array)
+```
+
+### 依赖
 
 * 使用 [SwiftHash](https://github.com/onmyway133/SwiftHash)进行md5加密
 
-## 安装
+### 安装
 
 * 1.pod 'ZLaunchAdVC'
 
 * 2.pod install / pod update
 
-## 联系
+### 联系
 
 * Email: mqz1228@163.com
 
-## LICENSE
+### LICENSE
 
 ZLaunchAdVC is released under the MIT license. See [LICENSE](https://github.com/MQZHot/ZLaunchAdVC/blob/master/LICENSE) for details.
 
