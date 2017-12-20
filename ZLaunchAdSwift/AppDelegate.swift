@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let vc = UIViewController()
                     vc.view.backgroundColor = UIColor.yellow
                     homeVC.navigationController?.pushViewController(vc, animated: true)
-                        
                 })
             }
             
@@ -46,9 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         window?.makeKeyAndVisible()
         return true
-    }
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        
     }
 }
 

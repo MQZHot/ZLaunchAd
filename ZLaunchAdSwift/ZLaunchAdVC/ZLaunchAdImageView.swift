@@ -48,7 +48,6 @@ extension ZLaunchAdImageView {
             cache = true
             if let imageData = getCacheImageWithURL(bundleURL) {
                 self.image = ZGIFImage.image(data: imageData)
-//                if completion != nil { completion!() }
             }
         }
         image(url: bundleURL, cache: cache, completion: { (image) in
@@ -73,9 +72,7 @@ extension ZLaunchAdImageView {
     
     private func image(url: URL, cache: Bool, completion:@escaping (UIImage?)->()) {
         guard let imageData = try? Data(contentsOf: url) else { return }
-        if cache {
-            saveImage(imageData, url: url, completion: nil)/// 存储
-        }
+        if cache { saveImage(imageData, url: url, completion: nil) } /// 存储
         let image = ZGIFImage.image(data: imageData)
         completion(image)
     }

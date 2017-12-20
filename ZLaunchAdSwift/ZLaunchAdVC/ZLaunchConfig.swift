@@ -17,8 +17,6 @@ public typealias ZLaunchClosure = ()->()
 public enum ZLaunchAnimationType: Int {
     /// 缩小
     case zoomOut = 0
-    /// 无动画
-    case none
     /// 溶解消失
     case crossDissolve
     /// 翻页
@@ -93,16 +91,13 @@ public struct ZLaunchSkipButtonConfig {
     public var borderColor: UIColor = UIColor.clear
     /// 边框宽度
     public var borderWidth: CGFloat = 1
-    
     /// 设置文字
     public var text: NSString = "跳过"
 }
-// MARK: - 配置
+// MARK: - 配置广告图
 public struct ZLaunchAdViewConfig {
     /// 广告图大小
     public var adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-100)
     /// 过渡动画
     public var animationType: ZLaunchAnimationType = .crossDissolve
 }
-
-
