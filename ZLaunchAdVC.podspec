@@ -7,7 +7,7 @@ s.homepage     = "https://github.com/MQZHot/ZLaunchAdVC"
 s.author       = { "mqz" => "mqz1228@163.com" }     
 s.platform     = :ios, "8.0"                     
 s.source       = { :git => "https://github.com/MQZHot/ZLaunchAdVC.git", :tag => s.version }
-s.source_files  = "ZLaunchAdSwift/ZLaunchAdVC", "ZLaunchAdSwift/ZLaunchAdVC/*.{swift}"                
+s.source_files  = "ZLaunchAdVC/*.{swift}"                
 s.requires_arc = true
 s.license      = "MIT"
 s.license      = { :type => "MIT", :file => "LICENSE" }
