@@ -18,13 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         let homeVC = ViewController()
         let nav = UINavigationController(rootViewController: homeVC)
-        
+        ZLaunchAdVC.clearDiskCache()
         if launchOptions != nil {
-            /// 通过推送、Deeplink等方式启动
+            /// 通过推送方式启动
             window?.rootViewController = nav
         } else {
             /// 加载广告
-            let adVC = ZLaunchAdVC(waitTime: 4,rootVC: nav)
+            let adVC = ZLaunchAdVC(waitTime: 3,rootVC: nav)
             request { model in
                 adVC.configure { button, adView in
                     button.skipBtnType = model.skipBtnType
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     /// 模拟请求数据，此处解析json文件
     func request(_ completion: @escaping (AdModel)->()) -> Void {
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
             if let path = Bundle.main.path(forResource: "data", ofType: "json") {
                 let url = URL(fileURLWithPath: path)
                 do {
