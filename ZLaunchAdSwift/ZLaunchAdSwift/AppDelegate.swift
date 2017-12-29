@@ -45,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         
     }
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        
+    }
 }
 extension AppDelegate {
     /// 模拟请求数据，此处解析json文件
