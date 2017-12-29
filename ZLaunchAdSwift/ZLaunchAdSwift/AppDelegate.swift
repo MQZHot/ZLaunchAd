@@ -45,8 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         
     }
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
         
+    }
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        return true
     }
 }
 extension AppDelegate {
