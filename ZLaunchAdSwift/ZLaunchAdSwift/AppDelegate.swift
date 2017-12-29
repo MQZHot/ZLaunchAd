@@ -42,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         return true
     }
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+    }
 }
 extension AppDelegate {
     /// 模拟请求数据，此处解析json文件
