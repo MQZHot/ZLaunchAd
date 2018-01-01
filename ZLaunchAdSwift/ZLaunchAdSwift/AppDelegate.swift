@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         let homeVC = ViewController()
         let nav = UINavigationController(rootViewController: homeVC)
-        ZLaunchAdVC.clearDiskCache()
+        
         if launchOptions != nil {
             /// 通过推送方式启动
             window?.rootViewController = nav
@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = adVC
         }
         window?.makeKeyAndVisible()
+        
         return true
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -51,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        
         return true
     }
 }
