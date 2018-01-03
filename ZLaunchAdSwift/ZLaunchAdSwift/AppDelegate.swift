@@ -48,15 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         
     }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        
-    }
-    
-    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-        
-        return true
-    }
 }
 extension AppDelegate {
     /// 模拟请求数据，此处解析json文件
