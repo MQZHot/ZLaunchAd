@@ -5,6 +5,8 @@
 //  Created by mengqingzheng on 2017/4/5.
 //  Copyright © 2017年 meng. All rights reserved.
 //
+//  //  https://github.com/MQZHot/ZLaunchAdVC
+
 
 import UIKit
 
