@@ -12,7 +12,6 @@
 		D63BD61E1FB44FFB007272F7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D63BD61C1FB44302007272F7 /* data.json */; };
 		D63BD6201FB455B2007272F7 /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63BD61F1FB455B2007272F7 /* AdModel.swift */; };
 		D63BD6381FB467AF007272F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3411E94EACB0097DF7A /* AppDelegate.swift */; };
-		D641B0131FF7CC0F0020F49B /* LaunchAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B0121FF7CC0F0020F49B /* LaunchAdManager.swift */; };
 		D66EE3441E94EACB0097DF7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3431E94EACB0097DF7A /* ViewController.swift */; };
 		D66EE3491E94EACB0097DF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66EE3481E94EACB0097DF7A /* Assets.xcassets */; };
 		D6C312431FEA69DA000F51FF /* ZLaunchAdImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3123A1FEA69DA000F51FF /* ZLaunchAdImageView.swift */; };
@@ -33,7 +32,6 @@
 		D61BC3521F6D106E00ED5E93 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D63BD61C1FB44302007272F7 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		D63BD61F1FB455B2007272F7 /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
-		D641B0121FF7CC0F0020F49B /* LaunchAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAdManager.swift; sourceTree = "<group>"; };
 		D66EE33E1E94EACB0097DF7A /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66EE3411E94EACB0097DF7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D66EE3431E94EACB0097DF7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				D66EE3411E94EACB0097DF7A /* AppDelegate.swift */,
 				D66EE3431E94EACB0097DF7A /* ViewController.swift */,
 				D63BD61F1FB455B2007272F7 /* AdModel.swift */,
-				D641B0121FF7CC0F0020F49B /* LaunchAdManager.swift */,
 				D66EE3481E94EACB0097DF7A /* Assets.xcassets */,
 				D61BC3521F6D106E00ED5E93 /* LaunchScreen.storyboard */,
 				D66EE34D1E94EACB0097DF7A /* Info.plist */,
@@ -271,7 +268,6 @@
 				D6C3124B1FEA69DA000F51FF /* ZLaunchAdVC.swift in Sources */,
 				D63BD6201FB455B2007272F7 /* AdModel.swift in Sources */,
 				D6C312431FEA69DA000F51FF /* ZLaunchAdImageView.swift in Sources */,
-				D641B0131FF7CC0F0020F49B /* LaunchAdManager.swift in Sources */,
 				D6C312451FEA69DA000F51FF /* ZLaunchButton.swift in Sources */,
 				D6C312481FEA69DA000F51FF /* ZLaunchStatusBar.swift in Sources */,
 			);
