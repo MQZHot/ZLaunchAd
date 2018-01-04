@@ -14,9 +14,8 @@ protocol ZLaunchAdDelegate {
 
 public class ZLaunchAdView: UIView {
     
-    static var `default` = ZLaunchAdView()
+    static var `default` = ZLaunchAdView(frame: UIScreen.main.bounds, showEnterForeground: true)
     var waitTime: Int = 3
-    var showEnterForeground: Bool = false
     fileprivate var adViewConfig: ZLaunchAdViewConfig = ZLaunchAdViewConfig()
     fileprivate var skipBtnConfig: ZLaunchSkipButtonConfig = ZLaunchSkipButtonConfig()
     fileprivate var originalTimer: DispatchSourceTimer?
@@ -45,18 +44,20 @@ public class ZLaunchAdView: UIView {
             if self.adTapAction != nil { self.adTapAction!() }
         }
     }
-    override init(frame: CGRect) {
+    init(frame: CGRect, showEnterForeground: Bool) {
         super.init(frame: frame)
-        
         let launchImageView = ZLaunchImageView(frame: UIScreen.main.bounds)
         addSubview(launchImageView)
-        
-        NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { [unowned self] _ in
-            if self.showEnterForeground {
+        if showEnterForeground {
+            NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { _ in
                 UIApplication.shared.keyWindow?.addSubview(self)
                 self.startTimer()
             }
         }
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     public override func willMove(toWindow newWindow: UIWindow?) {
@@ -111,9 +112,6 @@ public class ZLaunchAdView: UIView {
         }
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     deinit {
         NotificationCenter.default.removeObserver(self)
         print("dealloc")

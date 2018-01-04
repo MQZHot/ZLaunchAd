@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         /// 加载广告
-        let adView = create(waitTime: 5, showEnterForeground: true)
+        let adView = create(waitTime: 5, showEnterForeground: false)
         request { model in
             adView.configure { button, adView in
                 button.skipBtnType = model.skipBtnType

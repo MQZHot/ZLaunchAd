@@ -14,10 +14,9 @@ public func create(waitTime: Int = 3, showEnterForeground: Bool = false) -> ZLau
     if showEnterForeground {
         launchAdView = ZLaunchAdView.default
     } else {
-        launchAdView = ZLaunchAdView()
+        launchAdView = ZLaunchAdView(frame: UIScreen.main.bounds, showEnterForeground: false)
     }
     launchAdView.waitTime = waitTime
-    launchAdView.showEnterForeground = showEnterForeground
     launchAdView.frame = UIScreen.main.bounds
     UIApplication.shared.keyWindow?.addSubview(launchAdView)
     return launchAdView
