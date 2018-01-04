@@ -1,3 +1,5 @@
 language: swift
+
 xcode_workspace: ZLaunchAdSwift.xcworkspace
+
 osx_image: xcode9.1
