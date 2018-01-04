@@ -149,7 +149,7 @@ extension ZLaunchAdVC {
         if originalTimer?.isCancelled == false { originalTimer?.cancel() }
         if dataTimer?.isCancelled == false { dataTimer?.cancel() }
         guard rootViewController != nil else { return }
-        ZLaunchAnimation().animationType(adViewConfig.animationType, fromVC: self, toVC: rootViewController!, completion: completion)
+//        ZLaunchAnimation().animationType(adViewConfig.animationType, fromVC: self, toVC: rootViewController!, completion: completion)
     }
 }
 

@@ -17,8 +17,6 @@ public typealias ZLaunchClosure = ()->()
 
 // MARK: - 完成动画类型
 @objc public enum ZLaunchAnimationType: Int {
-    /// 缩小
-    case zoomOut = 0
     /// 溶解消失
     case crossDissolve
     /// 翻页
@@ -67,6 +65,8 @@ public typealias ZLaunchClosure = ()->()
     /// 有缓存，读取缓存，不重新加载；没缓存先加载，并缓存
     case readCache
 }
+
+
 // MARK: - 配置跳过按钮
 @objc public class ZLaunchSkipButtonConfig: NSObject {
     /// frame
@@ -98,6 +98,7 @@ public typealias ZLaunchClosure = ()->()
 }
 // MARK: - 配置
 @objc public class ZLaunchAdViewConfig: NSObject {
+    
     /// 广告图大小
     @objc public var adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-100)
     /// 过渡动画
