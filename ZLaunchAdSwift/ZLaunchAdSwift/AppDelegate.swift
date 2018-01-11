@@ -21,42 +21,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
         
-        /// 加载广告
-        let adView = create(waitTime: 5, showEnterForeground: false)
-        request { model in
-            adView.configure { button, adView in
-                button.skipBtnType = model.skipBtnType
-                adView.animationType = model.animationType
-                adView.adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
-            }
-            adView.setImage(model.imgUrl, duration: model.duration, options: .refreshCache, action: {
-                let vc = UIViewController()
-                vc.view.backgroundColor = UIColor.yellow
-                homeVC.navigationController?.pushViewController(vc, animated: true)
-            })
+        setupLaunchAd {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.yellow
+            homeVC.navigationController?.pushViewController(vc, animated: true)
         }
-        return true
-    }
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        print("已经进入后台")
-    }
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        
-    }
-    func applicationWillResignActive(_ application: UIApplication) {
-        print("---")
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        print("将要进入前台")
-    }
-    
-    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-        
         return true
     }
 }
 extension AppDelegate {
+    /// 加载广告
+    func setupLaunchAd(adClick: @escaping (()->())) {
+        let adView = create(waitTime: 3, showEnterForeground: false)
+        self.request { model in
+            let buttonConfig = ZLaunchSkipButtonConfig()
+            buttonConfig.skipBtnType = model.skipBtnType
+            
+            let imageResource = ZLaunchAdImageResourceConfigure()
+            imageResource.imageNameOrImageURL = model.imgUrl
+            imageResource.animationType = model.animationType
+            imageResource.imageDuration = model.duration
+            imageResource.imageFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
+            
+            adView.setImageResource(imageResource, buttonConfig: buttonConfig, action: {
+                adClick()
+            })
+        }
+    }
+    
     /// 模拟请求数据，此处解析json文件
     func request(_ completion: @escaping (AdModel)->()) -> Void {
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
@@ -79,5 +71,3 @@ extension AppDelegate {
         }
     }
 }
-
-

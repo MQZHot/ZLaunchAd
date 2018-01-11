@@ -1,5 +1,5 @@
 //
-//  ZLaunchWindow.swift
+//  ZLaunchAdWindow.swift
 //  ZLaunchAdSwift
 //
 //  Created by mengqingzheng on 2018/1/1.

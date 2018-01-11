@@ -10,35 +10,33 @@
 
 import UIKit
 
-class ZLaunchAnimation: NSObject, CAAnimationDelegate {
+class ZLaunchAdAnimation: NSObject, CAAnimationDelegate {
     
     private let animationDuration = 0.8
     private var animationView: UIView!
     
-    func animationType(_ animationType: ZLaunchAnimationType, animationView: UIView) {
+    func animationType(_ animationType: ZLaunchAnimationType, animationView: UIView, animationClosure: @escaping ZLaunchClosure) {
         
         switch animationType {
         case .crossDissolve, .curlUp, .flipFromBottom, .flipFromLeft, .flipFromRight, .flipFromTop:
             
             let closure = {
                 UIView.setAnimationsEnabled(false)
-                animationView.removeFromSuperview()
+                animationClosure()
                 UIView.setAnimationsEnabled(true)
             }
             UIView.transition(with: UIApplication.shared.keyWindow!, duration: animationDuration, options: animationOptions(animationType), animations: closure, completion: nil)
         default:
             
             var frame = animationView.frame
-            
             switch animationType {
-            
             case .slideFromTop:
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.2, execute: {
                     UIView.animate(withDuration: self.animationDuration, animations: {
                         frame.origin.y = -frame.size.height
                         animationView.frame = frame
                     }, completion: { _ in
-                        animationView.removeFromSuperview()
+                        animationClosure()
                     })
                 })
             case .slideFromBottom:
@@ -47,7 +45,7 @@ class ZLaunchAnimation: NSObject, CAAnimationDelegate {
                         frame.origin.y = frame.size.height
                         animationView.frame = frame
                     }, completion: { _ in
-                        animationView.removeFromSuperview()
+                        animationClosure()
                     })
                 })
             case .slideFromLeft:
@@ -56,7 +54,7 @@ class ZLaunchAnimation: NSObject, CAAnimationDelegate {
                         frame.origin.x = -frame.size.width
                         animationView.frame = frame
                     }, completion: { _ in
-                        animationView.removeFromSuperview()
+                        animationClosure()
                     })
                 })
                 
@@ -66,7 +64,7 @@ class ZLaunchAnimation: NSObject, CAAnimationDelegate {
                         frame.origin.x = frame.size.width
                         animationView.frame = frame
                     }, completion: { _ in
-                        animationView.removeFromSuperview()
+                        animationClosure()
                     })
                 })
             default: break

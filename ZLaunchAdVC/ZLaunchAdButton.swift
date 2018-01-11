@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-class ZLaunchButton: UIButton {
+class ZLaunchAdButton: UIButton {
     
     fileprivate var config: ZLaunchSkipButtonConfig!
     fileprivate var adDuration: Int!
@@ -54,6 +54,16 @@ class ZLaunchButton: UIButton {
             
         case .roundProgressText:
             
+            if animation == nil {
+                animation = CABasicAnimation(keyPath: "strokeStart")
+                animation?.duration = Double(adDuration)
+                animation?.delegate = self
+                animation?.fromValue = 0
+                animation?.toValue = 0.9999
+                animation?.fillMode = kCAFillModeForwards
+                animation?.isRemovedOnCompletion = false
+                animationLayer.add(animation!, forKey: "strokeStartAnimation")
+            }
             setTitle("\(config.text)", for: .normal)
             setTitleColor(config.textColor, for: .normal)
             titleLabel?.font = config.textFont
@@ -62,9 +72,9 @@ class ZLaunchButton: UIButton {
     }
     
     func setSkipApperance(_ config: ZLaunchSkipButtonConfig) {
+        
         self.config = config
         backgroundColor = config.backgroundColor
-        
         var frame = config.frame
         switch config.skipBtnType {
         case .roundText:
@@ -86,7 +96,7 @@ class ZLaunchButton: UIButton {
             layer.cornerRadius = config.cornerRadius
         }
     }
-    
+    private var animation: CABasicAnimation?
     private lazy var animationLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.frame = bounds
@@ -99,14 +109,13 @@ class ZLaunchButton: UIButton {
         layer.path = bezierPath.cgPath
         layer.strokeStart = 0
         layer.strokeEnd = 1
-        
-        let animation = CABasicAnimation(keyPath: "strokeStart")
-        animation.duration = Double(adDuration)
-        animation.fromValue = 0
-        animation.toValue = 0.9999
-        animation.fillMode = kCAFillModeForwards
-        animation.isRemovedOnCompletion = false
-        layer.add(animation, forKey: "strokeStartAnimation")
         return layer
     }()
+}
+extension ZLaunchAdButton: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if animationLayer.animation(forKey: "strokeStartAnimation")==anim {
+            animation = nil
+        }
+    }
 }
