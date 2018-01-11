@@ -27,8 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vc.view.backgroundColor = UIColor.yellow
             homeVC.navigationController?.pushViewController(vc, animated: true)
         }
+        
 //        /// example_02
 //        setupLaunchAd_02 {
+//            let vc = UIViewController()
+//            vc.view.backgroundColor = UIColor.yellow
+//            homeVC.navigationController?.pushViewController(vc, animated: true)
+//        }
+        
+//        /// example_03
+//        setupLaunchAd_03 {
 //            let vc = UIViewController()
 //            vc.view.backgroundColor = UIColor.yellow
 //            homeVC.navigationController?.pushViewController(vc, animated: true)
@@ -39,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     /// 本地图片
     func setupLaunchAd_01(adClick: @escaping (()->())) {
-        let adView = create(waitTime: 3, showEnterForeground: true)
+        let adView = create(showEnterForeground: true)
         let imageResource = ZLaunchAdImageResourceConfigure()
         imageResource.imageNameOrImageURL = "163yun"
         imageResource.imageDuration = 5
@@ -66,6 +74,28 @@ extension AppDelegate {
                 adClick()
             })
         }
+    }
+}
+
+extension AppDelegate {
+    /// 进入前台时发出请求，加载不同的广告
+    /// 网络请求写在`adNetRequest`闭包中
+    func setupLaunchAd_03(adClick: @escaping (()->())) {
+        create(showEnterForeground: true, adNetRequest: { adView in
+            self.request { model in
+                let buttonConfig = ZLaunchSkipButtonConfig()
+                buttonConfig.skipBtnType = model.skipBtnType
+                let imageResource = ZLaunchAdImageResourceConfigure()
+                imageResource.imageNameOrImageURL = model.imgUrl
+                imageResource.animationType = model.animationType
+                imageResource.imageDuration = model.duration
+                imageResource.imageFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
+                /// 设置图片、跳过按钮
+                adView.setImageResource(imageResource, buttonConfig: buttonConfig, action: {
+                    adClick()
+                })
+            }
+        })
     }
 }
 
