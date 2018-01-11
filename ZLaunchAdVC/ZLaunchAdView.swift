@@ -5,6 +5,8 @@
 //  Created by MQZHot on 2018/1/1.
 //  Copyright © 2018年 MQZHot. All rights reserved.
 //
+//  https://github.com/MQZHot/ZLaunchAdVC
+//
 
 import UIKit
 
@@ -82,6 +84,7 @@ public class ZLaunchAdView: UIView {
         print("dealloc")
     }
 }
+
 // MARK: - setup subview
 extension ZLaunchAdView {
     fileprivate func addAdImageView() {

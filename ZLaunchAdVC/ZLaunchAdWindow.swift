@@ -2,8 +2,8 @@
 //  ZLaunchAdWindow.swift
 //  ZLaunchAdSwift
 //
-//  Created by mengqingzheng on 2018/1/1.
-//  Copyright © 2018年 meng. All rights reserved.
+//  Created by MQZHot on 2018/1/1.
+//  Copyright © 2018年 MQZHot. All rights reserved.
 //
 
 import UIKit
