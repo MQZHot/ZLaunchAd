@@ -14,16 +14,16 @@
 		D63BD6381FB467AF007272F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3411E94EACB0097DF7A /* AppDelegate.swift */; };
 		D66EE3441E94EACB0097DF7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3431E94EACB0097DF7A /* ViewController.swift */; };
 		D66EE3491E94EACB0097DF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66EE3481E94EACB0097DF7A /* Assets.xcassets */; };
-		D692337F1FF7DC0F00CD2526 /* ZLaunchAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692337E1FF7DC0F00CD2526 /* ZLaunchAd.swift */; };
-		D6C312431FEA69DA000F51FF /* ZLaunchAdImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3123A1FEA69DA000F51FF /* ZLaunchAdImageView.swift */; };
-		D6C312441FEA69DA000F51FF /* ZLaunchAdCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3123B1FEA69DA000F51FF /* ZLaunchAdCache.swift */; };
-		D6C312451FEA69DA000F51FF /* ZLaunchAdButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3123C1FEA69DA000F51FF /* ZLaunchAdButton.swift */; };
-		D6C312461FEA69DA000F51FF /* ZLaunchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3123D1FEA69DA000F51FF /* ZLaunchImageView.swift */; };
-		D6C312471FEA69DA000F51FF /* ZLaunchLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3123E1FEA69DA000F51FF /* ZLaunchLog.swift */; };
-		D6C312491FEA69DA000F51FF /* ZLaunchAdConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C312401FEA69DA000F51FF /* ZLaunchAdConfig.swift */; };
-		D6C3124A1FEA69DA000F51FF /* ZLaunchAdAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C312411FEA69DA000F51FF /* ZLaunchAdAnimation.swift */; };
-		D6D8D2DC1FFA2CEA00AB15C3 /* ZLaunchAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D8D2DB1FFA2CEA00AB15C3 /* ZLaunchAdView.swift */; };
-		D6D8D2DE1FFA4CAA00AB15C3 /* ZLaunchAdWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D8D2DD1FFA4CAA00AB15C3 /* ZLaunchAdWindow.swift */; };
+		D67A04CC2007602500C7B2C0 /* ZLaunchAdImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C22007602500C7B2C0 /* ZLaunchAdImageView.swift */; };
+		D67A04CD2007602500C7B2C0 /* ZLaunchAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C32007602500C7B2C0 /* ZLaunchAd.swift */; };
+		D67A04CE2007602500C7B2C0 /* ZLaunchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C42007602500C7B2C0 /* ZLaunchImageView.swift */; };
+		D67A04CF2007602500C7B2C0 /* ZLaunchAdCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C52007602500C7B2C0 /* ZLaunchAdCache.swift */; };
+		D67A04D02007602500C7B2C0 /* ZLaunchAdConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C62007602500C7B2C0 /* ZLaunchAdConfig.swift */; };
+		D67A04D12007602500C7B2C0 /* ZLaunchLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C72007602500C7B2C0 /* ZLaunchLog.swift */; };
+		D67A04D22007602500C7B2C0 /* ZLaunchAdWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C82007602500C7B2C0 /* ZLaunchAdWindow.swift */; };
+		D67A04D32007602500C7B2C0 /* ZLaunchAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */; };
+		D67A04D42007602500C7B2C0 /* ZLaunchAdButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04CA2007602500C7B2C0 /* ZLaunchAdButton.swift */; };
+		D67A04D52007602500C7B2C0 /* ZLaunchAdAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04CB2007602500C7B2C0 /* ZLaunchAdAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,16 +38,16 @@
 		D66EE3431E94EACB0097DF7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D66EE3481E94EACB0097DF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D66EE34D1E94EACB0097DF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D692337E1FF7DC0F00CD2526 /* ZLaunchAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLaunchAd.swift; sourceTree = "<group>"; };
-		D6C3123A1FEA69DA000F51FF /* ZLaunchAdImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdImageView.swift; sourceTree = "<group>"; };
-		D6C3123B1FEA69DA000F51FF /* ZLaunchAdCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdCache.swift; sourceTree = "<group>"; };
-		D6C3123C1FEA69DA000F51FF /* ZLaunchAdButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdButton.swift; sourceTree = "<group>"; };
-		D6C3123D1FEA69DA000F51FF /* ZLaunchImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchImageView.swift; sourceTree = "<group>"; };
-		D6C3123E1FEA69DA000F51FF /* ZLaunchLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchLog.swift; sourceTree = "<group>"; };
-		D6C312401FEA69DA000F51FF /* ZLaunchAdConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdConfig.swift; sourceTree = "<group>"; };
-		D6C312411FEA69DA000F51FF /* ZLaunchAdAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdAnimation.swift; sourceTree = "<group>"; };
-		D6D8D2DB1FFA2CEA00AB15C3 /* ZLaunchAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLaunchAdView.swift; sourceTree = "<group>"; };
-		D6D8D2DD1FFA4CAA00AB15C3 /* ZLaunchAdWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLaunchAdWindow.swift; sourceTree = "<group>"; };
+		D67A04C22007602500C7B2C0 /* ZLaunchAdImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdImageView.swift; sourceTree = "<group>"; };
+		D67A04C32007602500C7B2C0 /* ZLaunchAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAd.swift; sourceTree = "<group>"; };
+		D67A04C42007602500C7B2C0 /* ZLaunchImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchImageView.swift; sourceTree = "<group>"; };
+		D67A04C52007602500C7B2C0 /* ZLaunchAdCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdCache.swift; sourceTree = "<group>"; };
+		D67A04C62007602500C7B2C0 /* ZLaunchAdConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdConfig.swift; sourceTree = "<group>"; };
+		D67A04C72007602500C7B2C0 /* ZLaunchLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchLog.swift; sourceTree = "<group>"; };
+		D67A04C82007602500C7B2C0 /* ZLaunchAdWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdWindow.swift; sourceTree = "<group>"; };
+		D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdView.swift; sourceTree = "<group>"; };
+		D67A04CA2007602500C7B2C0 /* ZLaunchAdButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdButton.swift; sourceTree = "<group>"; };
+		D67A04CB2007602500C7B2C0 /* ZLaunchAdAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 		D66EE3401E94EACB0097DF7A /* ZLaunchAdSwift */ = {
 			isa = PBXGroup;
 			children = (
-				D6C312391FEA69DA000F51FF /* ZLaunchAdVC */,
+				D67A04C12007602500C7B2C0 /* ZLaunchAd */,
 				D63BD61C1FB44302007272F7 /* data.json */,
 				D66EE3411E94EACB0097DF7A /* AppDelegate.swift */,
 				D66EE3431E94EACB0097DF7A /* ViewController.swift */,
@@ -112,22 +112,22 @@
 			path = ZLaunchAdSwift;
 			sourceTree = "<group>";
 		};
-		D6C312391FEA69DA000F51FF /* ZLaunchAdVC */ = {
+		D67A04C12007602500C7B2C0 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
-				D692337E1FF7DC0F00CD2526 /* ZLaunchAd.swift */,
-				D6D8D2DB1FFA2CEA00AB15C3 /* ZLaunchAdView.swift */,
-				D6C312401FEA69DA000F51FF /* ZLaunchAdConfig.swift */,
-				D6C3123A1FEA69DA000F51FF /* ZLaunchAdImageView.swift */,
-				D6C3123B1FEA69DA000F51FF /* ZLaunchAdCache.swift */,
-				D6C3123C1FEA69DA000F51FF /* ZLaunchAdButton.swift */,
-				D6C3123D1FEA69DA000F51FF /* ZLaunchImageView.swift */,
-				D6C3123E1FEA69DA000F51FF /* ZLaunchLog.swift */,
-				D6C312411FEA69DA000F51FF /* ZLaunchAdAnimation.swift */,
-				D6D8D2DD1FFA4CAA00AB15C3 /* ZLaunchAdWindow.swift */,
+				D67A04C32007602500C7B2C0 /* ZLaunchAd.swift */,
+				D67A04C22007602500C7B2C0 /* ZLaunchAdImageView.swift */,
+				D67A04C42007602500C7B2C0 /* ZLaunchImageView.swift */,
+				D67A04C52007602500C7B2C0 /* ZLaunchAdCache.swift */,
+				D67A04C62007602500C7B2C0 /* ZLaunchAdConfig.swift */,
+				D67A04C72007602500C7B2C0 /* ZLaunchLog.swift */,
+				D67A04C82007602500C7B2C0 /* ZLaunchAdWindow.swift */,
+				D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */,
+				D67A04CA2007602500C7B2C0 /* ZLaunchAdButton.swift */,
+				D67A04CB2007602500C7B2C0 /* ZLaunchAdAnimation.swift */,
 			);
-			name = ZLaunchAdVC;
-			path = ../../ZLaunchAdVC;
+			name = ZLaunchAd;
+			path = ../../ZLaunchAd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,19 +261,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67A04D12007602500C7B2C0 /* ZLaunchLog.swift in Sources */,
+				D67A04D02007602500C7B2C0 /* ZLaunchAdConfig.swift in Sources */,
+				D67A04D52007602500C7B2C0 /* ZLaunchAdAnimation.swift in Sources */,
+				D67A04CD2007602500C7B2C0 /* ZLaunchAd.swift in Sources */,
 				D63BD6381FB467AF007272F7 /* AppDelegate.swift in Sources */,
-				D6C312491FEA69DA000F51FF /* ZLaunchAdConfig.swift in Sources */,
-				D6C312461FEA69DA000F51FF /* ZLaunchImageView.swift in Sources */,
-				D6C3124A1FEA69DA000F51FF /* ZLaunchAdAnimation.swift in Sources */,
-				D692337F1FF7DC0F00CD2526 /* ZLaunchAd.swift in Sources */,
-				D6C312471FEA69DA000F51FF /* ZLaunchLog.swift in Sources */,
-				D6D8D2DC1FFA2CEA00AB15C3 /* ZLaunchAdView.swift in Sources */,
+				D67A04CE2007602500C7B2C0 /* ZLaunchImageView.swift in Sources */,
 				D66EE3441E94EACB0097DF7A /* ViewController.swift in Sources */,
-				D6C312441FEA69DA000F51FF /* ZLaunchAdCache.swift in Sources */,
+				D67A04CF2007602500C7B2C0 /* ZLaunchAdCache.swift in Sources */,
 				D63BD6201FB455B2007272F7 /* AdModel.swift in Sources */,
-				D6D8D2DE1FFA4CAA00AB15C3 /* ZLaunchAdWindow.swift in Sources */,
-				D6C312431FEA69DA000F51FF /* ZLaunchAdImageView.swift in Sources */,
-				D6C312451FEA69DA000F51FF /* ZLaunchAdButton.swift in Sources */,
+				D67A04D22007602500C7B2C0 /* ZLaunchAdWindow.swift in Sources */,
+				D67A04CC2007602500C7B2C0 /* ZLaunchAdImageView.swift in Sources */,
+				D67A04D42007602500C7B2C0 /* ZLaunchAdButton.swift in Sources */,
+				D67A04D32007602500C7B2C0 /* ZLaunchAdView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

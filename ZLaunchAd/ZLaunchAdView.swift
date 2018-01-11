@@ -14,14 +14,14 @@ public class ZLaunchAdView: UIView {
     
 // MARK: - API
     
-    
     /// 加载图片，网络图片/本地图片/GIF图片
     ///
     /// - Parameters:
     ///   - imageResource: 配置图片资源
     ///   - buttonConfig:  配置跳过按钮
     ///   - action: 广告点击响应
-    @objc public func setImageResource(_ imageResource: ZLaunchAdImageResourceConfigure, buttonConfig: ZLaunchSkipButtonConfig? = nil, action: ZLaunchClosure?) {
+    @objc
+    public func setImageResource(_ imageResource: ZLaunchAdImageResourceConfigure, buttonConfig: ZLaunchSkipButtonConfig? = nil, action: ZLaunchClosure?) {
         if let buttonConfig = buttonConfig { skipBtnConfig = buttonConfig }
         self.imageResource = imageResource
         adTapAction = action

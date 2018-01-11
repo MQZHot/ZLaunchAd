@@ -21,33 +21,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
         
-        /// example_01
-        setupLaunchAd_01 {
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor.yellow
-            homeVC.navigationController?.pushViewController(vc, animated: true)
-        }
+//        /// example_01
+//        /// 本地图片，进入前台时显示
+//        setupLaunchAd_01 {
+//            let vc = UIViewController()
+//            vc.view.backgroundColor = UIColor.yellow
+//            homeVC.navigationController?.pushViewController(vc, animated: true)
+//        }
         
 //        /// example_02
+//        /// 网络图片
 //        setupLaunchAd_02 {
 //            let vc = UIViewController()
 //            vc.view.backgroundColor = UIColor.yellow
 //            homeVC.navigationController?.pushViewController(vc, animated: true)
 //        }
         
-//        /// example_03
-//        setupLaunchAd_03 {
-//            let vc = UIViewController()
-//            vc.view.backgroundColor = UIColor.yellow
-//            homeVC.navigationController?.pushViewController(vc, animated: true)
-//        }
+        /// example_03
+        /// 网络图片，每次进入前台时加载不同的广告
+        setupLaunchAd_03 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.yellow
+            homeVC.navigationController?.pushViewController(vc, animated: true)
+        }
         return true
     }
 }
 extension AppDelegate {
     /// 本地图片
     func setupLaunchAd_01(adClick: @escaping (()->())) {
-        let adView = create(showEnterForeground: true)
+        let adView = ZLaunchAd.create(showEnterForeground: true)
         let imageResource = ZLaunchAdImageResourceConfigure()
         imageResource.imageNameOrImageURL = "163yun"
         imageResource.imageDuration = 5
@@ -60,7 +63,7 @@ extension AppDelegate {
 extension AppDelegate {
     /// 网络图片
     func setupLaunchAd_02(adClick: @escaping (()->())) {
-        let adView = create(waitTime: 3, showEnterForeground: true)
+        let adView = ZLaunchAd.create(waitTime: 3, showEnterForeground: true)
         request { model in
             let buttonConfig = ZLaunchSkipButtonConfig()
             buttonConfig.skipBtnType = model.skipBtnType
@@ -81,7 +84,7 @@ extension AppDelegate {
     /// 进入前台时发出请求，加载不同的广告
     /// 网络请求写在`adNetRequest`闭包中
     func setupLaunchAd_03(adClick: @escaping (()->())) {
-        create(showEnterForeground: true, adNetRequest: { adView in
+        ZLaunchAd.create(showEnterForeground: true, adNetRequest: { adView in
             self.request { model in
                 let buttonConfig = ZLaunchSkipButtonConfig()
                 buttonConfig.skipBtnType = model.skipBtnType

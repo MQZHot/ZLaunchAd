@@ -97,14 +97,6 @@ public typealias ZLaunchClosure = ()->()
     @objc public var borderWidth: CGFloat = 1
 }
 
-// MARK: - 配置
-@objc public class ZLaunchAdViewConfig: NSObject {
-    /// 广告图大小
-    @objc public var adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-100)
-    /// 过渡动画
-    @objc public var animationType: ZLaunchAnimationType = .crossDissolve
-}
-
 @objc public class ZLaunchAdImageResourceConfigure: NSObject {
     /// image本地图片名(jpg/gif图片请带上扩展名)或网络图片URL
     @objc public var imageNameOrImageURL: String?
