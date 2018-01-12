@@ -4,7 +4,7 @@
 ![image](https://travis-ci.org/MQZHot/ZLaunchAd.svg?branch=master)   ![image](https://img.shields.io/badge/support-swift%204-green.svg)  ![image](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![image](https://img.shields.io/cocoapods/v/ZLaunchAd.svg?style=flat)
 
 ZLaunchAd集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF，支持本地图片，支持视图过渡动画
-
+***ZLaunchAdVC替换为ZLaunchAd***
 ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic0.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic2.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic3.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic4.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic5.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic6.gif)
 
 ### 功能
@@ -114,6 +114,9 @@ ZLaunchAd.clearDiskCacheWithImageUrlArray(array)
 * 1.pod 'ZLaunchAd'
 
 * 2.pod install / pod update
+
+* 3.如果使用`ZLaunchAdVC`，pod 'ZLaunchAdVC'
+
 
 ### 联系
 
