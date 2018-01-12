@@ -97,7 +97,6 @@ extension ZLaunchAdImageView {
 
 extension UIImage {
     
-    
     class func gif(name: String) -> UIImage? {
         var nameStr = name
         if nameStr.contains(".gif") {

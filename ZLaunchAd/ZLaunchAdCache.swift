@@ -1,5 +1,5 @@
 //
-//  ZLaunchCache.swift
+//  ZLaunchAdCache.swift
 //  ZLaunchAdSwift
 //
 //  Created by MQZHot on 2017/4/5.

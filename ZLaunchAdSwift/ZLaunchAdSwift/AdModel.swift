@@ -2,9 +2,9 @@
 //  AdModel.swift
 //  ZLaunchAdSwift
 //
-//  Created by MQZHot on 2017/4/5.
+//  Created by MQZHot on 2017/11/9.
 //  Copyright © 2017年 MQZHot. All rights reserved.
-//  https://github.com/MQZHot/ZLaunchAdVC
+//
 
 import UIKit
 

@@ -5,8 +5,6 @@
 //  Created by MQZHot on 2017/4/5.
 //  Copyright © 2017年 MQZHot. All rights reserved.
 //
-//  //  https://github.com/MQZHot/ZLaunchAdVC
-
 
 import UIKit
 
@@ -20,32 +18,90 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         let homeVC = ViewController()
         let nav = UINavigationController(rootViewController: homeVC)
-        
-        if launchOptions != nil {
-            /// 通过推送方式启动
-            window?.rootViewController = nav
-        } else {
-            /// 加载广告
-            let adVC = ZLaunchAdVC(waitTime: 3,rootVC: nav)
-            request { model in
-                adVC.configure { button, adView in
-                    button.skipBtnType = model.skipBtnType
-                    adView.animationType = model.animationType
-                    adView.adFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
-                }
-                adVC.setImage(model.imgUrl, duration: model.duration, options: .refreshCache, action: {
-                    let vc = UIViewController()
-                    vc.view.backgroundColor = UIColor.yellow
-                    homeVC.navigationController?.pushViewController(vc, animated: true)
-                })
-            }
-            window?.rootViewController = adVC
-        }
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
         
+//        /// example_01
+//        /// 本地图片，进入前台时显示
+//        setupLaunchAd_01 {
+//            let vc = UIViewController()
+//            vc.view.backgroundColor = UIColor.yellow
+//            homeVC.navigationController?.pushViewController(vc, animated: true)
+//        }
+        
+//        /// example_02
+//        /// 网络图片
+//        setupLaunchAd_02 {
+//            let vc = UIViewController()
+//            vc.view.backgroundColor = UIColor.yellow
+//            homeVC.navigationController?.pushViewController(vc, animated: true)
+//        }
+        
+        /// example_03
+        /// 网络图片，每次进入前台时加载不同的广告
+        setupLaunchAd_03 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.yellow
+            homeVC.navigationController?.pushViewController(vc, animated: true)
+        }
         return true
     }
 }
+extension AppDelegate {
+    /// 本地图片
+    func setupLaunchAd_01(adClick: @escaping (()->())) {
+        let adView = ZLaunchAd.create(showEnterForeground: true)
+        let imageResource = ZLaunchAdImageResourceConfigure()
+        imageResource.imageNameOrImageURL = "163yun"
+        imageResource.imageDuration = 5
+        imageResource.imageFrame = UIScreen.main.bounds
+        adView.setImageResource(imageResource, action: {
+            adClick()
+        })
+    }
+}
+extension AppDelegate {
+    /// 网络图片
+    func setupLaunchAd_02(adClick: @escaping (()->())) {
+        let adView = ZLaunchAd.create(waitTime: 3, showEnterForeground: true)
+        request { model in
+            let buttonConfig = ZLaunchSkipButtonConfig()
+            buttonConfig.skipBtnType = model.skipBtnType
+            let imageResource = ZLaunchAdImageResourceConfigure()
+            imageResource.imageNameOrImageURL = model.imgUrl
+            imageResource.animationType = model.animationType
+            imageResource.imageDuration = model.duration
+            imageResource.imageFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
+            /// 设置图片、跳过按钮
+            adView.setImageResource(imageResource, buttonConfig: buttonConfig, action: {
+                adClick()
+            })
+        }
+    }
+}
+
+extension AppDelegate {
+    /// 进入前台时发出请求，加载不同的广告
+    /// 网络请求写在`adNetRequest`闭包中
+    func setupLaunchAd_03(adClick: @escaping (()->())) {
+        ZLaunchAd.create(showEnterForeground: true, adNetRequest: { adView in
+            self.request { model in
+                let buttonConfig = ZLaunchSkipButtonConfig()
+                buttonConfig.skipBtnType = model.skipBtnType
+                let imageResource = ZLaunchAdImageResourceConfigure()
+                imageResource.imageNameOrImageURL = model.imgUrl
+                imageResource.animationType = model.animationType
+                imageResource.imageDuration = model.duration
+                imageResource.imageFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
+                /// 设置图片、跳过按钮
+                adView.setImageResource(imageResource, buttonConfig: buttonConfig, action: {
+                    adClick()
+                })
+            }
+        })
+    }
+}
+
 extension AppDelegate {
     /// 模拟请求数据，此处解析json文件
     func request(_ completion: @escaping (AdModel)->()) -> Void {
