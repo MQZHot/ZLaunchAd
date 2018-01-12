@@ -116,13 +116,20 @@
 			isa = PBXGroup;
 			children = (
 				D67A04C32007602500C7B2C0 /* ZLaunchAd.swift */,
+<<<<<<< HEAD
+=======
 				D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */,
+>>>>>>> master
 				D67A04C22007602500C7B2C0 /* ZLaunchAdImageView.swift */,
 				D67A04C42007602500C7B2C0 /* ZLaunchImageView.swift */,
 				D67A04C52007602500C7B2C0 /* ZLaunchAdCache.swift */,
 				D67A04C62007602500C7B2C0 /* ZLaunchAdConfig.swift */,
 				D67A04C72007602500C7B2C0 /* ZLaunchLog.swift */,
 				D67A04C82007602500C7B2C0 /* ZLaunchAdWindow.swift */,
+<<<<<<< HEAD
+				D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */,
+=======
+>>>>>>> master
 				D67A04CA2007602500C7B2C0 /* ZLaunchAdButton.swift */,
 				D67A04CB2007602500C7B2C0 /* ZLaunchAdAnimation.swift */,
 			);
