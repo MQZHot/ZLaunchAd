@@ -38,28 +38,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E2DC8220405B5B834644954791DB9E7 /* SwiftHash.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftHash.modulemap; sourceTree = "<group>"; };
+		0E2DC8220405B5B834644954791DB9E7 /* SwiftHash.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftHash.modulemap; sourceTree = "<group>"; };
 		2346D1E0C557BFAF00270699D2EAC31F /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/MD5.swift; sourceTree = "<group>"; };
 		285057E53B221250CC8B98C2CECBB5B5 /* Pods-ZLaunchAdSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLaunchAdSwift.release.xcconfig"; sourceTree = "<group>"; };
 		2D9C89FB845719EF9D5AD4541D644C5F /* Pods-ZLaunchAdSwift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZLaunchAdSwift-frameworks.sh"; sourceTree = "<group>"; };
 		32C9AB5A40F616C3960734E0A94AE249 /* Pods-ZLaunchAdObjc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZLaunchAdObjc-dummy.m"; sourceTree = "<group>"; };
 		36A85E490D4AE7FB67E60913F6AF5E12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		478CE0EA08022451E928FA74691459A8 /* Pods-ZLaunchAdObjc-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZLaunchAdObjc-frameworks.sh"; sourceTree = "<group>"; };
-		48C7AFBAFB61BC42ED76EB744BDDE760 /* Pods-ZLaunchAdObjc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZLaunchAdObjc.modulemap"; sourceTree = "<group>"; };
+		48C7AFBAFB61BC42ED76EB744BDDE760 /* Pods-ZLaunchAdObjc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZLaunchAdObjc.modulemap"; sourceTree = "<group>"; };
 		4A3F05A2523C0B791D04E5FB54B94B87 /* Pods-ZLaunchAdObjc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZLaunchAdObjc-umbrella.h"; sourceTree = "<group>"; };
 		527F81AE0CBD3A1576540EB51BE5F71F /* Pods-ZLaunchAdObjc-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZLaunchAdObjc-acknowledgements.plist"; sourceTree = "<group>"; };
-		53328A10D57A16775100C18702701659 /* Pods_ZLaunchAdSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZLaunchAdSwift.framework; path = "Pods-ZLaunchAdSwift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53328A10D57A16775100C18702701659 /* Pods_ZLaunchAdSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9270744DE82A2E733EB4D5E0D07448 /* Pods-ZLaunchAdSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLaunchAdSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		6113EF78989B7635CDA6779DEB299369 /* SwiftHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftHash.framework; path = SwiftHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6113EF78989B7635CDA6779DEB299369 /* SwiftHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		639583EE040BDF4653949B1658A4CA96 /* Pods-ZLaunchAdSwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZLaunchAdSwift-acknowledgements.markdown"; sourceTree = "<group>"; };
 		65930DF4A243899ADFD8F7835C9DB31A /* SwiftHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHash-umbrella.h"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6B32B001BE46D4054CE44917DFF8B74D /* SwiftHash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftHash-dummy.m"; sourceTree = "<group>"; };
 		6C0C27B3B24482336E136507AF55AEF0 /* Pods-ZLaunchAdObjc-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZLaunchAdObjc-resources.sh"; sourceTree = "<group>"; };
-		7EDAE7E14A231C73FBB853E7C592B157 /* Pods_ZLaunchAdObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZLaunchAdObjc.framework; path = "Pods-ZLaunchAdObjc.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EDAE7E14A231C73FBB853E7C592B157 /* Pods_ZLaunchAdObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9280605DD7FBB3E1E6DDC63FF450D987 /* Pods-ZLaunchAdObjc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLaunchAdObjc.debug.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		999824DD665A32BFF61B87BA78F11CF4 /* Pods-ZLaunchAdSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZLaunchAdSwift.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		999824DD665A32BFF61B87BA78F11CF4 /* Pods-ZLaunchAdSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZLaunchAdSwift.modulemap"; sourceTree = "<group>"; };
 		9B340F6366CF0F9687C3D675D888A2A3 /* SwiftHash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHash.xcconfig; sourceTree = "<group>"; };
 		9D6B261180869191B45C17AE681D54B6 /* Pods-ZLaunchAdSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZLaunchAdSwift-dummy.m"; sourceTree = "<group>"; };
 		A561CE51A383A297DAC44721AB87D2E5 /* Pods-ZLaunchAdObjc-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZLaunchAdObjc-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -177,7 +177,6 @@
 				F933AF1653187208104ED68B6B1E5A8F /* SHA1.swift */,
 				0B8B52FF5754D7D48DC93319780103AE /* Support Files */,
 			);
-			name = SwiftHash;
 			path = SwiftHash;
 			sourceTree = "<group>";
 		};
@@ -306,7 +305,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0910;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -442,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBC73698684D6D046F5D7C9F56ECE80F /* Pods-ZLaunchAdObjc.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -476,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9280605DD7FBB3E1E6DDC63FF450D987 /* Pods-ZLaunchAdObjc.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

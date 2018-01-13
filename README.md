@@ -119,8 +119,6 @@ ZLaunchAd.clearDiskCacheWithImageUrlArray(array)
 
 * 2.pod install / pod update
 
-* 3.如果使用`ZLaunchAdVC`，pod 'ZLaunchAdVC'
-
 
 ### 联系
 
