@@ -28,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		80084672BEF16A43E4E5EF9D /* Pods-ZLaunchAdObjc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdObjc.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc.release.xcconfig"; sourceTree = "<group>"; };
 		D6EFD9C72008624D00BFC9D1 /* ZLaunchAdObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EFD9CA2008624D00BFC9D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6EFD9CB2008624D00BFC9D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,7 +48,6 @@
 		D6EFD9E8200863C700BFC9D1 /* ZLaunchAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdView.swift; sourceTree = "<group>"; };
 		D6EFD9E9200863C700BFC9D1 /* ZLaunchAdButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdButton.swift; sourceTree = "<group>"; };
 		D6EFD9EA200863C700BFC9D1 /* ZLaunchAdAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdAnimation.swift; sourceTree = "<group>"; };
-		E467AA0963FDFA58C1503ADE /* Pods-ZLaunchAdObjc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdObjc.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +62,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3933198BCABDE624AEB00F06 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E467AA0963FDFA58C1503ADE /* Pods-ZLaunchAdObjc.debug.xcconfig */,
-				80084672BEF16A43E4E5EF9D /* Pods-ZLaunchAdObjc.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		65773FC1721FB4ECEE371AB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +75,6 @@
 			children = (
 				D6EFD9C92008624D00BFC9D1 /* ZLaunchAdObjc */,
 				D6EFD9C82008624D00BFC9D1 /* Products */,
-				3933198BCABDE624AEB00F06 /* Pods */,
 				65773FC1721FB4ECEE371AB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -141,12 +129,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6EFD9DD2008624D00BFC9D1 /* Build configuration list for PBXNativeTarget "ZLaunchAdObjc" */;
 			buildPhases = (
-				8E73B705EAF81D9036A1C2F1 /* [CP] Check Pods Manifest.lock */,
 				D6EFD9C32008624D00BFC9D1 /* Sources */,
 				D6EFD9C42008624D00BFC9D1 /* Frameworks */,
 				D6EFD9C52008624D00BFC9D1 /* Resources */,
-				63F3A5EBC89CF1DCDD69FCA6 /* [CP] Embed Pods Frameworks */,
-				960630179D8728947F149D8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,60 +187,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		63F3A5EBC89CF1DCDD69FCA6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8E73B705EAF81D9036A1C2F1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZLaunchAdObjc-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		960630179D8728947F149D8B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D6EFD9C32008624D00BFC9D1 /* Sources */ = {
@@ -406,7 +337,6 @@
 		};
 		D6EFD9DE2008624D00BFC9D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E467AA0963FDFA58C1503ADE /* Pods-ZLaunchAdObjc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -423,7 +353,6 @@
 		};
 		D6EFD9DF2008624D00BFC9D1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80084672BEF16A43E4E5EF9D /* Pods-ZLaunchAdObjc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

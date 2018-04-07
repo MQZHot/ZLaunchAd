@@ -3,303 +3,241 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AC6917A9658005ED0347145 /* Pods_ZLaunchAdSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0286BDCC28D37737FA7B47 /* Pods_ZLaunchAdSwift.framework */; };
-		D61BC3531F6D106E00ED5E93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D61BC3521F6D106E00ED5E93 /* LaunchScreen.storyboard */; };
-		D63BD61E1FB44FFB007272F7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D63BD61C1FB44302007272F7 /* data.json */; };
-		D63BD6201FB455B2007272F7 /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63BD61F1FB455B2007272F7 /* AdModel.swift */; };
-		D63BD6381FB467AF007272F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3411E94EACB0097DF7A /* AppDelegate.swift */; };
-		D66EE3441E94EACB0097DF7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EE3431E94EACB0097DF7A /* ViewController.swift */; };
-		D66EE3491E94EACB0097DF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66EE3481E94EACB0097DF7A /* Assets.xcassets */; };
-		D67A04CC2007602500C7B2C0 /* ZLaunchAdImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C22007602500C7B2C0 /* ZLaunchAdImageView.swift */; };
-		D67A04CD2007602500C7B2C0 /* ZLaunchAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C32007602500C7B2C0 /* ZLaunchAd.swift */; };
-		D67A04CE2007602500C7B2C0 /* ZLaunchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C42007602500C7B2C0 /* ZLaunchImageView.swift */; };
-		D67A04CF2007602500C7B2C0 /* ZLaunchAdCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C52007602500C7B2C0 /* ZLaunchAdCache.swift */; };
-		D67A04D02007602500C7B2C0 /* ZLaunchAdConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C62007602500C7B2C0 /* ZLaunchAdConfig.swift */; };
-		D67A04D12007602500C7B2C0 /* ZLaunchLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C72007602500C7B2C0 /* ZLaunchLog.swift */; };
-		D67A04D22007602500C7B2C0 /* ZLaunchAdWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C82007602500C7B2C0 /* ZLaunchAdWindow.swift */; };
-		D67A04D32007602500C7B2C0 /* ZLaunchAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */; };
-		D67A04D42007602500C7B2C0 /* ZLaunchAdButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04CA2007602500C7B2C0 /* ZLaunchAdButton.swift */; };
-		D67A04D52007602500C7B2C0 /* ZLaunchAdAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A04CB2007602500C7B2C0 /* ZLaunchAdAnimation.swift */; };
+		D6BAE6D52078EE8D0078BC62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D32078EE8D0078BC62 /* Main.storyboard */; };
+		D6BAE6D72078EE8F0078BC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */; };
+		D6BAE6DA2078EE8F0078BC62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D82078EE8F0078BC62 /* LaunchScreen.storyboard */; };
+		D6BAE6E52078EEC80078BC62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6E22078EEC80078BC62 /* ViewController.swift */; };
+		D6BAE6E62078EEC80078BC62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6E32078EEC80078BC62 /* AppDelegate.swift */; };
+		D6BAE6E72078EEC80078BC62 /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6E42078EEC80078BC62 /* AdModel.swift */; };
+		D6BAE6E92078EED80078BC62 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6E82078EED80078BC62 /* data.json */; };
+		D6BAE6F52078EF6B0078BC62 /* ZLaunchAdImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6EB2078EF6B0078BC62 /* ZLaunchAdImageView.swift */; };
+		D6BAE6F62078EF6B0078BC62 /* ZLaunchAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6EC2078EF6B0078BC62 /* ZLaunchAd.swift */; };
+		D6BAE6F72078EF6B0078BC62 /* ZLaunchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6ED2078EF6B0078BC62 /* ZLaunchImageView.swift */; };
+		D6BAE6F82078EF6B0078BC62 /* ZLaunchAdCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6EE2078EF6B0078BC62 /* ZLaunchAdCache.swift */; };
+		D6BAE6F92078EF6B0078BC62 /* ZLaunchAdConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6EF2078EF6B0078BC62 /* ZLaunchAdConfig.swift */; };
+		D6BAE6FA2078EF6B0078BC62 /* ZLaunchLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6F02078EF6B0078BC62 /* ZLaunchLog.swift */; };
+		D6BAE6FB2078EF6B0078BC62 /* ZLaunchAdWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6F12078EF6B0078BC62 /* ZLaunchAdWindow.swift */; };
+		D6BAE6FC2078EF6B0078BC62 /* ZLaunchAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */; };
+		D6BAE6FD2078EF6B0078BC62 /* ZLaunchAdButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6F32078EF6B0078BC62 /* ZLaunchAdButton.swift */; };
+		D6BAE6FE2078EF6B0078BC62 /* ZLaunchAdAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C0286BDCC28D37737FA7B47 /* Pods_ZLaunchAdSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C83747B6BF2D91926AA74F6 /* Pods-ZLaunchAdSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdSwift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		81F4B16F7DB5507A138D8D61 /* Pods-ZLaunchAdSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdSwift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift.release.xcconfig"; sourceTree = "<group>"; };
-		D61BC3521F6D106E00ED5E93 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D63BD61C1FB44302007272F7 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		D63BD61F1FB455B2007272F7 /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
-		D66EE33E1E94EACB0097DF7A /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D66EE3411E94EACB0097DF7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D66EE3431E94EACB0097DF7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D66EE3481E94EACB0097DF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D66EE34D1E94EACB0097DF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D67A04C22007602500C7B2C0 /* ZLaunchAdImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdImageView.swift; sourceTree = "<group>"; };
-		D67A04C32007602500C7B2C0 /* ZLaunchAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAd.swift; sourceTree = "<group>"; };
-		D67A04C42007602500C7B2C0 /* ZLaunchImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchImageView.swift; sourceTree = "<group>"; };
-		D67A04C52007602500C7B2C0 /* ZLaunchAdCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdCache.swift; sourceTree = "<group>"; };
-		D67A04C62007602500C7B2C0 /* ZLaunchAdConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdConfig.swift; sourceTree = "<group>"; };
-		D67A04C72007602500C7B2C0 /* ZLaunchLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchLog.swift; sourceTree = "<group>"; };
-		D67A04C82007602500C7B2C0 /* ZLaunchAdWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdWindow.swift; sourceTree = "<group>"; };
-		D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdView.swift; sourceTree = "<group>"; };
-		D67A04CA2007602500C7B2C0 /* ZLaunchAdButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdButton.swift; sourceTree = "<group>"; };
-		D67A04CB2007602500C7B2C0 /* ZLaunchAdAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdAnimation.swift; sourceTree = "<group>"; };
+		D6BAE6CC2078EE8D0078BC62 /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6BAE6D42078EE8D0078BC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D6BAE6D92078EE8F0078BC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D6BAE6DB2078EE8F0078BC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6BAE6E12078EEC70078BC62 /* ZLaunchAdSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZLaunchAdSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D6BAE6E22078EEC80078BC62 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D6BAE6E32078EEC80078BC62 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D6BAE6E42078EEC80078BC62 /* AdModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
+		D6BAE6E82078EED80078BC62 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		D6BAE6EB2078EF6B0078BC62 /* ZLaunchAdImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdImageView.swift; sourceTree = "<group>"; };
+		D6BAE6EC2078EF6B0078BC62 /* ZLaunchAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAd.swift; sourceTree = "<group>"; };
+		D6BAE6ED2078EF6B0078BC62 /* ZLaunchImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchImageView.swift; sourceTree = "<group>"; };
+		D6BAE6EE2078EF6B0078BC62 /* ZLaunchAdCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdCache.swift; sourceTree = "<group>"; };
+		D6BAE6EF2078EF6B0078BC62 /* ZLaunchAdConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdConfig.swift; sourceTree = "<group>"; };
+		D6BAE6F02078EF6B0078BC62 /* ZLaunchLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchLog.swift; sourceTree = "<group>"; };
+		D6BAE6F12078EF6B0078BC62 /* ZLaunchAdWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdWindow.swift; sourceTree = "<group>"; };
+		D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdView.swift; sourceTree = "<group>"; };
+		D6BAE6F32078EF6B0078BC62 /* ZLaunchAdButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdButton.swift; sourceTree = "<group>"; };
+		D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D66EE33B1E94EACB0097DF7A /* Frameworks */ = {
+		D6BAE6C92078EE8D0078BC62 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC6917A9658005ED0347145 /* Pods_ZLaunchAdSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C2EE91620826123271F19B7 /* Pods */ = {
+		D6BAE6C32078EE8D0078BC62 = {
 			isa = PBXGroup;
 			children = (
-				4C83747B6BF2D91926AA74F6 /* Pods-ZLaunchAdSwift.debug.xcconfig */,
-				81F4B16F7DB5507A138D8D61 /* Pods-ZLaunchAdSwift.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		99147379AC3CE493DF7E4A64 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1C0286BDCC28D37737FA7B47 /* Pods_ZLaunchAdSwift.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D66EE3351E94EACB0097DF7A = {
-			isa = PBXGroup;
-			children = (
-				D66EE3401E94EACB0097DF7A /* ZLaunchAdSwift */,
-				D66EE33F1E94EACB0097DF7A /* Products */,
-				2C2EE91620826123271F19B7 /* Pods */,
-				99147379AC3CE493DF7E4A64 /* Frameworks */,
+				D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */,
+				D6BAE6CE2078EE8D0078BC62 /* ZLaunchAdSwift */,
+				D6BAE6CD2078EE8D0078BC62 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D66EE33F1E94EACB0097DF7A /* Products */ = {
+		D6BAE6CD2078EE8D0078BC62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D66EE33E1E94EACB0097DF7A /* ZLaunchAdSwift.app */,
+				D6BAE6CC2078EE8D0078BC62 /* ZLaunchAdSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D66EE3401E94EACB0097DF7A /* ZLaunchAdSwift */ = {
+		D6BAE6CE2078EE8D0078BC62 /* ZLaunchAdSwift */ = {
 			isa = PBXGroup;
 			children = (
-				D67A04C12007602500C7B2C0 /* ZLaunchAd */,
-				D63BD61C1FB44302007272F7 /* data.json */,
-				D66EE3411E94EACB0097DF7A /* AppDelegate.swift */,
-				D66EE3431E94EACB0097DF7A /* ViewController.swift */,
-				D63BD61F1FB455B2007272F7 /* AdModel.swift */,
-				D66EE3481E94EACB0097DF7A /* Assets.xcassets */,
-				D61BC3521F6D106E00ED5E93 /* LaunchScreen.storyboard */,
-				D66EE34D1E94EACB0097DF7A /* Info.plist */,
+				D6BAE6E82078EED80078BC62 /* data.json */,
+				D6BAE6E42078EEC80078BC62 /* AdModel.swift */,
+				D6BAE6E32078EEC80078BC62 /* AppDelegate.swift */,
+				D6BAE6E22078EEC80078BC62 /* ViewController.swift */,
+				D6BAE6D32078EE8D0078BC62 /* Main.storyboard */,
+				D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */,
+				D6BAE6D82078EE8F0078BC62 /* LaunchScreen.storyboard */,
+				D6BAE6DB2078EE8F0078BC62 /* Info.plist */,
+				D6BAE6E12078EEC70078BC62 /* ZLaunchAdSwift-Bridging-Header.h */,
 			);
 			path = ZLaunchAdSwift;
 			sourceTree = "<group>";
 		};
-		D67A04C12007602500C7B2C0 /* ZLaunchAd */ = {
+		D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
-				D67A04C32007602500C7B2C0 /* ZLaunchAd.swift */,
-<<<<<<< HEAD
-=======
-				D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */,
->>>>>>> master
-				D67A04C22007602500C7B2C0 /* ZLaunchAdImageView.swift */,
-				D67A04C42007602500C7B2C0 /* ZLaunchImageView.swift */,
-				D67A04C52007602500C7B2C0 /* ZLaunchAdCache.swift */,
-				D67A04C62007602500C7B2C0 /* ZLaunchAdConfig.swift */,
-				D67A04C72007602500C7B2C0 /* ZLaunchLog.swift */,
-				D67A04C82007602500C7B2C0 /* ZLaunchAdWindow.swift */,
-<<<<<<< HEAD
-				D67A04C92007602500C7B2C0 /* ZLaunchAdView.swift */,
-=======
->>>>>>> master
-				D67A04CA2007602500C7B2C0 /* ZLaunchAdButton.swift */,
-				D67A04CB2007602500C7B2C0 /* ZLaunchAdAnimation.swift */,
+				D6BAE6EB2078EF6B0078BC62 /* ZLaunchAdImageView.swift */,
+				D6BAE6EC2078EF6B0078BC62 /* ZLaunchAd.swift */,
+				D6BAE6ED2078EF6B0078BC62 /* ZLaunchImageView.swift */,
+				D6BAE6EE2078EF6B0078BC62 /* ZLaunchAdCache.swift */,
+				D6BAE6EF2078EF6B0078BC62 /* ZLaunchAdConfig.swift */,
+				D6BAE6F02078EF6B0078BC62 /* ZLaunchLog.swift */,
+				D6BAE6F12078EF6B0078BC62 /* ZLaunchAdWindow.swift */,
+				D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */,
+				D6BAE6F32078EF6B0078BC62 /* ZLaunchAdButton.swift */,
+				D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */,
 			);
 			name = ZLaunchAd;
-			path = ../../ZLaunchAd;
+			path = ../ZLaunchAd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D66EE33D1E94EACB0097DF7A /* ZLaunchAdSwift */ = {
+		D6BAE6CB2078EE8D0078BC62 /* ZLaunchAdSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D66EE3501E94EACB0097DF7A /* Build configuration list for PBXNativeTarget "ZLaunchAdSwift" */;
+			buildConfigurationList = D6BAE6DE2078EE8F0078BC62 /* Build configuration list for PBXNativeTarget "ZLaunchAdSwift" */;
 			buildPhases = (
-				40DB9AC704848CCBB139D22A /* [CP] Check Pods Manifest.lock */,
-				D66EE33A1E94EACB0097DF7A /* Sources */,
-				D66EE33B1E94EACB0097DF7A /* Frameworks */,
-				D66EE33C1E94EACB0097DF7A /* Resources */,
-				BBCCD58544163AE47B6C35BC /* [CP] Embed Pods Frameworks */,
-				68EFC5E26B66FE60E1E4DE75 /* [CP] Copy Pods Resources */,
+				D6BAE6C82078EE8D0078BC62 /* Sources */,
+				D6BAE6C92078EE8D0078BC62 /* Frameworks */,
+				D6BAE6CA2078EE8D0078BC62 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ZLaunchAdSwift;
-			productName = ZLaunchAdDemo;
-			productReference = D66EE33E1E94EACB0097DF7A /* ZLaunchAdSwift.app */;
+			productName = ZLaunchAdSwift;
+			productReference = D6BAE6CC2078EE8D0078BC62 /* ZLaunchAdSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D66EE3361E94EACB0097DF7A /* Project object */ = {
+		D6BAE6C42078EE8D0078BC62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = meng;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = MQZHot;
 				TargetAttributes = {
-					D66EE33D1E94EACB0097DF7A = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 47ZCN2V9UQ;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+					D6BAE6CB2078EE8D0078BC62 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
-			buildConfigurationList = D66EE3391E94EACB0097DF7A /* Build configuration list for PBXProject "ZLaunchAdSwift" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = D6BAE6C72078EE8D0078BC62 /* Build configuration list for PBXProject "ZLaunchAdSwift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = D66EE3351E94EACB0097DF7A;
-			productRefGroup = D66EE33F1E94EACB0097DF7A /* Products */;
+			mainGroup = D6BAE6C32078EE8D0078BC62;
+			productRefGroup = D6BAE6CD2078EE8D0078BC62 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D66EE33D1E94EACB0097DF7A /* ZLaunchAdSwift */,
+				D6BAE6CB2078EE8D0078BC62 /* ZLaunchAdSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D66EE33C1E94EACB0097DF7A /* Resources */ = {
+		D6BAE6CA2078EE8D0078BC62 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D63BD61E1FB44FFB007272F7 /* data.json in Resources */,
-				D61BC3531F6D106E00ED5E93 /* LaunchScreen.storyboard in Resources */,
-				D66EE3491E94EACB0097DF7A /* Assets.xcassets in Resources */,
+				D6BAE6DA2078EE8F0078BC62 /* LaunchScreen.storyboard in Resources */,
+				D6BAE6D72078EE8F0078BC62 /* Assets.xcassets in Resources */,
+				D6BAE6D52078EE8D0078BC62 /* Main.storyboard in Resources */,
+				D6BAE6E92078EED80078BC62 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		40DB9AC704848CCBB139D22A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZLaunchAdSwift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		68EFC5E26B66FE60E1E4DE75 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBCCD58544163AE47B6C35BC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		D66EE33A1E94EACB0097DF7A /* Sources */ = {
+		D6BAE6C82078EE8D0078BC62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D67A04D12007602500C7B2C0 /* ZLaunchLog.swift in Sources */,
-				D67A04D02007602500C7B2C0 /* ZLaunchAdConfig.swift in Sources */,
-				D67A04D52007602500C7B2C0 /* ZLaunchAdAnimation.swift in Sources */,
-				D67A04CD2007602500C7B2C0 /* ZLaunchAd.swift in Sources */,
-				D63BD6381FB467AF007272F7 /* AppDelegate.swift in Sources */,
-				D67A04CE2007602500C7B2C0 /* ZLaunchImageView.swift in Sources */,
-				D66EE3441E94EACB0097DF7A /* ViewController.swift in Sources */,
-				D67A04CF2007602500C7B2C0 /* ZLaunchAdCache.swift in Sources */,
-				D63BD6201FB455B2007272F7 /* AdModel.swift in Sources */,
-				D67A04D22007602500C7B2C0 /* ZLaunchAdWindow.swift in Sources */,
-				D67A04CC2007602500C7B2C0 /* ZLaunchAdImageView.swift in Sources */,
-				D67A04D42007602500C7B2C0 /* ZLaunchAdButton.swift in Sources */,
-				D67A04D32007602500C7B2C0 /* ZLaunchAdView.swift in Sources */,
+				D6BAE6FA2078EF6B0078BC62 /* ZLaunchLog.swift in Sources */,
+				D6BAE6F92078EF6B0078BC62 /* ZLaunchAdConfig.swift in Sources */,
+				D6BAE6FE2078EF6B0078BC62 /* ZLaunchAdAnimation.swift in Sources */,
+				D6BAE6F62078EF6B0078BC62 /* ZLaunchAd.swift in Sources */,
+				D6BAE6E62078EEC80078BC62 /* AppDelegate.swift in Sources */,
+				D6BAE6F72078EF6B0078BC62 /* ZLaunchImageView.swift in Sources */,
+				D6BAE6E52078EEC80078BC62 /* ViewController.swift in Sources */,
+				D6BAE6F82078EF6B0078BC62 /* ZLaunchAdCache.swift in Sources */,
+				D6BAE6E72078EEC80078BC62 /* AdModel.swift in Sources */,
+				D6BAE6FB2078EF6B0078BC62 /* ZLaunchAdWindow.swift in Sources */,
+				D6BAE6F52078EF6B0078BC62 /* ZLaunchAdImageView.swift in Sources */,
+				D6BAE6FD2078EF6B0078BC62 /* ZLaunchAdButton.swift in Sources */,
+				D6BAE6FC2078EF6B0078BC62 /* ZLaunchAdView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		D6BAE6D32078EE8D0078BC62 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6BAE6D42078EE8D0078BC62 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D6BAE6D82078EE8F0078BC62 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6BAE6D92078EE8F0078BC62 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		D66EE34E1E94EACB0097DF7A /* Debug */ = {
+		D6BAE6DC2078EE8F0078BC62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -307,19 +245,21 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -333,29 +273,31 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OSACOMPILE_EXECUTE_ONLY = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		D66EE34F1E94EACB0097DF7A /* Release */ = {
+		D6BAE6DD2078EE8F0078BC62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -363,19 +305,21 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -383,46 +327,49 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OSACOMPILE_EXECUTE_ONLY = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		D66EE3511E94EACB0097DF7A /* Debug */ = {
+		D6BAE6DF2078EE8F0078BC62 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C83747B6BF2D91926AA74F6 /* Pods-ZLaunchAdSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 47ZCN2V9UQ;
-				INFOPLIST_FILE = "$(SRCROOT)/ZLaunchAdSwift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OSACOMPILE_EXECUTE_ONLY = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAd;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ZLaunchAdSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		D66EE3521E94EACB0097DF7A /* Release */ = {
+		D6BAE6E02078EE8F0078BC62 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81F4B16F7DB5507A138D8D61 /* Pods-ZLaunchAdSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 47ZCN2V9UQ;
-				INFOPLIST_FILE = "$(SRCROOT)/ZLaunchAdSwift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OSACOMPILE_EXECUTE_ONLY = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAd;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ZLaunchAdSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,25 +378,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D66EE3391E94EACB0097DF7A /* Build configuration list for PBXProject "ZLaunchAdSwift" */ = {
+		D6BAE6C72078EE8D0078BC62 /* Build configuration list for PBXProject "ZLaunchAdSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D66EE34E1E94EACB0097DF7A /* Debug */,
-				D66EE34F1E94EACB0097DF7A /* Release */,
+				D6BAE6DC2078EE8F0078BC62 /* Debug */,
+				D6BAE6DD2078EE8F0078BC62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D66EE3501E94EACB0097DF7A /* Build configuration list for PBXNativeTarget "ZLaunchAdSwift" */ = {
+		D6BAE6DE2078EE8F0078BC62 /* Build configuration list for PBXNativeTarget "ZLaunchAdSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D66EE3511E94EACB0097DF7A /* Debug */,
-				D66EE3521E94EACB0097DF7A /* Release */,
+				D6BAE6DF2078EE8F0078BC62 /* Debug */,
+				D6BAE6E02078EE8F0078BC62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D66EE3361E94EACB0097DF7A /* Project object */;
+	rootObject = D6BAE6C42078EE8D0078BC62 /* Project object */;
 }
