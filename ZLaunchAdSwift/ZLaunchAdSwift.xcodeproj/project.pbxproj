@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6BAE6D52078EE8D0078BC62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D32078EE8D0078BC62 /* Main.storyboard */; };
+		7A64EA7A9330F2F067F30FF9 /* Pods_ZLaunchAdSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5551134455F291A93A85B2B /* Pods_ZLaunchAdSwift.framework */; };
 		D6BAE6D72078EE8F0078BC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */; };
 		D6BAE6DA2078EE8F0078BC62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D82078EE8F0078BC62 /* LaunchScreen.storyboard */; };
 		D6BAE6E52078EEC80078BC62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6E22078EEC80078BC62 /* ViewController.swift */; };
@@ -27,8 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B95EBEB272A727977894626 /* Pods-ZLaunchAdSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdSwift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift.release.xcconfig"; sourceTree = "<group>"; };
+		B0A9DD51C3B020D8B05E5AE7 /* Pods-ZLaunchAdSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdSwift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		D6BAE6CC2078EE8D0078BC62 /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6BAE6D42078EE8D0078BC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6BAE6D92078EE8F0078BC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6BAE6DB2078EE8F0078BC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdView.swift; sourceTree = "<group>"; };
 		D6BAE6F32078EF6B0078BC62 /* ZLaunchAdButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdButton.swift; sourceTree = "<group>"; };
 		D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdAnimation.swift; sourceTree = "<group>"; };
+		F5551134455F291A93A85B2B /* Pods_ZLaunchAdSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A64EA7A9330F2F067F30FF9 /* Pods_ZLaunchAdSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,8 @@
 				D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */,
 				D6BAE6CE2078EE8D0078BC62 /* ZLaunchAdSwift */,
 				D6BAE6CD2078EE8D0078BC62 /* Products */,
+				F0B5234D21821FA6E8CB2B88 /* Pods */,
+				E77E4D2016C3583ABAD5CFBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,7 +89,6 @@
 				D6BAE6E42078EEC80078BC62 /* AdModel.swift */,
 				D6BAE6E32078EEC80078BC62 /* AppDelegate.swift */,
 				D6BAE6E22078EEC80078BC62 /* ViewController.swift */,
-				D6BAE6D32078EE8D0078BC62 /* Main.storyboard */,
 				D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */,
 				D6BAE6D82078EE8F0078BC62 /* LaunchScreen.storyboard */,
 				D6BAE6DB2078EE8F0078BC62 /* Info.plist */,
@@ -111,6 +115,23 @@
 			path = ../ZLaunchAd;
 			sourceTree = "<group>";
 		};
+		E77E4D2016C3583ABAD5CFBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5551134455F291A93A85B2B /* Pods_ZLaunchAdSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0B5234D21821FA6E8CB2B88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0A9DD51C3B020D8B05E5AE7 /* Pods-ZLaunchAdSwift.debug.xcconfig */,
+				7B95EBEB272A727977894626 /* Pods-ZLaunchAdSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6BAE6DE2078EE8F0078BC62 /* Build configuration list for PBXNativeTarget "ZLaunchAdSwift" */;
 			buildPhases = (
+				1A1C37CF0530EFEA7C2056A9 /* [CP] Check Pods Manifest.lock */,
 				D6BAE6C82078EE8D0078BC62 /* Sources */,
 				D6BAE6C92078EE8D0078BC62 /* Frameworks */,
 				D6BAE6CA2078EE8D0078BC62 /* Resources */,
+				6D1FEED8E363BD59F8060329 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,12 +195,50 @@
 			files = (
 				D6BAE6DA2078EE8F0078BC62 /* LaunchScreen.storyboard in Resources */,
 				D6BAE6D72078EE8F0078BC62 /* Assets.xcassets in Resources */,
-				D6BAE6D52078EE8D0078BC62 /* Main.storyboard in Resources */,
 				D6BAE6E92078EED80078BC62 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A1C37CF0530EFEA7C2056A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZLaunchAdSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D1FEED8E363BD59F8060329 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D6BAE6C82078EE8D0078BC62 /* Sources */ = {
@@ -203,14 +264,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D6BAE6D32078EE8D0078BC62 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D6BAE6D42078EE8D0078BC62 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D6BAE6D82078EE8F0078BC62 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -338,11 +391,14 @@
 		};
 		D6BAE6DF2078EE8F0078BC62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A9DD51C3B020D8B05E5AE7 /* Pods-ZLaunchAdSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47ZCN2V9UQ;
 				INFOPLIST_FILE = ZLaunchAdSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,11 +414,14 @@
 		};
 		D6BAE6E02078EE8F0078BC62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B95EBEB272A727977894626 /* Pods-ZLaunchAdSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47ZCN2V9UQ;
 				INFOPLIST_FILE = ZLaunchAdSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
