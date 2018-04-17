@@ -49,8 +49,10 @@ public class ZLaunchAdView: UIView {
         return imgView
     }()
     fileprivate func launchAdTapAction() {
-        launchAdVCRemove() {
-            if self.adTapAction != nil { self.adTapAction!() }
+        if adTapAction != nil {
+            launchAdVCRemove() {
+                self.adTapAction!()
+            }
         }
     }
     init(frame: CGRect, showEnterForeground: Bool) {
