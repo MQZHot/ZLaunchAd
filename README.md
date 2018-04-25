@@ -31,7 +31,7 @@ adView.setImageResource(imageResource, action: {
 
 ### 创建广告View
 ```swift
-/// 创建广告View
+/// 初始化方法，创建广告View
 ///
 /// - Parameters:
 ///   - waitTime: 加载广告等待的时间，默认3s
@@ -41,7 +41,7 @@ adView.setImageResource(imageResource, action: {
 func create(waitTime: Int = 3, showEnterForeground: Bool = false, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView
 ```
 
-### 设置图片
+### 配置图片资源----配置跳过按钮
 ```swift
 /// 加载图片，网络图片/本地图片/GIF图片
 ///
@@ -50,6 +50,11 @@ func create(waitTime: Int = 3, showEnterForeground: Bool = false, adNetRequest: 
 ///   - buttonConfig:  配置跳过按钮
 ///   - action: 广告点击响应
 func setImageResource(_ imageResource: ZLaunchAdImageResourceConfigure, buttonConfig: ZLaunchSkipButtonConfig? = nil, action: ZLaunchClosure?)
+```
+
+### 进入后台后返回的时间大于间隔才进行显示， 默认10s
+```swift
+var timeForWillEnterForeground: Double = 10
 ```
 
  ### 页面配置
