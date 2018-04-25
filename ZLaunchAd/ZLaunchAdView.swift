@@ -28,7 +28,8 @@ public class ZLaunchAdView: UIView {
         addAdImageView()
     }
     
-    
+    /// 进入后台后返回的时间大于间隔才进行显示
+    var timeForWillEnterForeground: Double = 10
     
 // MARK: - private
     static var `default` = ZLaunchAdView(frame: UIScreen.main.bounds, showEnterForeground: true)
@@ -40,6 +41,7 @@ public class ZLaunchAdView: UIView {
     fileprivate var adTapAction: ZLaunchClosure?
     fileprivate var imageResource: ZLaunchAdImageResourceConfigure?
     fileprivate var skipBtn: ZLaunchAdButton?
+    
     /// 广告图
     fileprivate lazy var launchAdImgView: ZLaunchAdImageView = {
         let imgView = ZLaunchAdImageView(frame: .zero)
@@ -55,19 +57,33 @@ public class ZLaunchAdView: UIView {
             }
         }
     }
+    let zLaunchAdAppearTimeStamp = "ZLaunchAdAppearTimeStamp"
     init(frame: CGRect, showEnterForeground: Bool) {
         super.init(frame: frame)
         let launchImageView = ZLaunchImageView(frame: UIScreen.main.bounds)
         addSubview(launchImageView)
         if showEnterForeground {
             NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { _ in
-                UIApplication.shared.keyWindow?.addSubview(self)
-                self.startTimer()
+                /// 上次出现的时间戳
+                let lastAppearTimeStamp = UserDefaults.standard.double(forKey: self.zLaunchAdAppearTimeStamp)
+                let currentTimeStamp = self.getSystemTimestamp()
+                if currentTimeStamp - lastAppearTimeStamp > self.timeForWillEnterForeground*1000 {
+                    UIApplication.shared.keyWindow?.addSubview(self)
+                    self.startTimer()
+                }
+            }
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: nil) { (_) in
+                /// 记录时间戳
+                UserDefaults.standard.set(self.getSystemTimestamp(), forKey: self.zLaunchAdAppearTimeStamp)
             }
         }
     }
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    /// 获取系统时间戳
+    fileprivate func getSystemTimestamp() -> Double {
+        let date = Date()
+        let time = String(format: "%.3f", date.timeIntervalSince1970)
+        let timeSp = time.replacingOccurrences(of: ".", with: "") as NSString
+        return timeSp.doubleValue
     }
     public override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
@@ -80,6 +96,9 @@ public class ZLaunchAdView: UIView {
                 addAdImageView()
             }
         }
+    }
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     deinit {
         NotificationCenter.default.removeObserver(self)

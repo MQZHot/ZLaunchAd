@@ -100,14 +100,14 @@
 		D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
-				D6BAE6EB2078EF6B0078BC62 /* ZLaunchAdImageView.swift */,
 				D6BAE6EC2078EF6B0078BC62 /* ZLaunchAd.swift */,
+				D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */,
 				D6BAE6ED2078EF6B0078BC62 /* ZLaunchImageView.swift */,
+				D6BAE6EB2078EF6B0078BC62 /* ZLaunchAdImageView.swift */,
 				D6BAE6EE2078EF6B0078BC62 /* ZLaunchAdCache.swift */,
 				D6BAE6EF2078EF6B0078BC62 /* ZLaunchAdConfig.swift */,
 				D6BAE6F02078EF6B0078BC62 /* ZLaunchLog.swift */,
 				D6BAE6F12078EF6B0078BC62 /* ZLaunchAdWindow.swift */,
-				D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */,
 				D6BAE6F32078EF6B0078BC62 /* ZLaunchAdButton.swift */,
 				D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */,
 			);
