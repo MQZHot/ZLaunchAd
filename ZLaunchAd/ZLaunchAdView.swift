@@ -29,8 +29,9 @@ public class ZLaunchAdView: UIView {
     }
     
     /// 进入后台后返回的时间大于间隔才进行显示
-    var timeForWillEnterForeground: Double = 10
+    public var timeForWillEnterForeground: Double = 10
     
+/////////////////////////////////////////////////////////////////////////////////////
 // MARK: - private
     static var `default` = ZLaunchAdView(frame: UIScreen.main.bounds, showEnterForeground: true)
     var adRequest: ((ZLaunchAdView)->())?
@@ -78,13 +79,7 @@ public class ZLaunchAdView: UIView {
             }
         }
     }
-    /// 获取系统时间戳
-    fileprivate func getSystemTimestamp() -> Double {
-        let date = Date()
-        let time = String(format: "%.3f", date.timeIntervalSince1970)
-        let timeSp = time.replacingOccurrences(of: ".", with: "") as NSString
-        return timeSp.doubleValue
-    }
+    
     public override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         if newWindow != nil {
@@ -96,6 +91,13 @@ public class ZLaunchAdView: UIView {
                 addAdImageView()
             }
         }
+    }
+    /// 获取系统时间戳
+    fileprivate func getSystemTimestamp() -> Double {
+        let date = Date()
+        let time = String(format: "%.3f", date.timeIntervalSince1970)
+        let timeSp = time.replacingOccurrences(of: ".", with: "") as NSString
+        return timeSp.doubleValue
     }
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

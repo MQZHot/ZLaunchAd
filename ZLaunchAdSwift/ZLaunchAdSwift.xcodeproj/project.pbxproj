@@ -106,10 +106,10 @@
 				D6BAE6EB2078EF6B0078BC62 /* ZLaunchAdImageView.swift */,
 				D6BAE6EE2078EF6B0078BC62 /* ZLaunchAdCache.swift */,
 				D6BAE6EF2078EF6B0078BC62 /* ZLaunchAdConfig.swift */,
-				D6BAE6F02078EF6B0078BC62 /* ZLaunchLog.swift */,
 				D6BAE6F12078EF6B0078BC62 /* ZLaunchAdWindow.swift */,
 				D6BAE6F32078EF6B0078BC62 /* ZLaunchAdButton.swift */,
 				D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */,
+				D6BAE6F02078EF6B0078BC62 /* ZLaunchLog.swift */,
 			);
 			name = ZLaunchAd;
 			path = ../ZLaunchAd;
