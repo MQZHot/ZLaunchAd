@@ -6,13 +6,10 @@
 ZLaunchAd集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF，支持本地图片，支持视图过渡动画
 
 
-***ZLaunchAdVC替换为ZLaunchAd***
-
-
 ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic0.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic2.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic3.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic4.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic5.gif) ![image](https://github.com/MQZHot/ZLaunchAd/raw/master/Picture/pic6.gif)
 
 ### 功能
-- [x] 支持进入前台广告显示
+- [x] 支持进入前台广告显示，设定时间间隔，进入后台后返回的时间大于间隔才进行显示
 - [x] 支持Objective-C/Swift
 - [x] 自带图片缓存，清除缓存
 - [x] 自定义跳过按钮外观、位置
