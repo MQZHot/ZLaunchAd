@@ -84,7 +84,7 @@ extension AppDelegate {
     /// 进入前台时发出请求，加载不同的广告
     /// 网络请求写在`adNetRequest`闭包中
     func setupLaunchAd_03(adClick: @escaping (()->())) {
-        ZLaunchAd.create(showEnterForeground: true, adNetRequest: { adView in
+        ZLaunchAd.create(customNotificationName: "myNotification") { (adView) in
             self.request { model in
                 let buttonConfig = ZLaunchSkipButtonConfig()
                 buttonConfig.skipBtnType = model.skipBtnType
@@ -98,7 +98,24 @@ extension AppDelegate {
                     adClick()
                 })
             }
-        })
+        }
+        
+        
+//        ZLaunchAd.create(showEnterForeground: true, adNetRequest: { adView in
+//            self.request { model in
+//                let buttonConfig = ZLaunchSkipButtonConfig()
+//                buttonConfig.skipBtnType = model.skipBtnType
+//                let imageResource = ZLaunchAdImageResourceConfigure()
+//                imageResource.imageNameOrImageURL = model.imgUrl
+//                imageResource.animationType = model.animationType
+//                imageResource.imageDuration = model.duration
+//                imageResource.imageFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
+//                /// 设置图片、跳过按钮
+//                adView.setImageResource(imageResource, buttonConfig: buttonConfig, action: {
+//                    adClick()
+//                })
+//            }
+//        })
     }
 }
 
