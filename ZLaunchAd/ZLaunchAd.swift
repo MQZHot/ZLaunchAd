@@ -12,11 +12,12 @@ import UIKit
 @objc
 public class ZLaunchAd: NSObject {
     
-    /// 创建广告View
+    /// 创建广告view --- 进入前台时显示
     ///
     /// - Parameters:
     ///   - waitTime: 加载广告等待的时间，默认3s
     ///   - showEnterForeground: 是否进入前台时显示，默认`false`
+    ///   - timeForWillEnterForeground: 控制进入后台到前台显示的时间
     ///   - adNetRequest: 广告网络请求。如果需要每次进入前台是显示不同的广告图片，网络请求写在此闭包中
     /// - Returns: ZLaunchAdView
     @discardableResult
@@ -35,6 +36,13 @@ public class ZLaunchAd: NSObject {
         return launchAdView
     }
     
+    /// 创建广告view --- 自定义通知控制出现
+    ///
+    /// - Parameters:
+    ///   - waitTime: 加载广告等待的时间，默认3s
+    ///   - customNotificationName: 自定义通知名称
+    ///   - adNetRequest: 广告网络请求。如果需要每次进入前台是显示不同的广告图片，网络请求写在此闭包中
+    /// - Returns: ZLaunchAdView
     @discardableResult
     @objc public class func create(waitTime: Int = 3, customNotificationName: String?, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView {
         let launchAdView: ZLaunchAdView = ZLaunchAdView.default

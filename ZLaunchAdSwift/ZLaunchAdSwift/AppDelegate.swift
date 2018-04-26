@@ -84,7 +84,7 @@ extension AppDelegate {
     /// 进入前台时发出请求，加载不同的广告
     /// 网络请求写在`adNetRequest`闭包中
     func setupLaunchAd_03(adClick: @escaping (()->())) {
-        let adView = ZLaunchAd.create(showEnterForeground: true, adNetRequest: { adView in
+        ZLaunchAd.create(showEnterForeground: true, adNetRequest: { adView in
             self.request { model in
                 let buttonConfig = ZLaunchSkipButtonConfig()
                 buttonConfig.skipBtnType = model.skipBtnType

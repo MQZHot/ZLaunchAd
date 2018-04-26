@@ -28,11 +28,6 @@ public class ZLaunchAdView: UIView {
         addAdImageView()
     }
     
-    /// 出现
-    @objc public func show() {
-        UIApplication.shared.keyWindow?.addSubview(self)
-    }
-    
 /////////////////////////////////////////////////////////////////////////////////////
 // MARK: - private
     static var `default` = ZLaunchAdView(frame: UIScreen.main.bounds)
@@ -61,7 +56,10 @@ public class ZLaunchAdView: UIView {
             }
         }
     }
-    
+    /// 出现
+    @objc fileprivate func show() {
+        UIApplication.shared.keyWindow?.addSubview(self)
+    }
     public override init(frame: CGRect) {
         super.init(frame: frame)
         let launchImageView = ZLaunchImageView(frame: UIScreen.main.bounds)
