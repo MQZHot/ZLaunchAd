@@ -58,7 +58,7 @@ public class ZLaunchAdView: UIView {
             }
         }
     }
-    let zLaunchAdAppearTimeStamp = "ZLaunchAdAppearTimeStamp"
+    fileprivate let zLaunchAdAppearTimeStamp = "ZLaunchAdAppearTimeStamp"
     init(frame: CGRect, showEnterForeground: Bool) {
         super.init(frame: frame)
         let launchImageView = ZLaunchImageView(frame: UIScreen.main.bounds)
