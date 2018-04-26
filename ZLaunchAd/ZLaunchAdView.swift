@@ -28,12 +28,14 @@ public class ZLaunchAdView: UIView {
         addAdImageView()
     }
     
-    /// 进入后台后返回的时间大于间隔才进行显示
-    public var timeForWillEnterForeground: Double = 10
+    /// 出现
+    @objc public func show() {
+        UIApplication.shared.keyWindow?.addSubview(self)
+    }
     
 /////////////////////////////////////////////////////////////////////////////////////
 // MARK: - private
-    static var `default` = ZLaunchAdView(frame: UIScreen.main.bounds, showEnterForeground: true)
+    static var `default` = ZLaunchAdView(frame: UIScreen.main.bounds)
     var adRequest: ((ZLaunchAdView)->())?
     var waitTime: Int = 3
     fileprivate var skipBtnConfig: ZLaunchSkipButtonConfig = ZLaunchSkipButtonConfig()
@@ -42,7 +44,8 @@ public class ZLaunchAdView: UIView {
     fileprivate var adTapAction: ZLaunchClosure?
     fileprivate var imageResource: ZLaunchAdImageResourceConfigure?
     fileprivate var skipBtn: ZLaunchAdButton?
-    
+    /// UIApplicationWillEnterForeground Notification.Name
+    fileprivate let zLaunchAdAppearTimeStamp = "ZLaunchAdAppearTimeStamp"
     /// 广告图
     fileprivate lazy var launchAdImgView: ZLaunchAdImageView = {
         let imgView = ZLaunchAdImageView(frame: .zero)
@@ -58,25 +61,29 @@ public class ZLaunchAdView: UIView {
             }
         }
     }
-    fileprivate let zLaunchAdAppearTimeStamp = "ZLaunchAdAppearTimeStamp"
-    init(frame: CGRect, showEnterForeground: Bool) {
+    
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         let launchImageView = ZLaunchImageView(frame: UIScreen.main.bounds)
         addSubview(launchImageView)
+    }
+    
+    func appear(showEnterForeground: Bool, timeForWillEnterForeground: Double = 10, customNotificationName: String? = nil) {
         if showEnterForeground {
             NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { _ in
                 /// 上次出现的时间戳
                 let lastAppearTimeStamp = UserDefaults.standard.double(forKey: self.zLaunchAdAppearTimeStamp)
                 let currentTimeStamp = self.getSystemTimestamp()
-                if currentTimeStamp - lastAppearTimeStamp > self.timeForWillEnterForeground*1000 {
-                    UIApplication.shared.keyWindow?.addSubview(self)
-                    self.startTimer()
+                if currentTimeStamp - lastAppearTimeStamp > timeForWillEnterForeground*1000 {
+                    self.show()
                 }
             }
             NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: nil) { (_) in
                 /// 记录时间戳
                 UserDefaults.standard.set(self.getSystemTimestamp(), forKey: self.zLaunchAdAppearTimeStamp)
             }
+        } else if customNotificationName != nil {
+            NotificationCenter.default.addObserver(self, selector: #selector(show), name: NSNotification.Name(customNotificationName!), object: nil)
         }
     }
     
@@ -145,6 +152,7 @@ extension ZLaunchAdView {
         launchAdVCRemove()
     }
 }
+
 // MARK: - remove
 extension ZLaunchAdView {
     fileprivate func launchAdVCRemove(completion: ZLaunchClosure? = nil) {

@@ -99,7 +99,6 @@ extension AppDelegate {
                 })
             }
         })
-        adView.timeForWillEnterForeground = 20
     }
 }
 
