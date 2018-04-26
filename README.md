@@ -10,6 +10,7 @@ ZLaunchAd集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF�
 
 ### 功能
 - [x] 支持进入前台广告显示，设定时间间隔，进入后台后返回的时间大于间隔才进行显示
+- [x] 接收自定义通知控制图片显示
 - [x] 支持Objective-C/Swift
 - [x] 自带图片缓存，清除缓存
 - [x] 自定义跳过按钮外观、位置
@@ -18,29 +19,29 @@ ZLaunchAd集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF�
 - [x] 支持广告点击事件，支持广告完成动画设置
 
 ### 使用
-```swift
-let adView = ZLaunchAd.create()
-let imageResource = ZLaunchAdImageResourceConfigure()
-imageResource.imageNameOrImageURL = "163yun"
-imageResource.imageDuration = 5
-imageResource.imageFrame = UIScreen.main.bounds
-adView.setImageResource(imageResource, action: {
-    /// 广告点击
-})
-```
 
 ### 创建广告View
 ```swift
-/// 初始化方法，创建广告View
+/// 创建广告view --- 进入前台时显示
 ///
 /// - Parameters:
 ///   - waitTime: 加载广告等待的时间，默认3s
 ///   - showEnterForeground: 是否进入前台时显示，默认`false`
+///   - timeForWillEnterForeground: 控制进入后台到前台显示的时间
 ///   - adNetRequest: 广告网络请求。如果需要每次进入前台是显示不同的广告图片，网络请求写在此闭包中
 /// - Returns: ZLaunchAdView
-func create(waitTime: Int = 3, showEnterForeground: Bool = false, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView
+func create(waitTime: Int = 3, showEnterForeground: Bool = false, timeForWillEnterForeground: Double = 10, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView
 ```
-
+```
+/// 创建广告view --- 自定义通知控制出现
+///
+/// - Parameters:
+///   - waitTime: 加载广告等待的时间，默认3s
+///   - customNotificationName: 自定义通知名称
+///   - adNetRequest: 广告网络请求。如果需要每次进入前台是显示不同的广告图片，网络请求写在此闭包中
+/// - Returns: ZLaunchAdView
+func create(waitTime: Int = 3, customNotificationName: String?, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView
+```
 ### 配置图片资源----配置跳过按钮
 ```swift
 /// 加载图片，网络图片/本地图片/GIF图片
