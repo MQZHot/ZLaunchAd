@@ -53,11 +53,6 @@ func create(waitTime: Int = 3, customNotificationName: String?, adNetRequest: ((
 func setImageResource(_ imageResource: ZLaunchAdImageResourceConfigure, buttonConfig: ZLaunchSkipButtonConfig? = nil, action: ZLaunchClosure?)
 ```
 
-### 进入后台后返回的时间大于间隔才进行显示， 默认10s
-```swift
-var timeForWillEnterForeground: Double = 10
-```
-
  ### 页面配置
  * `ZLaunchSkipButtonConfig`：跳过按钮配置
  ```swift
