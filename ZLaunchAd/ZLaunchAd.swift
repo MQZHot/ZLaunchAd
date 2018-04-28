@@ -5,7 +5,7 @@
 //  Created by MQZHot on 2017/12/30.
 //  Copyright © 2017年 MQZHot. All rights reserved.
 //
-//  https://github.com/MQZHot/ZLaunchAdVC
+//  https://github.com/MQZHot/ZLaunchAd
 //
 
 import UIKit
