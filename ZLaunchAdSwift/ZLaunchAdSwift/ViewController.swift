@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.orange
         navigationItem.title = "ZLaunchAdVC"
         
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+20) {
             NotificationCenter.default.post(name: NSNotification.Name.init("myNotification"), object: nil)
         }
