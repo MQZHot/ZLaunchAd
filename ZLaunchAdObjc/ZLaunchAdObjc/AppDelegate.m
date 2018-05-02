@@ -25,8 +25,7 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
-    ZLaunchAdView *launchAdView = [ZLaunchAd createWithWaitTime:3 showEnterForeground:YES adNetRequest:nil];
-    
+    ZLaunchAdView *launchAdView = [ZLaunchAd createWithWaitTime:3 showEnterForeground:YES timeForWillEnterForeground: 10 adNetRequest:nil];
     ZLaunchAdImageResourceConfigure *imageResource = [[ZLaunchAdImageResourceConfigure alloc]init];
     imageResource.imageNameOrImageURL =@"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg";
     imageResource.imageDuration = 5;
