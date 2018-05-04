@@ -54,7 +54,6 @@ public class ZLaunchAd: NSObject {
     }
     
     // MARK: - 清除缓存
-    
     /// 清除全部缓存
     @objc public class func clearDiskCache() {
         ZLaunchAdClearDiskCache()
