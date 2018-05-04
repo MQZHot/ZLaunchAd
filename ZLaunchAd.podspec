@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "ZLaunchAd"                              
-s.version      = "2.0.1"                                   
+s.version      = "2.0.2"                                   
 s.summary      = "集成启动广告,支持LaunchImage和LaunchScreen,支持GIF,支持本地图片,支持视图过渡动画"
 s.homepage     = "https://github.com/MQZHot/ZLaunchAd"
 s.author       = { "mqz" => "mqz1228@163.com" }     
