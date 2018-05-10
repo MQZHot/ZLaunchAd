@@ -28,6 +28,15 @@ public class ZLaunchAdView: UIView {
         addAdImageView()
     }
     
+    /// 倒计时结束回调
+    ///
+    /// - Parameter action:
+    @objc
+    public func endOfCountDown(_ action: ZLaunchClosure?) {
+        self.endOfCountDownClosure = action
+    }
+    
+    
 /////////////////////////////////////////////////////////////////////////////////////
 // MARK: - private
     static var `default` = ZLaunchAdView(frame: UIScreen.main.bounds)
@@ -41,6 +50,8 @@ public class ZLaunchAdView: UIView {
     fileprivate var skipBtn: ZLaunchAdButton?
     /// UIApplicationWillEnterForeground Notification.Name
     fileprivate let zLaunchAdAppearTimeStamp = "ZLaunchAdAppearTimeStamp"
+    /// 倒计时结束闭包
+    fileprivate var endOfCountDownClosure: ZLaunchClosure?
     /// 广告图
     fileprivate lazy var launchAdImgView: ZLaunchAdImageView = {
         let imgView = ZLaunchAdImageView(frame: .zero)
@@ -165,6 +176,10 @@ extension ZLaunchAdView {
             self.skipBtn = nil
             self.removeFromSuperview()
         })
+        /// #10 有没有倒计时结束时的回调函数
+        if endOfCountDownClosure != nil {
+            endOfCountDownClosure!()
+        }
         if completion != nil {
             completion!()
         }

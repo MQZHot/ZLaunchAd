@@ -112,7 +112,9 @@ extension AppDelegate {
                     homeVC.navigationController?.pushViewController(vc, animated: true)
                 })
             }
-        })
+        }).endOfCountDown {
+            print("-----sssss")
+        }
     }
 }
 
