@@ -113,7 +113,7 @@ extension AppDelegate {
                 })
             }
         }).endOfCountDown {
-            print("-----sssss")
+            printLog("倒计时结束了-----")
         }
     }
 }
