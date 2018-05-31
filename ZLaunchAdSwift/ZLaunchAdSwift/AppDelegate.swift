@@ -96,7 +96,7 @@ extension AppDelegate {
     /// 如果进入前台时加载不同的广告图片，网络请求需要写在`adNetRequest`闭包中
     /// 如果显示的是同一张图片，网络请求不需要写在闭包中，避免重复请求
     func launchExample04(_ homeVC: UIViewController) {
-        ZLaunchAd.create(showEnterForeground: true, timeForWillEnterForeground: 20, adNetRequest: { adView in
+        ZLaunchAd.create(showEnterForeground: true, timeForWillEnterForeground: 10, adNetRequest: { adView in
             self.request { model in
                 let buttonConfig = ZLaunchSkipButtonConfig()
                 buttonConfig.skipBtnType = model.skipBtnType
