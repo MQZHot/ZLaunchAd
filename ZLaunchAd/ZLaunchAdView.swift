@@ -9,7 +9,6 @@
 //
 
 import UIKit
-
 public class ZLaunchAdView: UIView {
     
 // MARK: - API
@@ -20,8 +19,10 @@ public class ZLaunchAdView: UIView {
     ///   - imageResource: 配置图片资源
     ///   - buttonConfig:  配置跳过按钮
     ///   - action: 广告点击响应
-    @objc
-    public func setImageResource(_ imageResource: ZLaunchAdImageResourceConfigure, buttonConfig: ZLaunchSkipButtonConfig? = nil, action: ZLaunchClosure?) {
+    @objc public func setImageResource(_ imageResource: ZLaunchAdImageResourceConfigure,
+                                       buttonConfig: ZLaunchSkipButtonConfig? = nil,
+                                       action: ZLaunchClosure?)
+    {
         if let buttonConfig = buttonConfig { skipBtnConfig = buttonConfig }
         self.imageResource = imageResource
         adTapAction = action
@@ -29,10 +30,7 @@ public class ZLaunchAdView: UIView {
     }
     
     /// 倒计时结束回调
-    ///
-    /// - Parameter action:
-    @objc
-    public func endOfCountDown(_ action: ZLaunchClosure?) {
+    @objc public func endOfCountDown(_ action: ZLaunchClosure?) {
         self.endOfCountDownClosure = action
     }
     

@@ -13,10 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.orange
-        navigationItem.title = "ZLaunchAdVC"
-        
-        
-        
+        navigationItem.title = "ZLaunchAd"
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+20) {
             NotificationCenter.default.post(name: NSNotification.Name.init("myNotification"), object: nil)

@@ -9,8 +9,8 @@
 //
 
 import UIKit
-@objc
-public class ZLaunchAd: NSObject {
+
+@objc public class ZLaunchAd: NSObject {
     
     /// 创建广告view --- 进入前台时显示
     ///
@@ -21,7 +21,12 @@ public class ZLaunchAd: NSObject {
     ///   - adNetRequest: 广告网络请求。如果需要每次进入前台是显示不同的广告图片，网络请求写在此闭包中
     /// - Returns: ZLaunchAdView
     @discardableResult
-    @objc public class func create(waitTime: Int = 3, showEnterForeground: Bool = false, timeForWillEnterForeground: Double = 10, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView {
+    @objc public class func create(waitTime: Int = 3,
+                                   showEnterForeground: Bool = false,
+                                   timeForWillEnterForeground: Double = 10,
+                                   adNetRequest: ((ZLaunchAdView)->())? = nil)
+        -> ZLaunchAdView
+    {
         let launchAdView: ZLaunchAdView
         if showEnterForeground {
             launchAdView = ZLaunchAdView.default
@@ -44,7 +49,11 @@ public class ZLaunchAd: NSObject {
     ///   - adNetRequest: 广告网络请求。如果需要每次进入前台是显示不同的广告图片，网络请求写在此闭包中
     /// - Returns: ZLaunchAdView
     @discardableResult
-    @objc public class func create(waitTime: Int = 3, customNotificationName: String?, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView {
+    @objc public class func create(waitTime: Int = 3,
+                                   customNotificationName: String?,
+                                   adNetRequest: ((ZLaunchAdView)->())? = nil)
+        -> ZLaunchAdView
+    {
         let launchAdView: ZLaunchAdView = ZLaunchAdView.default
         launchAdView.appear(showEnterForeground: false, customNotificationName: customNotificationName)
         launchAdView.adRequest = adNetRequest

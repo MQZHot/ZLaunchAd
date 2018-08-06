@@ -66,7 +66,6 @@ public typealias ZLaunchClosure = ()->()
     case readCache
 }
 
-
 // MARK: - 配置跳过按钮
 @objc public class ZLaunchSkipButtonConfig: NSObject {
     /// frame
