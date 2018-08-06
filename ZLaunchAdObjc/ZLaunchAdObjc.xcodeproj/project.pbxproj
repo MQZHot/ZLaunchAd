@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A37B6EE2B377D74BEB99323A /* Pods_ZLaunchAdObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */; };
+		D69CBC85211820BC0076CA9A /* ZLaunchAdMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */; };
 		D6EFD9CC2008624D00BFC9D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EFD9CB2008624D00BFC9D1 /* AppDelegate.m */; };
 		D6EFD9CF2008624D00BFC9D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EFD9CE2008624D00BFC9D1 /* ViewController.m */; };
 		D6EFD9D22008624D00BFC9D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6EFD9D02008624D00BFC9D1 /* Main.storyboard */; };
@@ -27,9 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		126926C8C3E05A8D18FBE5B6 /* Pods-ZLaunchAdObjc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdObjc.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc.release.xcconfig"; sourceTree = "<group>"; };
-		1C702E1348DF913187D2108E /* Pods-ZLaunchAdObjc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdObjc.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc.debug.xcconfig"; sourceTree = "<group>"; };
 		3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69CBC83211820BB0076CA9A /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
 		D6EFD9C72008624D00BFC9D1 /* ZLaunchAdObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EFD9CA2008624D00BFC9D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6EFD9CB2008624D00BFC9D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,15 +65,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E68804D294BF50882DDD95E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1C702E1348DF913187D2108E /* Pods-ZLaunchAdObjc.debug.xcconfig */,
-				126926C8C3E05A8D18FBE5B6 /* Pods-ZLaunchAdObjc.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		65773FC1721FB4ECEE371AB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +73,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D69CBC82211820BB0076CA9A /* CCommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				D69CBC83211820BB0076CA9A /* module.modulemap */,
+			);
+			path = CCommonCrypto;
+			sourceTree = "<group>";
+		};
 		D6EFD9BE2008624D00BFC9D1 = {
 			isa = PBXGroup;
 			children = (
 				D6EFD9C92008624D00BFC9D1 /* ZLaunchAdObjc */,
 				D6EFD9C82008624D00BFC9D1 /* Products */,
 				65773FC1721FB4ECEE371AB8 /* Frameworks */,
-				1E68804D294BF50882DDD95E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +118,8 @@
 		D6EFD9E0200863C700BFC9D1 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
+				D69CBC82211820BB0076CA9A /* CCommonCrypto */,
+				D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */,
 				D6EFD9E1200863C700BFC9D1 /* ZLaunchAdImageView.swift */,
 				D6EFD9E2200863C700BFC9D1 /* ZLaunchAd.swift */,
 				D6EFD9E3200863C700BFC9D1 /* ZLaunchImageView.swift */,
@@ -141,11 +142,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6EFD9DD2008624D00BFC9D1 /* Build configuration list for PBXNativeTarget "ZLaunchAdObjc" */;
 			buildPhases = (
-				286BDDCE2BD9CA10D8F3B913 /* [CP] Check Pods Manifest.lock */,
 				D6EFD9C32008624D00BFC9D1 /* Sources */,
 				D6EFD9C42008624D00BFC9D1 /* Frameworks */,
 				D6EFD9C52008624D00BFC9D1 /* Resources */,
-				87A138C6C79D3E24187DF4E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,45 +201,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		286BDDCE2BD9CA10D8F3B913 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZLaunchAdObjc-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		87A138C6C79D3E24187DF4E0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdObjc/Pods-ZLaunchAdObjc-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D6EFD9C32008624D00BFC9D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -249,6 +209,7 @@
 				D6EFD9F0200863C700BFC9D1 /* ZLaunchLog.swift in Sources */,
 				D6EFD9EF200863C700BFC9D1 /* ZLaunchAdConfig.swift in Sources */,
 				D6EFD9F4200863C700BFC9D1 /* ZLaunchAdAnimation.swift in Sources */,
+				D69CBC85211820BC0076CA9A /* ZLaunchAdMD5.swift in Sources */,
 				D6EFD9EC200863C700BFC9D1 /* ZLaunchAd.swift in Sources */,
 				D6EFD9CF2008624D00BFC9D1 /* ViewController.m in Sources */,
 				D6EFD9ED200863C700BFC9D1 /* ZLaunchImageView.swift in Sources */,
@@ -395,7 +356,6 @@
 		};
 		D6EFD9DE2008624D00BFC9D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C702E1348DF913187D2108E /* Pods-ZLaunchAdObjc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -405,6 +365,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -412,7 +373,6 @@
 		};
 		D6EFD9DF2008624D00BFC9D1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 126926C8C3E05A8D18FBE5B6 /* Pods-ZLaunchAdObjc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -422,6 +382,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

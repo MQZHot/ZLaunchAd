@@ -8,7 +8,9 @@
 //
 
 import UIKit
-import SwiftHash
+import CCommonCrypto
+
+
 
 // MARK: - 清除缓存
 func ZLaunchAdClearDiskCache() {

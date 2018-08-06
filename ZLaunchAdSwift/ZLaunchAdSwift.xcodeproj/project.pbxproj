@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A64EA7A9330F2F067F30FF9 /* Pods_ZLaunchAdSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5551134455F291A93A85B2B /* Pods_ZLaunchAdSwift.framework */; };
+		D69BAC862118129300771FED /* ZLaunchAdMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BAC852118129300771FED /* ZLaunchAdMD5.swift */; };
 		D6BAE6D72078EE8F0078BC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */; };
 		D6BAE6DA2078EE8F0078BC62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6BAE6D82078EE8F0078BC62 /* LaunchScreen.storyboard */; };
 		D6BAE6E52078EEC80078BC62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6E22078EEC80078BC62 /* ViewController.swift */; };
@@ -26,9 +26,22 @@
 		D6BAE6FE2078EF6B0078BC62 /* ZLaunchAdAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D60DE01F210327F200C5B94B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		7B95EBEB272A727977894626 /* Pods-ZLaunchAdSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdSwift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift.release.xcconfig"; sourceTree = "<group>"; };
-		B0A9DD51C3B020D8B05E5AE7 /* Pods-ZLaunchAdSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLaunchAdSwift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		D69BAC812117F23700771FED /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		D69BAC852118129300771FED /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
 		D6BAE6CC2078EE8D0078BC62 /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6BAE6D92078EE8F0078BC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,7 +61,6 @@
 		D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdView.swift; sourceTree = "<group>"; };
 		D6BAE6F32078EF6B0078BC62 /* ZLaunchAdButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdButton.swift; sourceTree = "<group>"; };
 		D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdAnimation.swift; sourceTree = "<group>"; };
-		F5551134455F291A93A85B2B /* Pods_ZLaunchAdSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,21 +68,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A64EA7A9330F2F067F30FF9 /* Pods_ZLaunchAdSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D69BAC802117F23700771FED /* CCommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				D69BAC812117F23700771FED /* module.modulemap */,
+			);
+			path = CCommonCrypto;
+			sourceTree = "<group>";
+		};
 		D6BAE6C32078EE8D0078BC62 = {
 			isa = PBXGroup;
 			children = (
 				D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */,
 				D6BAE6CE2078EE8D0078BC62 /* ZLaunchAdSwift */,
 				D6BAE6CD2078EE8D0078BC62 /* Products */,
-				F0B5234D21821FA6E8CB2B88 /* Pods */,
-				E77E4D2016C3583ABAD5CFBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +117,7 @@
 		D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
+				D69BAC802117F23700771FED /* CCommonCrypto */,
 				D6BAE6EC2078EF6B0078BC62 /* ZLaunchAd.swift */,
 				D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */,
 				D6BAE6ED2078EF6B0078BC62 /* ZLaunchImageView.swift */,
@@ -110,26 +128,10 @@
 				D6BAE6F32078EF6B0078BC62 /* ZLaunchAdButton.swift */,
 				D6BAE6F42078EF6B0078BC62 /* ZLaunchAdAnimation.swift */,
 				D6BAE6F02078EF6B0078BC62 /* ZLaunchLog.swift */,
+				D69BAC852118129300771FED /* ZLaunchAdMD5.swift */,
 			);
 			name = ZLaunchAd;
 			path = ../ZLaunchAd;
-			sourceTree = "<group>";
-		};
-		E77E4D2016C3583ABAD5CFBA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F5551134455F291A93A85B2B /* Pods_ZLaunchAdSwift.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F0B5234D21821FA6E8CB2B88 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B0A9DD51C3B020D8B05E5AE7 /* Pods-ZLaunchAdSwift.debug.xcconfig */,
-				7B95EBEB272A727977894626 /* Pods-ZLaunchAdSwift.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,11 +141,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6BAE6DE2078EE8F0078BC62 /* Build configuration list for PBXNativeTarget "ZLaunchAdSwift" */;
 			buildPhases = (
-				1A1C37CF0530EFEA7C2056A9 /* [CP] Check Pods Manifest.lock */,
 				D6BAE6C82078EE8D0078BC62 /* Sources */,
 				D6BAE6C92078EE8D0078BC62 /* Frameworks */,
 				D6BAE6CA2078EE8D0078BC62 /* Resources */,
-				6D1FEED8E363BD59F8060329 /* [CP] Embed Pods Frameworks */,
+				D60DE01F210327F200C5B94B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,45 +202,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1A1C37CF0530EFEA7C2056A9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZLaunchAdSwift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6D1FEED8E363BD59F8060329 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ZLaunchAdSwift/Pods-ZLaunchAdSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D6BAE6C82078EE8D0078BC62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -248,6 +210,7 @@
 				D6BAE6FA2078EF6B0078BC62 /* ZLaunchLog.swift in Sources */,
 				D6BAE6F92078EF6B0078BC62 /* ZLaunchAdConfig.swift in Sources */,
 				D6BAE6FE2078EF6B0078BC62 /* ZLaunchAdAnimation.swift in Sources */,
+				D69BAC862118129300771FED /* ZLaunchAdMD5.swift in Sources */,
 				D6BAE6F62078EF6B0078BC62 /* ZLaunchAd.swift in Sources */,
 				D6BAE6E62078EEC80078BC62 /* AppDelegate.swift in Sources */,
 				D6BAE6F72078EF6B0078BC62 /* ZLaunchImageView.swift in Sources */,
@@ -391,12 +354,12 @@
 		};
 		D6BAE6DF2078EE8F0078BC62 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0A9DD51C3B020D8B05E5AE7 /* Pods-ZLaunchAdSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47ZCN2V9UQ;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/CommonCrypto/CommonCrypto.h";
 				INFOPLIST_FILE = ZLaunchAdSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -405,21 +368,24 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		D6BAE6E02078EE8F0078BC62 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B95EBEB272A727977894626 /* Pods-ZLaunchAdSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47ZCN2V9UQ;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/CommonCrypto/CommonCrypto.h";
 				INFOPLIST_FILE = ZLaunchAdSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,9 +394,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
