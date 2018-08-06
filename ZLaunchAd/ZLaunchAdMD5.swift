@@ -2,13 +2,15 @@
 //  ZLaunchAdMD5.swift
 //  ZLaunchAdSwift
 //
-//  Created by mengqingzheng on 2018/8/6.
+//  Created by MQZHot on 2018/8/6.
 //  Copyright © 2018年 MQZHot. All rights reserved.
 //
-
+//  https://github.com/MQZHot/ZLaunchAd
+//
 import UIKit
 import CCommonCrypto
 
+/// md5
 func MD5(_ str: String) -> String {
     let cStr = str.cString(using: String.Encoding.utf8);
     let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: 16)
