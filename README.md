@@ -1,7 +1,7 @@
 
 ## ZLaunchAd
 
-![image](https://travis-ci.org/MQZHot/ZLaunchAd.svg?branch=master)   ![image](https://img.shields.io/badge/support-swift%204-green.svg)  ![image](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![image](https://img.shields.io/cocoapods/v/ZLaunchAd.svg?style=flat)
+![image](https://travis-ci.org/MQZHot/ZLaunchAd.svg?branch=master)   ![image](https://img.shields.io/badge/support-swift%204-green.svg)  ![image](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)  ![image](https://img.shields.io/cocoapods/v/ZLaunchAd.svg?style=flat)[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ZLaunchAd集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF，支持本地图片，支持视图过渡动画
 
@@ -18,13 +18,32 @@ ZLaunchAd集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF�
 - [x] 支持LaunchImage和LaunchScreen.storyboard.
 - [x] 支持广告点击事件，支持广告完成动画设置
 
+### 安装
+
+#### CocoaPods
+
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+target 'YourTargetName' do
+pod 'ZLaunchAd'
+end
+```
+
+#### Carthage
+
+```ogdl
+github "MQZHot/ZLaunchAd"
+```
+
 ### 使用
 
 ```swift
 /// 进入前台时显示
 func create(waitTime: Int = 3, showEnterForeground: Bool = false, timeForWillEnterForeground: Double = 10, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView
 ```
-```
+```swift
 /// 自定义通知控制出现
 func create(waitTime: Int = 3, customNotificationName: String?, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView
 ```
@@ -86,13 +105,6 @@ ZLaunchAd.clearDiskCache()
 let array = ["http://..", "http://..", "http://..", "http://.."]
 ZLaunchAd.clearDiskCacheWithImageUrlArray(array)
 ```
-
-### 安装
-
-* 1.pod 'ZLaunchAd'
-
-* 2.pod install / pod update
-
 
 ### 联系
 
