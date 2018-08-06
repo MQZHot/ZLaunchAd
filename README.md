@@ -20,36 +20,16 @@ ZLaunchAd集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF�
 
 ### 使用
 
-### 创建广告View
 ```swift
-/// 创建广告view --- 进入前台时显示
-///
-/// - Parameters:
-///   - waitTime: 加载广告等待的时间，默认3s
-///   - showEnterForeground: 是否进入前台时显示，默认`false`
-///   - timeForWillEnterForeground: 控制进入后台到前台显示的时间
-///   - adNetRequest: 广告网络请求。如果需要每次进入前台是显示不同的广告图片，网络请求写在此闭包中
-/// - Returns: ZLaunchAdView
+/// 进入前台时显示
 func create(waitTime: Int = 3, showEnterForeground: Bool = false, timeForWillEnterForeground: Double = 10, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView
 ```
 ```
-/// 创建广告view --- 自定义通知控制出现
-///
-/// - Parameters:
-///   - waitTime: 加载广告等待的时间，默认3s
-///   - customNotificationName: 自定义通知名称
-///   - adNetRequest: 广告网络请求。如果需要每次进入前台是显示不同的广告图片，网络请求写在此闭包中
-/// - Returns: ZLaunchAdView
+/// 自定义通知控制出现
 func create(waitTime: Int = 3, customNotificationName: String?, adNetRequest: ((ZLaunchAdView)->())? = nil) -> ZLaunchAdView
 ```
 ### 配置图片资源----配置跳过按钮
 ```swift
-/// 加载图片，网络图片/本地图片/GIF图片
-///
-/// - Parameters:
-///   - imageResource: 配置图片资源
-///   - buttonConfig:  配置跳过按钮
-///   - action: 广告点击响应
 func setImageResource(_ imageResource: ZLaunchAdImageResourceConfigure, buttonConfig: ZLaunchSkipButtonConfig? = nil, action: ZLaunchClosure?)
 ```
 
@@ -106,10 +86,6 @@ ZLaunchAd.clearDiskCache()
 let array = ["http://..", "http://..", "http://..", "http://.."]
 ZLaunchAd.clearDiskCacheWithImageUrlArray(array)
 ```
-
-### 依赖
-
-* 使用 [SwiftHash](https://github.com/onmyway133/SwiftHash)进行md5加密
 
 ### 安装
 
