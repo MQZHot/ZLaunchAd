@@ -12,10 +12,8 @@ import UIKit
 extension UIWindow {
     open override func didAddSubview(_ subview: UIView) {
         super.didAddSubview(subview)
-        /// namespace
-        let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
         for sub_view in subviews {
-            if sub_view.classForCoder.description() == "\(namespace).ZLaunchAdView" {
+            if sub_view.isKind(of: ZLaunchAdView.self) {
                 bringSubview(toFront: sub_view)
             }
         }

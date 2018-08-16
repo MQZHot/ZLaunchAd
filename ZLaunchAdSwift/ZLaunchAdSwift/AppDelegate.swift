@@ -104,7 +104,7 @@ extension AppDelegate {
                 imageResource.imageNameOrImageURL = model.imgUrl
                 imageResource.animationType = model.animationType
                 imageResource.imageDuration = model.duration
-                imageResource.imageFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_WIDTH*model.height/model.width)
+                imageResource.imageFrame = CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: Z_SCREEN_HEIGHT-75)
                 
                 adView.setImageResource(imageResource, buttonConfig: buttonConfig, action: {
                     let vc = UIViewController()
