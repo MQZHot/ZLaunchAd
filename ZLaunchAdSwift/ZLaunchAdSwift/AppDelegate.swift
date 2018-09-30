@@ -50,7 +50,7 @@ extension AppDelegate {
     }
     /// 加载网络图片
     func launchExample02(_ homeVC: UIViewController) {
-        let adView = ZLaunchAd.create()
+        let adView = ZLaunchAd.create(waitTime: 5)
         request { model in
             let buttonConfig = ZLaunchSkipButtonConfig()
             buttonConfig.skipBtnType = model.skipBtnType

@@ -8,7 +8,7 @@
 //  https://github.com/MQZHot/ZLaunchAd
 //
 import UIKit
-import CCommonCrypto
+import CommonCrypto
 
 /// md5
 func MD5(_ str: String) -> String {

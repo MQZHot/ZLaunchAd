@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +28,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ab4-Zy-uIf" secondAttribute="trailing" id="FUf-ry-btA"/>
-                            <constraint firstItem="8d5-rP-xFW" firstAttribute="top" secondItem="ab4-Zy-uIf" secondAttribute="bottom" id="MtW-ef-Gs8"/>
+                            <constraint firstAttribute="bottom" secondItem="ab4-Zy-uIf" secondAttribute="bottom" id="SMz-5S-dgO"/>
                             <constraint firstItem="ab4-Zy-uIf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Tcd-qO-seo"/>
                             <constraint firstItem="ab4-Zy-uIf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="VJv-jR-ckt"/>
                         </constraints>

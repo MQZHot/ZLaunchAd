@@ -40,7 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D69BAC812117F23700771FED /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		D61836FD21606FCC0004BA83 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		D69BAC852118129300771FED /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
 		D6BAE6CC2078EE8D0078BC62 /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,12 +74,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D69BAC802117F23700771FED /* CCommonCrypto */ = {
+		D61836FC21606FCC0004BA83 /* CommonCrypto */ = {
 			isa = PBXGroup;
 			children = (
-				D69BAC812117F23700771FED /* module.modulemap */,
+				D61836FD21606FCC0004BA83 /* module.modulemap */,
 			);
-			path = CCommonCrypto;
+			path = CommonCrypto;
 			sourceTree = "<group>";
 		};
 		D6BAE6C32078EE8D0078BC62 = {
@@ -117,7 +117,7 @@
 		D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
-				D69BAC802117F23700771FED /* CCommonCrypto */,
+				D61836FC21606FCC0004BA83 /* CommonCrypto */,
 				D6BAE6EC2078EF6B0078BC62 /* ZLaunchAd.swift */,
 				D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */,
 				D6BAE6ED2078EF6B0078BC62 /* ZLaunchImageView.swift */,
@@ -289,7 +289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -343,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -368,8 +368,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -394,8 +394,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

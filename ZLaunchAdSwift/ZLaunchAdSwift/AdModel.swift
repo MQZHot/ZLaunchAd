@@ -19,10 +19,10 @@ struct AdModel {
     
     
     init(_ dic: Dictionary<String, Any>) {
-        imgUrl = dic["imgUrl"] as! String
-        duration = dic["duration"] as! Int
-        width = dic["width"] as! CGFloat
-        height = dic["height"] as! CGFloat
+        imgUrl = dic["imgUrl"] as? String
+        duration = dic["duration"] as? Int
+        width = dic["width"] as? CGFloat
+        height = dic["height"] as? CGFloat
         
         let btnType = dic["skipBtnType"] as! Int
         skipBtnType = ZLaunchSkipButtonType(rawValue: btnType)!

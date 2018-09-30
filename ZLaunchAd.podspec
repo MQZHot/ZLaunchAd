@@ -11,9 +11,9 @@ s.source_files  = "ZLaunchAd/*.{h,m,swift}"
 
 
 s.xcconfig = { 'SWIFT_INCLUDE_PATHS' =>
-  '$(PODS_ROOT)/ZLaunchAd/ZLaunchAd/CCommonCrypto' }
+  '$(PODS_ROOT)/ZLaunchAd/ZLaunchAd/CommonCrypto' }
 
-s.preserve_paths = 'ZLaunchAd/CCommonCrypto/module.modulemap'
+s.preserve_paths = 'ZLaunchAd/CommonCrypto/module.modulemap'
 
              
 s.requires_arc = true
