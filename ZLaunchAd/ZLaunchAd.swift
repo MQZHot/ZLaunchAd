@@ -41,6 +41,7 @@ import UIKit
         return launchAdView
     }
     
+    
     /// 创建广告view --- 自定义通知控制出现
     ///
     /// - Parameters:

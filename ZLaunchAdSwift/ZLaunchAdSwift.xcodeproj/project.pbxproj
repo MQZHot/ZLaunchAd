@@ -40,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D608D8CC21607B9900F6877C /* CommonCryptoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoHeader.h; sourceTree = "<group>"; };
 		D61836FD21606FCC0004BA83 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		D69BAC852118129300771FED /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
 		D6BAE6CC2078EE8D0078BC62 /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				D61836FD21606FCC0004BA83 /* module.modulemap */,
+				D608D8CC21607B9900F6877C /* CommonCryptoHeader.h */,
 			);
 			path = CommonCrypto;
 			sourceTree = "<group>";
@@ -368,8 +370,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -394,8 +396,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
