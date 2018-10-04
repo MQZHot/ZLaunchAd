@@ -2,8 +2,8 @@
 //  ZLaunchAdFramework.h
 //  ZLaunchAdFramework
 //
-//  Created by mengqingzheng on 2018/8/6.
-//  Copyright © 2018年 MQZHot. All rights reserved.
+//  Created by mengqingzheng on 2018/10/4.
+//  Copyright © 2018 MQZHot. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

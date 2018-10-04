@@ -12,6 +12,7 @@ import UIKit
 
 @objc public class ZLaunchAd: NSObject {
     
+    
     /// 创建广告view --- 进入前台时显示
     ///
     /// - Parameters:
