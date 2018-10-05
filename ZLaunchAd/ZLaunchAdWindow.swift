@@ -14,7 +14,7 @@ extension UIWindow {
         super.didAddSubview(subview)
         for sub_view in subviews {
             if sub_view.isKind(of: ZLaunchAdView.self) {
-                bringSubview(toFront: sub_view)
+                bringSubviewToFront(sub_view)
             }
         }
     }
