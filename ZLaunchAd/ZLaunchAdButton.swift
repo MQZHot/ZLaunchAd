@@ -60,7 +60,7 @@ class ZLaunchAdButton: UIButton {
                 animation?.delegate = self
                 animation?.fromValue = 0
                 animation?.toValue = 0.9999
-                animation?.fillMode = CAMediaTimingFillMode.forwards
+                animation?.fillMode = kCAFillModeForwards
                 animation?.isRemovedOnCompletion = false
                 animationLayer.add(animation!, forKey: "strokeStartAnimation")
             }
@@ -103,8 +103,8 @@ class ZLaunchAdButton: UIButton {
         layer.strokeColor = config.strokeColor.cgColor
         layer.fillColor = UIColor.clear.cgColor
         layer.lineWidth = config.lineWidth
-        layer.lineCap = CAShapeLayerLineCap.round
-        layer.lineJoin = CAShapeLayerLineJoin.round
+        layer.lineCap = kCALineCapRound
+        layer.lineJoin = kCALineJoinRound
         let bezierPath = UIBezierPath(ovalIn: bounds)
         layer.path = bezierPath.cgPath
         layer.strokeStart = 0

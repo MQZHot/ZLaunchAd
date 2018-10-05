@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A37B6EE2B377D74BEB99323A /* Pods_ZLaunchAdObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */; };
 		D69CBC85211820BC0076CA9A /* ZLaunchAdMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */; };
 		D6EFD9CC2008624D00BFC9D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EFD9CB2008624D00BFC9D1 /* AppDelegate.m */; };
 		D6EFD9CF2008624D00BFC9D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EFD9CE2008624D00BFC9D1 /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D61836FF21606FEE0004BA83 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
 		D6EFD9C72008624D00BFC9D1 /* ZLaunchAdObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37B6EE2B377D74BEB99323A /* Pods_ZLaunchAdObjc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 		65773FC1721FB4ECEE371AB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,7 +166,6 @@
 				TargetAttributes = {
 					D6EFD9C62008624D00BFC9D1 = {
 						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -363,7 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -380,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CCommonCrypto\"";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
