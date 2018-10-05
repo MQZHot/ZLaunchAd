@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A37B6EE2B377D74BEB99323A /* Pods_ZLaunchAdObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */; };
 		D69CBC85211820BC0076CA9A /* ZLaunchAdMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */; };
 		D6EFD9CC2008624D00BFC9D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EFD9CB2008624D00BFC9D1 /* AppDelegate.m */; };
 		D6EFD9CF2008624D00BFC9D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EFD9CE2008624D00BFC9D1 /* ViewController.m */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLaunchAdObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D61836FF21606FEE0004BA83 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
 		D6EFD9C72008624D00BFC9D1 /* ZLaunchAdObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,21 +56,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A37B6EE2B377D74BEB99323A /* Pods_ZLaunchAdObjc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		65773FC1721FB4ECEE371AB8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3DCEA95723282540E9E41707 /* Pods_ZLaunchAdObjc.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D61836FE21606FEE0004BA83 /* CommonCrypto */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +75,6 @@
 			children = (
 				D6EFD9C92008624D00BFC9D1 /* ZLaunchAdObjc */,
 				D6EFD9C82008624D00BFC9D1 /* Products */,
-				65773FC1721FB4ECEE371AB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -346,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
