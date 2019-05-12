@@ -12,7 +12,6 @@ import UIKit
 
 @objc public class ZLaunchAd: NSObject {
     
-    
     /// 创建广告view --- 进入前台时显示
     ///
     /// - Parameters:
@@ -38,7 +37,7 @@ import UIKit
         }
         launchAdView.adRequest = adNetRequest
         launchAdView.waitTime = waitTime
-        UIApplication.shared.keyWindow?.addSubview(launchAdView)
+        UIApplication.shared.delegate?.window??.addSubview(launchAdView)
         return launchAdView
     }
     

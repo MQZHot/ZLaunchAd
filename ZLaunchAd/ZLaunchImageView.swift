@@ -41,7 +41,7 @@ extension ZLaunchImageView {
         let size = UIScreen.main.bounds.size
         guard let launchImages = Bundle.main.infoDictionary?["UILaunchImages"] as? [[String: Any]] else { return nil }
         for dict in launchImages {
-            let imageSize = CGSizeFromString(dict["UILaunchImageSize"] as! String)
+            let imageSize = NSCoder.cgSize(for: dict["UILaunchImageSize"] as! String)
             if __CGSizeEqualToSize(imageSize, size) && orientation == (dict["UILaunchImageOrientation"] as! String) {
                 let launchImageName = dict["UILaunchImageName"] as! String
                 let image = UIImage(named: launchImageName)

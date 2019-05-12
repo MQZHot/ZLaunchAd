@@ -77,7 +77,7 @@ public class ZLaunchAdView: UIView {
     
     func appear(showEnterForeground: Bool, timeForWillEnterForeground: Double = 10, customNotificationName: String? = nil) {
         if showEnterForeground {
-            NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { _ in
+            NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { _ in
                 /// 上次出现的时间戳
                 let lastAppearTimeStamp = UserDefaults.standard.double(forKey: self.zLaunchAdAppearTimeStamp)
                 let currentTimeStamp = self.getSystemTimestamp()
@@ -85,7 +85,7 @@ public class ZLaunchAdView: UIView {
                     self.show()
                 }
             }
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: nil) { (_) in
+            NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { (_) in
                 /// 记录时间戳
                 UserDefaults.standard.set(self.getSystemTimestamp(), forKey: self.zLaunchAdAppearTimeStamp)
             }

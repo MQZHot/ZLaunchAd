@@ -9,7 +9,7 @@
 //
 import UIKit
 
-import CommonCrypto
+import CCommonCrypto
 
 /// md5
 func MD5(_ str: String) -> String {

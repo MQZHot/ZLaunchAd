@@ -72,7 +72,7 @@ class ZLaunchAdAnimation: NSObject, CAAnimationDelegate {
         }
     }
     
-    private func animationOptions(_ animationType: ZLaunchAnimationType) -> UIViewAnimationOptions {
+    private func animationOptions(_ animationType: ZLaunchAnimationType) -> UIView.AnimationOptions {
         switch animationType {
         case .curlUp:
             return .transitionCurlUp
