@@ -18,6 +18,7 @@ class ZLaunchAdImageView: UIImageView {
         super.init(frame: frame)
         isUserInteractionEnabled = true
         self.contentMode = .scaleAspectFill
+        self.clipsToBounds = true
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(adImageViewTapAction))
         addGestureRecognizer(tap)
     }
