@@ -15,5 +15,3 @@ func printLog<T>( _ message: T, file: String = #file, method: String = #function
         print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
     #endif
 }
-
-
