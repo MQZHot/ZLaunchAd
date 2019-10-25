@@ -27,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D61836FF21606FEE0004BA83 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
 		D6EFD9C72008624D00BFC9D1 /* ZLaunchAdObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EFD9CA2008624D00BFC9D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,14 +61,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D61836FE21606FEE0004BA83 /* CommonCrypto */ = {
-			isa = PBXGroup;
-			children = (
-				D61836FF21606FEE0004BA83 /* module.modulemap */,
-			);
-			path = CommonCrypto;
-			sourceTree = "<group>";
-		};
 		D6EFD9BE2008624D00BFC9D1 = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +97,6 @@
 		D6EFD9E0200863C700BFC9D1 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
-				D61836FE21606FEE0004BA83 /* CommonCrypto */,
 				D69CBC84211820BC0076CA9A /* ZLaunchAdMD5.swift */,
 				D6EFD9E1200863C700BFC9D1 /* ZLaunchAdImageView.swift */,
 				D6EFD9E2200863C700BFC9D1 /* ZLaunchAd.swift */,

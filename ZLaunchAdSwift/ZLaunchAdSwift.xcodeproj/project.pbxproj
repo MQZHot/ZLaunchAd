@@ -40,8 +40,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D608D8CC21607B9900F6877C /* CommonCryptoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoHeader.h; sourceTree = "<group>"; };
-		D61836FD21606FCC0004BA83 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		D69BAC852118129300771FED /* ZLaunchAdMD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLaunchAdMD5.swift; sourceTree = "<group>"; };
 		D6BAE6CC2078EE8D0078BC62 /* ZLaunchAdSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLaunchAdSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BAE6D62078EE8F0078BC62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,15 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D61836FC21606FCC0004BA83 /* CommonCrypto */ = {
-			isa = PBXGroup;
-			children = (
-				D61836FD21606FCC0004BA83 /* module.modulemap */,
-				D608D8CC21607B9900F6877C /* CommonCryptoHeader.h */,
-			);
-			path = CommonCrypto;
-			sourceTree = "<group>";
-		};
 		D6BAE6C32078EE8D0078BC62 = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +108,6 @@
 		D6BAE6EA2078EF6B0078BC62 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
-				D61836FC21606FCC0004BA83 /* CommonCrypto */,
 				D6BAE6EC2078EF6B0078BC62 /* ZLaunchAd.swift */,
 				D6BAE6F22078EF6B0078BC62 /* ZLaunchAdView.swift */,
 				D6BAE6ED2078EF6B0078BC62 /* ZLaunchImageView.swift */,
