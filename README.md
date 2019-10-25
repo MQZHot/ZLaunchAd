@@ -71,8 +71,4 @@ ZLaunchAd.clearDiskCacheWithImageUrlArray(array)
 
 * Email: mqz1228@163.com
 
-### LICENSE
-
-ZLaunchAd is released under the MIT license. See [LICENSE](https://github.com/MQZHot/ZLaunchAd/blob/master/LICENSE) for details.
-
 

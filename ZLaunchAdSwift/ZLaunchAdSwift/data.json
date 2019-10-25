@@ -2,36 +2,36 @@
     "data":
     [
      {
-     "width":674,
-     "height":973,
-     "duration":5,
-     "imgUrl":"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20171109135437541.png",
-     "skipBtnType":0,
-     "animationType":3
+         "width":674,
+         "height":973,
+         "duration":5,
+         "imgUrl":"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20171109135437541.png",
+         "skipBtnType":0,
+         "animationType":3
      },
      {
-     "width":320,
-     "height":480,
-     "duration":6,
-     "imgUrl":"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg",
-     "skipBtnType":6,
-     "animationType":5
+         "width":320,
+         "height":480,
+         "duration":6,
+         "imgUrl":"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170725104352981.jpg",
+         "skipBtnType":6,
+         "animationType":5
      },
      {
-     "width":400,
-     "height":566,
-     "duration":8,
-     "imgUrl":"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20171109145155437.gif",
-     "skipBtnType":3,
-     "animationType":8
+         "width":400,
+         "height":566,
+         "duration":8,
+         "imgUrl":"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20171109145155437.gif",
+         "skipBtnType":3,
+         "animationType":8
      },
      {
-     "width":750,
-     "height":1144,
-     "duration":4,
-     "imgUrl":"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20171109153125234.jpg",
-     "skipBtnType":1,
-     "animationType":2
+         "width":750,
+         "height":1144,
+         "duration":4,
+         "imgUrl":"http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20171109153125234.jpg",
+         "skipBtnType":1,
+         "animationType":2
      }
      ]
 }
