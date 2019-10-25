@@ -348,8 +348,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/CommonCrypto/CommonCrypto.h";
+				DEVELOPMENT_TEAM = US43RGTPBX;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ZLaunchAdSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,8 +358,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
+				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -374,8 +374,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/CommonCrypto/CommonCrypto.h";
+				DEVELOPMENT_TEAM = US43RGTPBX;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ZLaunchAdSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,8 +384,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MQZHot.ZLaunchAdSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/../ZLaunchAd/CommonCrypto\"";
+				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZLaunchAdSwift/ZLaunchAdSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
