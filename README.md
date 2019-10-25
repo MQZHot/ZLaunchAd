@@ -2,7 +2,7 @@
 ## ZLaunchAd
 
  ![image](https://img.shields.io/badge/support-iOS%208%2B-blue.svg)   ![image](https://img.shields.io/cocoapods/v/ZLaunchAd.svg?style=flat)    [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-
+![image](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)
 ZLaunchAd集成启动广告，支持`LaunchImage`和`LaunchScreen`，支持GIF，支持本地图片，支持视图过渡动画
 
 
@@ -35,6 +35,18 @@ end
 
 ```ogdl
 github "MQZHot/ZLaunchAd"
+```
+
+#### Swift Package Manager
+```ruby
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    dependencies: [
+        .package(url: "https://github.com/MQZHot/ZLaunchAd.git", from: "2.1.0"),
+    ]
+)
 ```
 
 ### 使用
